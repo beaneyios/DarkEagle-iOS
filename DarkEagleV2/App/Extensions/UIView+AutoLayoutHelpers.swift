@@ -20,8 +20,19 @@ extension NSLayoutConstraint {
 }
 
 extension UIView {
+    func pinToEdges(on view: UIView) {
+        topAnchor.constraint(equalTo: view.topAnchor, constant: 0.0).activate()
+        bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0.0).activate()
+        leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0.0).activate()
+        rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0.0).activate()
+    }
+    
     func pinVertically(to view: UIView, at yPosition: CGFloat) {
         topAnchor.constraint(equalTo: view.topAnchor, constant: yPosition).activate()
+    }
+    
+    func height(_ height: CGFloat) {
+        heightAnchor.constraint(equalToConstant: height).activate()
     }
     
     func size(at size: CGSize) {

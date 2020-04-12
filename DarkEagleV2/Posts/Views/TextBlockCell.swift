@@ -19,7 +19,7 @@ class TextBlockCell: UICollectionViewCell, NibLoadable {
     weak var delegate: TextBlockCellDelegate?
     
     private var block: TextBlock?
-    private var selectionOptions: UIView?
+    private var selectionOptions: SelectionOptionsView?
 
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -101,18 +101,14 @@ class TextBlockCell: UICollectionViewCell, NibLoadable {
             }
         }()
         
-        let newView = UIView()
-        newView.backgroundColor = .white
-        newView.layer.borderColor = UIColor.black.cgColor
-        newView.layer.borderWidth = 0.5
-        newView.alpha = 0.9
+        let newView = SelectionOptionsView(frame: .zero)
         addSubview(newView)
         newView.translatesAutoresizingMaskIntoConstraints = false
         
         newView.pinVertically(to: self, at: yPosition)
         newView.center(in: self)
-        newView.size(at: CGSize(width: 250.0, height: 50.0))
-        
+        newView.height(50.0)
+        newView.widthAnchor.constraint(greaterThanOrEqualToConstant: 10.0).activate()
         selectionOptions = newView
     }
 }

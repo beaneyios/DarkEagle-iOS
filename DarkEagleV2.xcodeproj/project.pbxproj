@@ -32,6 +32,7 @@
 		BE8DE81224437D2300C3CF39 /* UIView+AutoLayoutHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE81124437D2300C3CF39 /* UIView+AutoLayoutHelpers.swift */; };
 		BE8DE8142443906D00C3CF39 /* UITextInputTokenizer+TappedRanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE8132443906D00C3CF39 /* UITextInputTokenizer+TappedRanges.swift */; };
 		BE8DE816244390A500C3CF39 /* UITextView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE815244390A500C3CF39 /* UITextView+Helpers.swift */; };
+		BE8DE8182443ADA200C3CF39 /* SelectionOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE8172443ADA200C3CF39 /* SelectionOptionsView.swift */; };
 		BEF3DF68243CFCE200CFF00F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF3DF67243CFCE200CFF00F /* AppDelegate.swift */; };
 		BEF3DF6C243CFCE200CFF00F /* NativePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF3DF6B243CFCE200CFF00F /* NativePostViewController.swift */; };
 		BEF3DF6F243CFCE200CFF00F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF3DF6D243CFCE200CFF00F /* Main.storyboard */; };
@@ -77,6 +78,7 @@
 		BE8DE81124437D2300C3CF39 /* UIView+AutoLayoutHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayoutHelpers.swift"; sourceTree = "<group>"; };
 		BE8DE8132443906D00C3CF39 /* UITextInputTokenizer+TappedRanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextInputTokenizer+TappedRanges.swift"; sourceTree = "<group>"; };
 		BE8DE815244390A500C3CF39 /* UITextView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Helpers.swift"; sourceTree = "<group>"; };
+		BE8DE8172443ADA200C3CF39 /* SelectionOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionOptionsView.swift; sourceTree = "<group>"; };
 		BEF3DF64243CFCE200CFF00F /* DarkEagleV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DarkEagleV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF3DF67243CFCE200CFF00F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEF3DF6B243CFCE200CFF00F /* NativePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativePostViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				BE79ED3F2441FFA6009249FE /* DETextView.swift */,
 				BE79ED6D24430C2D009249FE /* ImageBlockCell.swift */,
 				BE79ED6E24430C2D009249FE /* ImageBlockCell.xib */,
+				BE8DE8172443ADA200C3CF39 /* SelectionOptionsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				BE79ED4B24420432009249FE /* Array+FirstOfType.swift in Sources */,
 				BE79ED4F2442055E009249FE /* AnyBlock.swift in Sources */,
 				BE79ED7324430C67009249FE /* NativeArticleCellProvider.swift in Sources */,
+				BE8DE8182443ADA200C3CF39 /* SelectionOptionsView.swift in Sources */,
 				BE79ED6F24430C2D009249FE /* ImageBlockCell.swift in Sources */,
 				BE79ED5324420D0D009249FE /* ImageBlock.swift in Sources */,
 				BE79ED662442288B009249FE /* PostDownloader.swift in Sources */,
