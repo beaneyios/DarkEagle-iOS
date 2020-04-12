@@ -9,9 +9,9 @@
 import UIKit
 
 enum Style {
-    case bold
     case underlined
-    case coloured(UIColor)
+    case colour(UIColor)
+    case font(UIFont)
     case none
 }
 
@@ -21,10 +21,13 @@ struct StyleRange: Decodable {
     var style: Style
     
     enum DecodingKeys: CodingKey {
+        case style
+
         case startIndex
         case endIndex
         case colour
-        case style
+        case fontName
+        case fontSize
     }
     
     init(from decoder: Decoder) throws {
@@ -39,22 +42,36 @@ struct StyleRange: Decodable {
             let style = try container.decode(String.self, forKey: .style)
             
             switch style {
-            case "bold":
-                return .bold
             case "underlined":
                 return .underlined
-            case "coloured":
-                let colourHex = try container.decode(String.self, forKey: .colour)
-                guard let colour = UIColor(hex: colourHex) else {
-                    return .none
-                }
-                
-                return .coloured(colour)
+            case "colour":
+                return try colourStyle(from: container)
+            case "font":
+                return try fontStyle(from: container)
             default:
                 return .none
             }
         } catch {
             return .none
         }
+    }
+    
+    static func colourStyle(from container: KeyedDecodingContainer<DecodingKeys>) throws -> Style {
+        let colourHex = try container.decode(String.self, forKey: .colour)
+        guard let colour = UIColor(hex: colourHex) else {
+            return .none
+        }
+        
+        return .colour(colour)
+    }
+    
+    static func fontStyle(from container: KeyedDecodingContainer<DecodingKeys>) throws -> Style {
+        let fontName = try container.decode(String.self, forKey: .fontName)
+        let fontSize = try container.decode(Double.self, forKey: .fontSize)
+        guard let font = UIFont(name: fontName, size: CGFloat(fontSize)) else {
+            return .none
+        }
+        
+        return .font(font)
     }
 }

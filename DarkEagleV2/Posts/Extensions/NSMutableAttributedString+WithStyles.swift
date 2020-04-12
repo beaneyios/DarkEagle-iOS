@@ -23,12 +23,12 @@ extension NSMutableAttributedString {
             let range = NSRange(location: $0.startIndex, length: length)
             
             switch $0.style {
-            case .bold:
-                updatedAttributedString.addAttribute(.font, value: UIFont(name: "AvenirNext-Bold", size: 25.0)!, range: range)
             case .underlined:
                 updatedAttributedString.addAttributes([.underlineStyle: NSUnderlineStyle.single.rawValue], range: range)
-            case let .coloured(colour):
+            case let .colour(colour):
                 updatedAttributedString.addAttribute(.foregroundColor, value: colour, range: range)
+            case let .font(font):
+                updatedAttributedString.addAttribute(.font, value: font, range: range)
             case .none:
                 break
             }
