@@ -11,15 +11,11 @@ import UIKit
 extension NSMutableAttributedString {
     func withStyleRanges(_ styleRanges: [StyleRange]) -> Self {
         let updatedAttributedString = self
-        updatedAttributedString.setAttributes(
-            [
-                NSAttributedString.Key.font: UIFont(name: "AvenirNext-Regular", size: 25.0)!
-            ],
-            range: NSRange(location: 0, length: updatedAttributedString.string.count)
-        )
         
         styleRanges.forEach {
-            let length = $0.endIndex - $0.startIndex + 1
+            // If endIndex is nil, it means the user wants the style to apply to the whole block.
+            let endIndex = $0.endIndex ?? (updatedAttributedString.string.count - 1)
+            let length = endIndex - $0.startIndex + 1
             let range = NSRange(location: $0.startIndex, length: length)
             
             switch $0.style {

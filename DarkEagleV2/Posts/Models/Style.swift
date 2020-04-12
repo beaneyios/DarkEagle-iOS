@@ -17,7 +17,7 @@ enum Style {
 
 struct StyleRange: Decodable {
     var startIndex: Int
-    var endIndex: Int
+    var endIndex: Int?
     var style: Style
     
     enum DecodingKeys: CodingKey {
@@ -34,7 +34,7 @@ struct StyleRange: Decodable {
         let container = try decoder.container(keyedBy: DecodingKeys.self)
         self.style = StyleRange.style(from: container)
         self.startIndex = try container.decode(Int.self, forKey: .startIndex)
-        self.endIndex = try container.decode(Int.self, forKey: .endIndex)
+        self.endIndex = try container.decodeIfPresent(Int.self, forKey: .endIndex)
     }
     
     static func style(from container: KeyedDecodingContainer<DecodingKeys>) -> Style {

@@ -4,8 +4,30 @@
         {
             "id": "1",
             "type": "text",
+            "text": "This is a title",
+            "styles": [
+                {
+                    "startIndex": 0,
+                    "endIndex": null,
+                    "style": "font",
+                    "fontName": "AvenirNext-Bold",
+                    "fontSize": 45.0
+                }
+            ],
+            "tapActions": []
+        },
+        {
+            "id": "1",
+            "type": "text",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
             "styles": [
+                {
+                    "startIndex": 0,
+                    "endIndex": null,
+                    "style": "font",
+                    "fontName": "AvenirNext-Regular",
+                    "fontSize": 25.0
+                },
                 {
                     "startIndex": 22,
                     "endIndex": 25,
@@ -54,7 +76,15 @@
             "id": "1",
             "type": "text",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "styles": [],
+            "styles": [
+                {
+                    "startIndex": 0,
+                    "endIndex": null,
+                    "style": "font",
+                    "fontName": "AvenirNext-Regular",
+                    "fontSize": 25.0
+                },
+            ],
             "tapActions": [
                 {
                     "startIndex": 7,
@@ -69,8 +99,31 @@
         {
             "id": "1",
             "type": "text",
+            "text": "This is a sub-title",
+            "styles": [
+                {
+                    "startIndex": 0,
+                    "endIndex": null,
+                    "style": "font",
+                    "fontName": "AvenirNext-Bold",
+                    "fontSize": 35.0
+                }
+            ],
+            "tapActions": []
+        },
+        {
+            "id": "1",
+            "type": "text",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            "styles": [],
+            "styles": [
+                {
+                    "startIndex": 0,
+                    "endIndex": null,
+                    "style": "font",
+                    "fontName": "AvenirNext-Regular",
+                    "fontSize": 25.0
+                },
+            ],
             "tapActions": [
                 {
                     "startIndex": 7,
@@ -86,7 +139,15 @@
             "id": "1",
             "type": "text",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "styles": [],
+            "styles": [
+                {
+                    "startIndex": 0,
+                    "endIndex": null,
+                    "style": "font",
+                    "fontName": "AvenirNext-Regular",
+                    "fontSize": 25.0
+                },
+            ],
             "tapActions": [
                 {
                     "startIndex": 7,
