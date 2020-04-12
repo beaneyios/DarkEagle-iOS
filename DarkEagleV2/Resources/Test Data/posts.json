@@ -9,18 +9,24 @@
           {
             "startIndex": 22,
             "endIndex": 25,
-            "style": "url"
+            "style": "underlined"
           },
           {
-            "startIndex": 0,
-            "endIndex": 10,
+            "startIndex": 22,
+            "endIndex": 25,
             "style": "bold"
+          },
+          {
+            "startIndex": 22,
+            "endIndex": 25,
+            "style": "coloured",
+            "colour": "#1976bf"
           }
       ],
       "tapActions": [
           {
-            "startIndex": 7,
-            "endIndex": 9,
+            "startIndex": 22,
+            "endIndex": 25,
             "action": {
               "type": "openURL",
               "url": "http://google/com"

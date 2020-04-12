@@ -8,47 +8,12 @@
 
 import UIKit
 
-extension NSMutableAttributedString {
-    func withStyleRanges(_ styleRanges: [StyleRange]) -> Self {
-        let updatedAttributedString = self
-        updatedAttributedString.setAttributes(
-            [
-                NSAttributedString.Key.font: UIFont(name: "AvenirNext-Regular", size: 25.0)!
-            ],
-            range: NSRange(location: 0, length: updatedAttributedString.string.count)
-        )
-        
-        styleRanges.forEach {
-            let length = $0.endIndex - $0.startIndex + 1
-            let range = NSRange(location: $0.startIndex, length: length)
-            switch $0.style {
-            case .bold:
-                updatedAttributedString.setAttributes(
-                    [
-                        NSAttributedString.Key.font: UIFont(name: "AvenirNext-Bold", size: 25.0)!
-                    ],
-                    range: range
-                )
-            case .url:
-                updatedAttributedString.setAttributes(
-                    [
-                        NSAttributedString.Key.font: UIFont(name: "AvenirNext-Regular", size: 25.0)!,
-                        NSAttributedString.Key.foregroundColor: UIColor.blue,
-                        NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue
-                    ],
-                    range: range
-                )
-                break
-            }
-        }
-        
-        return updatedAttributedString
-    }
-}
-
 class TextBlockCell: UICollectionViewCell, NibLoadable {
     
     @IBOutlet weak var textView: UITextView!
+    
+    private var block: TextBlock?
+    private var selectionOptions: UIView?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -56,12 +21,14 @@ class TextBlockCell: UICollectionViewCell, NibLoadable {
         self.textView.isUserInteractionEnabled = true
         self.textView.isEditable = false
         self.textView.tintColor = .green
+        self.textView.delegate = self
         
         let tappy = UITapGestureRecognizer(target: self, action: #selector(objectsTapLabel(gesture:)))
         textView.addGestureRecognizer(tappy)
     }
     
     func configure(with textBlock: TextBlock) {
+        self.block = textBlock
         let attributedString = NSMutableAttributedString(string: textBlock.text).withStyleRanges(textBlock.styles)
         self.textView.attributedText = attributedString
     }
@@ -71,20 +38,34 @@ class TextBlockCell: UICollectionViewCell, NibLoadable {
         let position = CGPoint(x: location.x, y: location.y)
         
         let tapPosition = textView.closestPosition(to: position)
-        let tappedRange = textView.tokenizer.rangeEnclosingPosition(
+        let tappedSentenceRange = textView.tokenizer.rangeEnclosingPosition(
             tapPosition!,
             with: UITextGranularity.sentence,
             inDirection: UITextDirection(rawValue: 1)
         )
         
-        if let tappedRange = tappedRange {
-            let range = selectedRangeInTextView(textView, tappedRange: tappedRange)
+        let tappedCharacterRange = textView.tokenizer.rangeEnclosingPosition(
+            tapPosition!,
+            with: UITextGranularity.character,
+            inDirection: UITextDirection(rawValue: 1)
+        )
+        
+        if let tappedSentenceRange = tappedSentenceRange, let tappedCharacterRange = tappedCharacterRange {
+            let range = selectedRangeInTextView(textView, tappedRange: tappedSentenceRange)
+            let charRange = selectedRangeInTextView(textView, tappedRange: tappedCharacterRange)
             
-            if range.location >= 5 && range.location < 15 {
-                print("Hit!")
+            if let actions = block?.tapActions {
+                let actionTapped = actions.contains {
+                    charRange.location >= $0.startIndex && charRange.location + charRange.length <= $0.endIndex
+                }
+                
+                if actionTapped {
+                    print("HIT!")
+                } else {
+                    highlight(selectRange: range)
+                }
             } else {
                 highlight(selectRange: range)
-//                presentOptions(tappedTextRange: tappedRange)
             }
         }
     }
@@ -106,16 +87,39 @@ class TextBlockCell: UICollectionViewCell, NibLoadable {
     }
     
     private func presentOptions(tappedTextRange: UITextRange) {
+        selectionOptions?.removeFromSuperview()
+        
         let startRect = textView.caretRect(for: tappedTextRange.start)
-        let newRect: CGRect = {
+        let endRect = textView.caretRect(for: tappedTextRange.end)
+        
+        let yPosition: CGFloat = {
             if startRect.minY - 50.0 < 0 {
-                return CGRect(x: startRect.minX, y: startRect.maxY + 50.0, width: 150.0, height: 50.0)
+                return endRect.maxY
             } else {
-                return CGRect(x: startRect.minX, y: startRect.minY - 50.0, width: 150.0, height: 50.0)
+                return startRect.minY - 50.0
             }
         }()
-        let newView = UIView(frame: newRect)
-        newView.backgroundColor = .red
-        self.addSubview(newView)
+        
+        let newView = UIView()
+        newView.backgroundColor = .white
+        newView.layer.borderColor = UIColor.black.cgColor
+        newView.layer.borderWidth = 0.5
+        newView.alpha = 0.9
+        addSubview(newView)
+        newView.translatesAutoresizingMaskIntoConstraints = false
+        
+        newView.pinVertically(to: self, at: yPosition)
+        newView.center(in: self)
+        newView.size(at: CGSize(width: 250.0, height: 50.0))
+        
+        selectionOptions = newView
+    }
+}
+
+extension TextBlockCell: UITextViewDelegate {
+    func textViewDidChangeSelection(_ textView: UITextView) {
+        if let selectedTextRange = textView.selectedTextRange, selectedRangeInTextView(textView, tappedRange: selectedTextRange).length > 0 {
+            presentOptions(tappedTextRange: textView.selectedTextRange!)
+        }
     }
 }

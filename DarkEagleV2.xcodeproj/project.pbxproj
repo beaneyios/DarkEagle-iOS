@@ -26,6 +26,10 @@
 		BE79ED6F24430C2D009249FE /* ImageBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79ED6D24430C2D009249FE /* ImageBlockCell.swift */; };
 		BE79ED7024430C2D009249FE /* ImageBlockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE79ED6E24430C2D009249FE /* ImageBlockCell.xib */; };
 		BE79ED7324430C67009249FE /* NativeArticleCellProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79ED7224430C67009249FE /* NativeArticleCellProvider.swift */; };
+		BE79ED762443215B009249FE /* NSMutableAttributedString+WithStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79ED752443215B009249FE /* NSMutableAttributedString+WithStyles.swift */; };
+		BE79ED78244329B6009249FE /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79ED77244329B6009249FE /* Action.swift */; };
+		BE8DE81024437D0200C3CF39 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE80F24437D0200C3CF39 /* UIColor+Hex.swift */; };
+		BE8DE81224437D2300C3CF39 /* UIView+AutoLayoutHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE81124437D2300C3CF39 /* UIView+AutoLayoutHelpers.swift */; };
 		BEF3DF68243CFCE200CFF00F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF3DF67243CFCE200CFF00F /* AppDelegate.swift */; };
 		BEF3DF6C243CFCE200CFF00F /* NativePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF3DF6B243CFCE200CFF00F /* NativePostViewController.swift */; };
 		BEF3DF6F243CFCE200CFF00F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF3DF6D243CFCE200CFF00F /* Main.storyboard */; };
@@ -65,6 +69,10 @@
 		BE79ED6D24430C2D009249FE /* ImageBlockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageBlockCell.swift; sourceTree = "<group>"; };
 		BE79ED6E24430C2D009249FE /* ImageBlockCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageBlockCell.xib; sourceTree = "<group>"; };
 		BE79ED7224430C67009249FE /* NativeArticleCellProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeArticleCellProvider.swift; sourceTree = "<group>"; };
+		BE79ED752443215B009249FE /* NSMutableAttributedString+WithStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+WithStyles.swift"; sourceTree = "<group>"; };
+		BE79ED77244329B6009249FE /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		BE8DE80F24437D0200C3CF39 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		BE8DE81124437D2300C3CF39 /* UIView+AutoLayoutHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayoutHelpers.swift"; sourceTree = "<group>"; };
 		BEF3DF64243CFCE200CFF00F /* DarkEagleV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DarkEagleV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF3DF67243CFCE200CFF00F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEF3DF6B243CFCE200CFF00F /* NativePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativePostViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +119,7 @@
 			children = (
 				BE79ED6424422642009249FE /* Controller */,
 				BE79ED5724420D31009249FE /* Enums */,
+				BE79ED7424432145009249FE /* Extensions */,
 				BE79ED3E2441FF86009249FE /* Models */,
 				BE79ED5424420D1F009249FE /* Protocols */,
 				BE79ED7124430C58009249FE /* Providers */,
@@ -149,6 +158,7 @@
 				BE79ED5224420D0D009249FE /* ImageBlock.swift */,
 				BE79ED5A24420D57009249FE /* Style.swift */,
 				BE79ED6224420DD4009249FE /* Post.swift */,
+				BE79ED77244329B6009249FE /* Action.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -183,6 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				BE79ED4A24420432009249FE /* Array+FirstOfType.swift */,
+				BE8DE80F24437D0200C3CF39 /* UIColor+Hex.swift */,
+				BE8DE81124437D2300C3CF39 /* UIView+AutoLayoutHelpers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -259,6 +271,14 @@
 				BE79ED7224430C67009249FE /* NativeArticleCellProvider.swift */,
 			);
 			path = Providers;
+			sourceTree = "<group>";
+		};
+		BE79ED7424432145009249FE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BE79ED752443215B009249FE /* NSMutableAttributedString+WithStyles.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		BEF3DF5B243CFCE100CFF00F = {
@@ -404,9 +424,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEF3DF91243D14C800CFF00F /* TextBlockCell.swift in Sources */,
+				BE79ED78244329B6009249FE /* Action.swift in Sources */,
+				BE8DE81024437D0200C3CF39 /* UIColor+Hex.swift in Sources */,
 				BE79ED5924420D3B009249FE /* BlockType.swift in Sources */,
+				BE79ED762443215B009249FE /* NSMutableAttributedString+WithStyles.swift in Sources */,
 				BE79ED432442003B009249FE /* DynamicCellSizeProvider.swift in Sources */,
 				BE79ED5624420D28009249FE /* Block.swift in Sources */,
+				BE8DE81224437D2300C3CF39 /* UIView+AutoLayoutHelpers.swift in Sources */,
 				BE79ED5B24420D57009249FE /* Style.swift in Sources */,
 				BE79ED4824420080009249FE /* NibLoadable.swift in Sources */,
 				BE79ED4B24420432009249FE /* Array+FirstOfType.swift in Sources */,
