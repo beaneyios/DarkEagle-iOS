@@ -30,6 +30,8 @@
 		BE79ED78244329B6009249FE /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79ED77244329B6009249FE /* Action.swift */; };
 		BE8DE81024437D0200C3CF39 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE80F24437D0200C3CF39 /* UIColor+Hex.swift */; };
 		BE8DE81224437D2300C3CF39 /* UIView+AutoLayoutHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE81124437D2300C3CF39 /* UIView+AutoLayoutHelpers.swift */; };
+		BE8DE8142443906D00C3CF39 /* UITextInputTokenizer+TappedRanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE8132443906D00C3CF39 /* UITextInputTokenizer+TappedRanges.swift */; };
+		BE8DE816244390A500C3CF39 /* UITextView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE815244390A500C3CF39 /* UITextView+Helpers.swift */; };
 		BEF3DF68243CFCE200CFF00F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF3DF67243CFCE200CFF00F /* AppDelegate.swift */; };
 		BEF3DF6C243CFCE200CFF00F /* NativePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF3DF6B243CFCE200CFF00F /* NativePostViewController.swift */; };
 		BEF3DF6F243CFCE200CFF00F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF3DF6D243CFCE200CFF00F /* Main.storyboard */; };
@@ -73,6 +75,8 @@
 		BE79ED77244329B6009249FE /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		BE8DE80F24437D0200C3CF39 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		BE8DE81124437D2300C3CF39 /* UIView+AutoLayoutHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayoutHelpers.swift"; sourceTree = "<group>"; };
+		BE8DE8132443906D00C3CF39 /* UITextInputTokenizer+TappedRanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextInputTokenizer+TappedRanges.swift"; sourceTree = "<group>"; };
+		BE8DE815244390A500C3CF39 /* UITextView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Helpers.swift"; sourceTree = "<group>"; };
 		BEF3DF64243CFCE200CFF00F /* DarkEagleV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DarkEagleV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF3DF67243CFCE200CFF00F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEF3DF6B243CFCE200CFF00F /* NativePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativePostViewController.swift; sourceTree = "<group>"; };
@@ -277,6 +281,8 @@
 			isa = PBXGroup;
 			children = (
 				BE79ED752443215B009249FE /* NSMutableAttributedString+WithStyles.swift */,
+				BE8DE8132443906D00C3CF39 /* UITextInputTokenizer+TappedRanges.swift */,
+				BE8DE815244390A500C3CF39 /* UITextView+Helpers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -423,10 +429,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE8DE816244390A500C3CF39 /* UITextView+Helpers.swift in Sources */,
 				BEF3DF91243D14C800CFF00F /* TextBlockCell.swift in Sources */,
 				BE79ED78244329B6009249FE /* Action.swift in Sources */,
 				BE8DE81024437D0200C3CF39 /* UIColor+Hex.swift in Sources */,
 				BE79ED5924420D3B009249FE /* BlockType.swift in Sources */,
+				BE8DE8142443906D00C3CF39 /* UITextInputTokenizer+TappedRanges.swift in Sources */,
 				BE79ED762443215B009249FE /* NSMutableAttributedString+WithStyles.swift in Sources */,
 				BE79ED432442003B009249FE /* DynamicCellSizeProvider.swift in Sources */,
 				BE79ED5624420D28009249FE /* Block.swift in Sources */,

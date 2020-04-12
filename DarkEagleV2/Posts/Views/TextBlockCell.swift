@@ -38,52 +38,29 @@ class TextBlockCell: UICollectionViewCell, NibLoadable {
         let position = CGPoint(x: location.x, y: location.y)
         
         let tapPosition = textView.closestPosition(to: position)
-        let tappedSentenceRange = textView.tokenizer.rangeEnclosingPosition(
-            tapPosition!,
-            with: UITextGranularity.sentence,
-            inDirection: UITextDirection(rawValue: 1)
-        )
         
-        let tappedCharacterRange = textView.tokenizer.rangeEnclosingPosition(
-            tapPosition!,
-            with: UITextGranularity.character,
-            inDirection: UITextDirection(rawValue: 1)
-        )
-        
-        if let tappedSentenceRange = tappedSentenceRange, let tappedCharacterRange = tappedCharacterRange {
-            let range = selectedRangeInTextView(textView, tappedRange: tappedSentenceRange)
-            let charRange = selectedRangeInTextView(textView, tappedRange: tappedCharacterRange)
-            
-            if let actions = block?.tapActions {
-                let actionTapped = actions.contains {
-                    charRange.location >= $0.startIndex && charRange.location + charRange.length <= $0.endIndex
-                }
-                
-                if actionTapped {
-                    print("HIT!")
-                } else {
-                    highlight(selectRange: range)
-                }
-            } else {
-                highlight(selectRange: range)
-            }
+        guard
+            let tappedSentenceRange = textView.tokenizer.tappedSentenceRange(tapPosition: tapPosition),
+            let tappedCharacterRange = textView.tokenizer.tappedCharacterRange(tapPosition: tapPosition)
+        else {
+            return
         }
+        
+        let sentenceRange = textView.selectedRangeInTextView(tappedRange: tappedSentenceRange)
+        let characterRange = textView.selectedRangeInTextView(tappedRange: tappedCharacterRange)
+        
+        guard let actions = block?.tapActions, let action = action(forCharacterRange: characterRange, actions: actions) else {
+            textView.highlight(sentenceRange)
+            return
+        }
+                    
+        print(action)
     }
     
-    func selectedRangeInTextView(_ textView: UITextView, tappedRange: UITextRange) -> NSRange {
-        let beginning = textView.beginningOfDocument
-        let selectionStart = tappedRange.start
-        let selectionEnd = tappedRange.end
-        
-        let location = textView.offset(from: beginning, to: selectionStart)
-        let length = textView.offset(from: selectionStart, to: selectionEnd)
-        
-        return NSRange(location: location, length: length)
-    }
-    
-    private func highlight(selectRange: NSRange) {
-        textView.becomeFirstResponder()
-        textView.selectedRange = selectRange
+    private func action(forCharacterRange characterRange: NSRange, actions: [TapActionRange]) -> TapAction? {
+        actions.first {
+            characterRange.location >= $0.startIndex && characterRange.location + characterRange.length <= $0.endIndex
+        }?.action
     }
     
     private func presentOptions(tappedTextRange: UITextRange) {
@@ -118,7 +95,7 @@ class TextBlockCell: UICollectionViewCell, NibLoadable {
 
 extension TextBlockCell: UITextViewDelegate {
     func textViewDidChangeSelection(_ textView: UITextView) {
-        if let selectedTextRange = textView.selectedTextRange, selectedRangeInTextView(textView, tappedRange: selectedTextRange).length > 0 {
+        if let selectedTextRange = textView.selectedTextRange, textView.selectedRangeInTextView(tappedRange: selectedTextRange).length > 0 {
             presentOptions(tappedTextRange: textView.selectedTextRange!)
         }
     }
