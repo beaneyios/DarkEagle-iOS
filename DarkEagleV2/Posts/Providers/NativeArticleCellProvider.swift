@@ -14,6 +14,12 @@ struct NativePostCellProvider {
         case imageBlock
     }
     
+    private var textBlockCellDelegate: TextBlockCellDelegate?
+    
+    init(textBlockCellDelegate: TextBlockCellDelegate? = nil) {
+        self.textBlockCellDelegate = textBlockCellDelegate
+    }
+    
     func registerCells(on collectionView: UICollectionView) {
         collectionView.register(TextBlockCell.nib, forCellWithReuseIdentifier: ReuseIdentifiers.textBlock.rawValue)
         collectionView.register(ImageBlockCell.nib, forCellWithReuseIdentifier: ReuseIdentifiers.imageBlock.rawValue)
@@ -27,6 +33,7 @@ struct NativePostCellProvider {
                 for: indexPath
             )
             
+            cell.delegate = textBlockCellDelegate
             cell.configure(with: block)
             return cell
         case let block as ImageBlock:

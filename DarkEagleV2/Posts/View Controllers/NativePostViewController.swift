@@ -15,11 +15,13 @@ class NativePostViewController: UIViewController {
     
     var viewModel = NativePostViewModel(postId: "1")
     let sizeProvider = DynamicCellSizeProvider()
-    let cellProvider = NativePostCellProvider()
+    
+    private var cellProvider: NativePostCellProvider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        cellProvider = NativePostCellProvider(textBlockCellDelegate: self)
         cellProvider.registerCells(on: collectionView)
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -74,3 +76,14 @@ extension NativePostViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+extension NativePostViewController: TextBlockCellDelegate {
+    func actionTapped(_ action: TapAction) {
+        switch action {
+        case let .openURL(url):
+            let sf = SFSafariViewController(url: url)
+            present(sf, animated: true, completion: nil)
+        case .none:
+            break
+        }
+    }
+}

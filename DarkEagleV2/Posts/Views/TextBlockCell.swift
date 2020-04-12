@@ -8,9 +8,15 @@
 
 import UIKit
 
+protocol TextBlockCellDelegate: AnyObject {
+    func actionTapped(_ action: TapAction)
+}
+
 class TextBlockCell: UICollectionViewCell, NibLoadable {
     
     @IBOutlet weak var textView: UITextView!
+    
+    weak var delegate: TextBlockCellDelegate?
     
     private var block: TextBlock?
     private var selectionOptions: UIView?
@@ -54,7 +60,7 @@ class TextBlockCell: UICollectionViewCell, NibLoadable {
             return
         }
                     
-        print(action)
+        delegate?.actionTapped(action)
     }
     
     private func action(forCharacterRange characterRange: NSRange, actions: [TapActionRange]) -> TapAction? {

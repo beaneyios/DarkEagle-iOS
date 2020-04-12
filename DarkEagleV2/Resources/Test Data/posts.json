@@ -29,7 +29,7 @@
             "endIndex": 25,
             "action": {
               "type": "openURL",
-              "url": "http://google/com"
+              "url": "http://google.com"
             }
           }
       ]
