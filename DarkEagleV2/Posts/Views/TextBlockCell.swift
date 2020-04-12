@@ -21,6 +21,11 @@ class TextBlockCell: UICollectionViewCell, NibLoadable {
     private var block: TextBlock?
     private var selectionOptions: UIView?
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        dismissSelectionOptions()
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -34,9 +39,9 @@ class TextBlockCell: UICollectionViewCell, NibLoadable {
     }
     
     func configure(with textBlock: TextBlock) {
-        self.block = textBlock
+        block = textBlock
         let attributedString = NSMutableAttributedString(string: textBlock.text).withStyleRanges(textBlock.styles)
-        self.textView.attributedText = attributedString
+        textView.attributedText = attributedString
     }
     
     @IBAction func objectsTapLabel(gesture: UITapGestureRecognizer) {
@@ -56,11 +61,24 @@ class TextBlockCell: UICollectionViewCell, NibLoadable {
         let characterRange = textView.selectedRangeInTextView(tappedRange: tappedCharacterRange)
         
         guard let actions = block?.tapActions, let action = action(forCharacterRange: characterRange, actions: actions) else {
-            textView.highlight(sentenceRange)
+            if textView.selectedRange == sentenceRange {
+                clearSelection()
+            } else {
+                textView.highlight(sentenceRange)
+            }
             return
         }
                     
         delegate?.actionTapped(action)
+    }
+    
+    func clearSelection() {
+        textView.selectedTextRange = nil
+    }
+    
+    private func dismissSelectionOptions() {
+        selectionOptions?.removeFromSuperview()
+        selectionOptions = nil
     }
     
     private func action(forCharacterRange characterRange: NSRange, actions: [TapActionRange]) -> TapAction? {
@@ -69,7 +87,7 @@ class TextBlockCell: UICollectionViewCell, NibLoadable {
         }?.action
     }
     
-    private func presentOptions(tappedTextRange: UITextRange) {
+    private func presentSelectionOptions(tappedTextRange: UITextRange) {
         selectionOptions?.removeFromSuperview()
         
         let startRect = textView.caretRect(for: tappedTextRange.start)
@@ -102,7 +120,9 @@ class TextBlockCell: UICollectionViewCell, NibLoadable {
 extension TextBlockCell: UITextViewDelegate {
     func textViewDidChangeSelection(_ textView: UITextView) {
         if let selectedTextRange = textView.selectedTextRange, textView.selectedRangeInTextView(tappedRange: selectedTextRange).length > 0 {
-            presentOptions(tappedTextRange: textView.selectedTextRange!)
+            presentSelectionOptions(tappedTextRange: textView.selectedTextRange!)
+        } else {
+            dismissSelectionOptions()
         }
     }
 }

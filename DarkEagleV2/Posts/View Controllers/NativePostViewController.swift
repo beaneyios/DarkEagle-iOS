@@ -39,6 +39,16 @@ class NativePostViewController: UIViewController {
     }
 }
 
+extension NativePostViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        collectionView.visibleCells.forEach {
+            if let textCell = $0 as? TextBlockCell {
+                textCell.clearSelection()
+            }
+        }
+    }
+}
+
 extension NativePostViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let block = viewModel.blocks[indexPath.row]
