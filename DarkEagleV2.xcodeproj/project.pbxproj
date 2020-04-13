@@ -33,6 +33,7 @@
 		BE8DE8142443906D00C3CF39 /* UITextInputTokenizer+TappedRanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE8132443906D00C3CF39 /* UITextInputTokenizer+TappedRanges.swift */; };
 		BE8DE816244390A500C3CF39 /* UITextView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE815244390A500C3CF39 /* UITextView+Helpers.swift */; };
 		BE8DE8182443ADA200C3CF39 /* SelectionOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE8172443ADA200C3CF39 /* SelectionOptionsView.swift */; };
+		BE8DE81A2443B63300C3CF39 /* insta-post.json in Resources */ = {isa = PBXBuildFile; fileRef = BE8DE8192443B63300C3CF39 /* insta-post.json */; };
 		BEF3DF68243CFCE200CFF00F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF3DF67243CFCE200CFF00F /* AppDelegate.swift */; };
 		BEF3DF6C243CFCE200CFF00F /* NativePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF3DF6B243CFCE200CFF00F /* NativePostViewController.swift */; };
 		BEF3DF6F243CFCE200CFF00F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF3DF6D243CFCE200CFF00F /* Main.storyboard */; };
@@ -79,6 +80,7 @@
 		BE8DE8132443906D00C3CF39 /* UITextInputTokenizer+TappedRanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextInputTokenizer+TappedRanges.swift"; sourceTree = "<group>"; };
 		BE8DE815244390A500C3CF39 /* UITextView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Helpers.swift"; sourceTree = "<group>"; };
 		BE8DE8172443ADA200C3CF39 /* SelectionOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionOptionsView.swift; sourceTree = "<group>"; };
+		BE8DE8192443B63300C3CF39 /* insta-post.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "insta-post.json"; sourceTree = "<group>"; };
 		BEF3DF64243CFCE200CFF00F /* DarkEagleV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DarkEagleV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF3DF67243CFCE200CFF00F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEF3DF6B243CFCE200CFF00F /* NativePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativePostViewController.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				BE79ED6024420DC0009249FE /* posts.json */,
+				BE8DE8192443B63300C3CF39 /* insta-post.json */,
 			);
 			path = "Test Data";
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				BEF3DF6F243CFCE200CFF00F /* Main.storyboard in Resources */,
 				BE79ED6124420DC0009249FE /* posts.json in Resources */,
 				BE79ED7024430C2D009249FE /* ImageBlockCell.xib in Resources */,
+				BE8DE81A2443B63300C3CF39 /* insta-post.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

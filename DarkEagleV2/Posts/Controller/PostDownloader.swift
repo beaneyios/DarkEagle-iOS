@@ -20,7 +20,5 @@ struct PostDownloader {
         } catch {
             print(error)
         }
-        
-        
     }
 }
