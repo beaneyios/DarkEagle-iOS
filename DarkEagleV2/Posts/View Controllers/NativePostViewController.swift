@@ -13,6 +13,8 @@ class NativePostViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    private var selectionOptions: SelectionOptionsView?
+    
     var viewModel = NativePostViewModel(postId: "1")
     let sizeProvider = DynamicCellSizeProvider()
     
@@ -40,12 +42,8 @@ class NativePostViewController: UIViewController {
 }
 
 extension NativePostViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        collectionView.visibleCells.forEach {
-            if let textCell = $0 as? TextBlockCell {
-                textCell.clearSelection()
-            }
-        }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {        
+        dismissOptions()
     }
 }
 
@@ -87,7 +85,7 @@ extension NativePostViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension NativePostViewController: TextBlockCellDelegate {
-    func actionTapped(_ action: TapAction) {
+    func textBlockCellDidTapAction(_ action: TapAction) {
         switch action {
         case let .openURL(url):
             let sf = SFSafariViewController(url: url)
@@ -95,5 +93,32 @@ extension NativePostViewController: TextBlockCellDelegate {
         case .none:
             break
         }
+    }
+    
+    func textBlockCellDidDismissOptions() {
+        dismissOptions()
+    }
+    
+    func textBlockCell(_ cell: TextBlockCell, didSelectatYPosition yPosition: CGFloat) {
+        selectionOptions?.removeFromSuperview()
+        
+        let newView = SelectionOptionsView(frame: .zero)
+        view.addSubview(newView)
+        newView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let newYPosition = cell.convert(CGPoint(x: 0.0, y: yPosition), to: self.view).y
+        let adjustedYPosition = newYPosition < 100.0 ? 100.0 : newYPosition
+        
+        newView.pinVertically(to: self.view, at: adjustedYPosition)
+        newView.centerHorizontally(in: self.view)
+        newView.height(50.0)
+        newView.widthAnchor.constraint(greaterThanOrEqualToConstant: 10.0).activate()
+        
+        selectionOptions = newView
+    }
+    
+    private func dismissOptions() {
+        selectionOptions?.removeFromSuperview()
+        selectionOptions = nil
     }
 }

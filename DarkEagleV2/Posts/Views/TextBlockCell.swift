@@ -9,7 +9,9 @@
 import UIKit
 
 protocol TextBlockCellDelegate: AnyObject {
-    func actionTapped(_ action: TapAction)
+    func textBlockCellDidTapAction(_ action: TapAction)
+    func textBlockCell(_ cell: TextBlockCell, didSelectatYPosition yPosition: CGFloat)
+    func textBlockCellDidDismissOptions()
 }
 
 class TextBlockCell: UICollectionViewCell, NibLoadable {
@@ -19,20 +21,19 @@ class TextBlockCell: UICollectionViewCell, NibLoadable {
     weak var delegate: TextBlockCellDelegate?
     
     private var block: TextBlock?
-    private var selectionOptions: SelectionOptionsView?
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        dismissSelectionOptions()
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.textView.isUserInteractionEnabled = true
-        self.textView.isEditable = false
-        self.textView.tintColor = .green
-        self.textView.delegate = self
+        clipsToBounds = false
+        textView.isUserInteractionEnabled = true
+        textView.isEditable = false
+        textView.tintColor = .green
+        textView.delegate = self
         
         let tappy = UITapGestureRecognizer(target: self, action: #selector(objectsTapLabel(gesture:)))
         textView.addGestureRecognizer(tappy)
@@ -69,16 +70,11 @@ class TextBlockCell: UICollectionViewCell, NibLoadable {
             return
         }
                     
-        delegate?.actionTapped(action)
+        delegate?.textBlockCellDidTapAction(action)
     }
     
     func clearSelection() {
         textView.selectedTextRange = nil
-    }
-    
-    private func dismissSelectionOptions() {
-        selectionOptions?.removeFromSuperview()
-        selectionOptions = nil
     }
     
     private func action(forCharacterRange characterRange: NSRange, actions: [TapActionRange]) -> TapAction? {
@@ -88,28 +84,29 @@ class TextBlockCell: UICollectionViewCell, NibLoadable {
     }
     
     private func presentSelectionOptions(tappedTextRange: UITextRange) {
-        selectionOptions?.removeFromSuperview()
         
         let startRect = textView.caretRect(for: tappedTextRange.start)
         let endRect = textView.caretRect(for: tappedTextRange.end)
         
         let yPosition: CGFloat = {
-            if startRect.minY - 50.0 < 0 {
-                return endRect.maxY
-            } else {
-                return startRect.minY - 50.0
+            let selectionAtTopOfCell = startRect.minY - 50.0 < 0
+            let selectionAtBottomOfCell = endRect.maxY + 50 > frame.height
+            
+            // If the cell is too small to go at the top or bottom, center it.
+            if selectionAtTopOfCell && selectionAtBottomOfCell {
+                return startRect.minY - 50.0;
             }
+            
+            // If the selection is at the top, present the options at the bottom.
+            if selectionAtTopOfCell {
+                return endRect.maxY
+            }
+            
+            // Otherwise, default to presenting options at the top.
+            return startRect.minY - 50.0
         }()
         
-        let newView = SelectionOptionsView(frame: .zero)
-        addSubview(newView)
-        newView.translatesAutoresizingMaskIntoConstraints = false
-        
-        newView.pinVertically(to: self, at: yPosition)
-        newView.center(in: self)
-        newView.height(50.0)
-        newView.widthAnchor.constraint(greaterThanOrEqualToConstant: 10.0).activate()
-        selectionOptions = newView
+        self.delegate?.textBlockCell(self, didSelectatYPosition: yPosition)
     }
 }
 
@@ -118,7 +115,7 @@ extension TextBlockCell: UITextViewDelegate {
         if let selectedTextRange = textView.selectedTextRange, textView.selectedRangeInTextView(tappedRange: selectedTextRange).length > 0 {
             presentSelectionOptions(tappedTextRange: textView.selectedTextRange!)
         } else {
-            dismissSelectionOptions()
+            delegate?.textBlockCellDidDismissOptions()
         }
     }
 }

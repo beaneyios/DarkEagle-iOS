@@ -40,7 +40,7 @@ extension UIView {
         heightAnchor.constraint(equalToConstant: size.height).activate()
     }
     
-    func center(in parent: UIView) {
+    func centerHorizontally(in parent: UIView) {
         centerXAnchor.constraint(equalToSystemSpacingAfter: parent.centerXAnchor, multiplier: 1.0).activate()
     }
 }
