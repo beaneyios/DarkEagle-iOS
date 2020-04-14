@@ -31,7 +31,6 @@
 		BE8DE81024437D0200C3CF39 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE80F24437D0200C3CF39 /* UIColor+Hex.swift */; };
 		BE8DE81224437D2300C3CF39 /* UIView+AutoLayoutHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE81124437D2300C3CF39 /* UIView+AutoLayoutHelpers.swift */; };
 		BE8DE8142443906D00C3CF39 /* UITextInputTokenizer+TappedRanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE8132443906D00C3CF39 /* UITextInputTokenizer+TappedRanges.swift */; };
-		BE8DE816244390A500C3CF39 /* UITextView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE815244390A500C3CF39 /* UITextView+Helpers.swift */; };
 		BE8DE8182443ADA200C3CF39 /* SelectionOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE8172443ADA200C3CF39 /* SelectionOptionsView.swift */; };
 		BE8DE81A2443B63300C3CF39 /* insta-post.json in Resources */ = {isa = PBXBuildFile; fileRef = BE8DE8192443B63300C3CF39 /* insta-post.json */; };
 		BE8DE81E2444DE6400C3CF39 /* Block.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE8DE81D2444DE6400C3CF39 /* Block.storyboard */; };
@@ -84,7 +83,6 @@
 		BE8DE80F24437D0200C3CF39 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		BE8DE81124437D2300C3CF39 /* UIView+AutoLayoutHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayoutHelpers.swift"; sourceTree = "<group>"; };
 		BE8DE8132443906D00C3CF39 /* UITextInputTokenizer+TappedRanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextInputTokenizer+TappedRanges.swift"; sourceTree = "<group>"; };
-		BE8DE815244390A500C3CF39 /* UITextView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Helpers.swift"; sourceTree = "<group>"; };
 		BE8DE8172443ADA200C3CF39 /* SelectionOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionOptionsView.swift; sourceTree = "<group>"; };
 		BE8DE8192443B63300C3CF39 /* insta-post.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "insta-post.json"; sourceTree = "<group>"; };
 		BE8DE81D2444DE6400C3CF39 /* Block.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Block.storyboard; sourceTree = "<group>"; };
@@ -289,7 +287,6 @@
 			children = (
 				BE79ED752443215B009249FE /* NSMutableAttributedString+WithStyles.swift */,
 				BE8DE8132443906D00C3CF39 /* UITextInputTokenizer+TappedRanges.swift */,
-				BE8DE815244390A500C3CF39 /* UITextView+Helpers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -512,7 +509,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE8DE8282444E0B900C3CF39 /* ListViewController.swift in Sources */,
-				BE8DE816244390A500C3CF39 /* UITextView+Helpers.swift in Sources */,
 				BEF3DF91243D14C800CFF00F /* TextBlockCell.swift in Sources */,
 				BE79ED78244329B6009249FE /* Action.swift in Sources */,
 				BE8DE81024437D0200C3CF39 /* UIColor+Hex.swift in Sources */,

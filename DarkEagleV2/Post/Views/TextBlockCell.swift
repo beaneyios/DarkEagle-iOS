@@ -16,7 +16,7 @@ protocol TextBlockCellDelegate: AnyObject {
 
 class TextBlockCell: UICollectionViewCell, NibLoadable {
     
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var textView: DETextView!
     
     weak var delegate: TextBlockCellDelegate?
     
@@ -113,10 +113,15 @@ class TextBlockCell: UICollectionViewCell, NibLoadable {
 
 extension TextBlockCell: UITextViewDelegate {
     func textViewDidChangeSelection(_ textView: UITextView) {
-        if let selectedTextRange = textView.selectedTextRange, textView.selectedRangeInTextView(tappedRange: selectedTextRange).length > 0 {
-            presentSelectionOptions(tappedTextRange: textView.selectedTextRange!)
-        } else {
+        guard
+            let deTextView = textView as? DETextView,
+            let selectedTextRange = textView.selectedTextRange,
+            deTextView.selectedRangeInTextView(tappedRange: selectedTextRange).length > 0
+        else {
             delegate?.textBlockCellDidDismissOptions()
+            return
         }
+        
+        presentSelectionOptions(tappedTextRange: selectedTextRange)
     }
 }
