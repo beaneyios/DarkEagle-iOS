@@ -34,9 +34,13 @@
 		BE8DE816244390A500C3CF39 /* UITextView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE815244390A500C3CF39 /* UITextView+Helpers.swift */; };
 		BE8DE8182443ADA200C3CF39 /* SelectionOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE8172443ADA200C3CF39 /* SelectionOptionsView.swift */; };
 		BE8DE81A2443B63300C3CF39 /* insta-post.json in Resources */ = {isa = PBXBuildFile; fileRef = BE8DE8192443B63300C3CF39 /* insta-post.json */; };
+		BE8DE81E2444DE6400C3CF39 /* Post.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE8DE81D2444DE6400C3CF39 /* Post.storyboard */; };
+		BE8DE8232444DF1800C3CF39 /* StoryboardCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE8222444DF1800C3CF39 /* StoryboardCreatable.swift */; };
+		BE8DE8252444E0A300C3CF39 /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE8DE8242444E0A300C3CF39 /* List.storyboard */; };
+		BE8DE8282444E0B900C3CF39 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE8272444E0B900C3CF39 /* ListViewController.swift */; };
+		BE8DE82B2444E11900C3CF39 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE82A2444E11900C3CF39 /* ListViewModel.swift */; };
 		BEF3DF68243CFCE200CFF00F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF3DF67243CFCE200CFF00F /* AppDelegate.swift */; };
 		BEF3DF6C243CFCE200CFF00F /* NativePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF3DF6B243CFCE200CFF00F /* NativePostViewController.swift */; };
-		BEF3DF6F243CFCE200CFF00F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF3DF6D243CFCE200CFF00F /* Main.storyboard */; };
 		BEF3DF71243CFCE300CFF00F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEF3DF70243CFCE300CFF00F /* Assets.xcassets */; };
 		BEF3DF7F243CFCE300CFF00F /* DarkEagleV2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF3DF7E243CFCE300CFF00F /* DarkEagleV2Tests.swift */; };
 		BEF3DF91243D14C800CFF00F /* TextBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF3DF8F243D14C800CFF00F /* TextBlockCell.swift */; };
@@ -81,10 +85,14 @@
 		BE8DE815244390A500C3CF39 /* UITextView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Helpers.swift"; sourceTree = "<group>"; };
 		BE8DE8172443ADA200C3CF39 /* SelectionOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionOptionsView.swift; sourceTree = "<group>"; };
 		BE8DE8192443B63300C3CF39 /* insta-post.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "insta-post.json"; sourceTree = "<group>"; };
+		BE8DE81D2444DE6400C3CF39 /* Post.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Post.storyboard; sourceTree = "<group>"; };
+		BE8DE8222444DF1800C3CF39 /* StoryboardCreatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardCreatable.swift; sourceTree = "<group>"; };
+		BE8DE8242444E0A300C3CF39 /* List.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
+		BE8DE8272444E0B900C3CF39 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		BE8DE82A2444E11900C3CF39 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		BEF3DF64243CFCE200CFF00F /* DarkEagleV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DarkEagleV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF3DF67243CFCE200CFF00F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEF3DF6B243CFCE200CFF00F /* NativePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativePostViewController.swift; sourceTree = "<group>"; };
-		BEF3DF6E243CFCE200CFF00F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BEF3DF70243CFCE300CFF00F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEF3DF75243CFCE300CFF00F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEF3DF7A243CFCE300CFF00F /* DarkEagleV2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DarkEagleV2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +123,7 @@
 		BE79ED0A2441FE3A009249FE /* App */ = {
 			isa = PBXGroup;
 			children = (
+				BE8DE8212444DF0C00C3CF39 /* Protocols */,
 				BE79ED4924420427009249FE /* Extensions */,
 				BEF3DF67243CFCE200CFF00F /* AppDelegate.swift */,
 				BE79ED0B2441FF19009249FE /* SceneDelegate.swift */,
@@ -122,9 +131,10 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		BE79ED3B2441FF73009249FE /* Posts */ = {
+		BE79ED3B2441FF73009249FE /* Post */ = {
 			isa = PBXGroup;
 			children = (
+				BE8DE81D2444DE6400C3CF39 /* Post.storyboard */,
 				BE79ED6424422642009249FE /* Controller */,
 				BE79ED5724420D31009249FE /* Enums */,
 				BE79ED7424432145009249FE /* Extensions */,
@@ -135,7 +145,7 @@
 				BE79ED6724423259009249FE /* View Models */,
 				BE79ED3D2441FF80009249FE /* Views */,
 			);
-			path = Posts;
+			path = Post;
 			sourceTree = "<group>";
 		};
 		BE79ED3C2441FF78009249FE /* View Controllers */ = {
@@ -293,6 +303,40 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		BE8DE81B2444DCE800C3CF39 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				BE8DE8242444E0A300C3CF39 /* List.storyboard */,
+				BE8DE8292444E10E00C3CF39 /* View Models */,
+				BE8DE8262444E0AC00C3CF39 /* View Controllers */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		BE8DE8212444DF0C00C3CF39 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BE8DE8222444DF1800C3CF39 /* StoryboardCreatable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		BE8DE8262444E0AC00C3CF39 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BE8DE8272444E0B900C3CF39 /* ListViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		BE8DE8292444E10E00C3CF39 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				BE8DE82A2444E11900C3CF39 /* ListViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
 		BEF3DF5B243CFCE100CFF00F = {
 			isa = PBXGroup;
 			children = (
@@ -314,11 +358,11 @@
 		BEF3DF66243CFCE200CFF00F /* DarkEagleV2 */ = {
 			isa = PBXGroup;
 			children = (
-				BE79ED5C24420D96009249FE /* Resources */,
-				BEF3DF6D243CFCE200CFF00F /* Main.storyboard */,
 				BE79ED0A2441FE3A009249FE /* App */,
-				BE79ED3B2441FF73009249FE /* Posts */,
 				BE79ED452442006F009249FE /* Cells */,
+				BE8DE81B2444DCE800C3CF39 /* List */,
+				BE79ED3B2441FF73009249FE /* Post */,
+				BE79ED5C24420D96009249FE /* Resources */,
 			);
 			path = DarkEagleV2;
 			sourceTree = "<group>";
@@ -414,10 +458,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEF3DF71243CFCE300CFF00F /* Assets.xcassets in Resources */,
+				BE8DE8252444E0A300C3CF39 /* List.storyboard in Resources */,
 				BEF3DF92243D14C800CFF00F /* TextBlockCell.xib in Resources */,
-				BEF3DF6F243CFCE200CFF00F /* Main.storyboard in Resources */,
 				BE79ED6124420DC0009249FE /* posts.json in Resources */,
 				BE79ED7024430C2D009249FE /* ImageBlockCell.xib in Resources */,
+				BE8DE81E2444DE6400C3CF39 /* Post.storyboard in Resources */,
 				BE8DE81A2443B63300C3CF39 /* insta-post.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,6 +481,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE8DE8282444E0B900C3CF39 /* ListViewController.swift in Sources */,
 				BE8DE816244390A500C3CF39 /* UITextView+Helpers.swift in Sources */,
 				BEF3DF91243D14C800CFF00F /* TextBlockCell.swift in Sources */,
 				BE79ED78244329B6009249FE /* Action.swift in Sources */,
@@ -455,7 +501,9 @@
 				BE79ED6F24430C2D009249FE /* ImageBlockCell.swift in Sources */,
 				BE79ED5324420D0D009249FE /* ImageBlock.swift in Sources */,
 				BE79ED662442288B009249FE /* PostDownloader.swift in Sources */,
+				BE8DE82B2444E11900C3CF39 /* ListViewModel.swift in Sources */,
 				BE79ED5124420CFC009249FE /* TextBlock.swift in Sources */,
+				BE8DE8232444DF1800C3CF39 /* StoryboardCreatable.swift in Sources */,
 				BE79ED6924423266009249FE /* NativePostViewModel.swift in Sources */,
 				BE79ED4D244204C5009249FE /* DynamicConfigureActionProvider.swift in Sources */,
 				BE79ED6324420DD4009249FE /* Post.swift in Sources */,
@@ -483,17 +531,6 @@
 			targetProxy = BEF3DF7B243CFCE300CFF00F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		BEF3DF6D243CFCE200CFF00F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BEF3DF6E243CFCE200CFF00F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		BEF3DF81243CFCE300CFF00F /* Debug */ = {
