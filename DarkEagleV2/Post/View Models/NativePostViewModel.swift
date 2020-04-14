@@ -8,20 +8,6 @@
 
 import Foundation
 
-enum BlockListChange {
-    case updated
-}
-
-protocol BlockListViewModel {
-    var didChange: ((BlockListChange) -> Void)? { get set }
-    var blockSections: [BlockSection] { get }
-    
-    func block(for indexPath: IndexPath) -> Block
-    func numberOfBlocks(in section: Int) -> Int
-    func numberOfBlockSections() -> Int
-    func loadData()
-}
-
 class NativePostViewModel: BlockListViewModel {
     private let postId: String
     private var post: Post?
