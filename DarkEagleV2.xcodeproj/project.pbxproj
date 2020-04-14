@@ -331,9 +331,9 @@
 		BE8DE82E2445EA1F00C3CF39 /* Blocks */ = {
 			isa = PBXGroup;
 			children = (
-				BE8DE8312445F0A800C3CF39 /* Protocols */,
 				BE8DE81D2444DE6400C3CF39 /* Block.storyboard */,
 				BE8DE82F2445EA2900C3CF39 /* Models */,
+				BE8DE8312445F0A800C3CF39 /* Protocols */,
 				BE8DE8302445F02100C3CF39 /* View Controllers */,
 			);
 			path = Blocks;
