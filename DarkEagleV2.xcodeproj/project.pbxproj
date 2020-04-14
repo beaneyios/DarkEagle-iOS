@@ -34,14 +34,15 @@
 		BE8DE816244390A500C3CF39 /* UITextView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE815244390A500C3CF39 /* UITextView+Helpers.swift */; };
 		BE8DE8182443ADA200C3CF39 /* SelectionOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE8172443ADA200C3CF39 /* SelectionOptionsView.swift */; };
 		BE8DE81A2443B63300C3CF39 /* insta-post.json in Resources */ = {isa = PBXBuildFile; fileRef = BE8DE8192443B63300C3CF39 /* insta-post.json */; };
-		BE8DE81E2444DE6400C3CF39 /* Post.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE8DE81D2444DE6400C3CF39 /* Post.storyboard */; };
+		BE8DE81E2444DE6400C3CF39 /* Block.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE8DE81D2444DE6400C3CF39 /* Block.storyboard */; };
 		BE8DE8232444DF1800C3CF39 /* StoryboardCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE8222444DF1800C3CF39 /* StoryboardCreatable.swift */; };
 		BE8DE8252444E0A300C3CF39 /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE8DE8242444E0A300C3CF39 /* List.storyboard */; };
 		BE8DE8282444E0B900C3CF39 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE8272444E0B900C3CF39 /* ListViewController.swift */; };
 		BE8DE82B2444E11900C3CF39 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE82A2444E11900C3CF39 /* ListViewModel.swift */; };
 		BE8DE82D2445E4BF00C3CF39 /* BlockSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE82C2445E4BF00C3CF39 /* BlockSection.swift */; };
+		BE8DE8332445F0B300C3CF39 /* BlockListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE8322445F0B300C3CF39 /* BlockListViewModel.swift */; };
 		BEF3DF68243CFCE200CFF00F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF3DF67243CFCE200CFF00F /* AppDelegate.swift */; };
-		BEF3DF6C243CFCE200CFF00F /* NativePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF3DF6B243CFCE200CFF00F /* NativePostViewController.swift */; };
+		BEF3DF6C243CFCE200CFF00F /* BlockListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF3DF6B243CFCE200CFF00F /* BlockListViewController.swift */; };
 		BEF3DF71243CFCE300CFF00F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEF3DF70243CFCE300CFF00F /* Assets.xcassets */; };
 		BEF3DF7F243CFCE300CFF00F /* DarkEagleV2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF3DF7E243CFCE300CFF00F /* DarkEagleV2Tests.swift */; };
 		BEF3DF91243D14C800CFF00F /* TextBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF3DF8F243D14C800CFF00F /* TextBlockCell.swift */; };
@@ -86,15 +87,16 @@
 		BE8DE815244390A500C3CF39 /* UITextView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Helpers.swift"; sourceTree = "<group>"; };
 		BE8DE8172443ADA200C3CF39 /* SelectionOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionOptionsView.swift; sourceTree = "<group>"; };
 		BE8DE8192443B63300C3CF39 /* insta-post.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "insta-post.json"; sourceTree = "<group>"; };
-		BE8DE81D2444DE6400C3CF39 /* Post.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Post.storyboard; sourceTree = "<group>"; };
+		BE8DE81D2444DE6400C3CF39 /* Block.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Block.storyboard; sourceTree = "<group>"; };
 		BE8DE8222444DF1800C3CF39 /* StoryboardCreatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardCreatable.swift; sourceTree = "<group>"; };
 		BE8DE8242444E0A300C3CF39 /* List.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
 		BE8DE8272444E0B900C3CF39 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		BE8DE82A2444E11900C3CF39 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		BE8DE82C2445E4BF00C3CF39 /* BlockSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockSection.swift; sourceTree = "<group>"; };
+		BE8DE8322445F0B300C3CF39 /* BlockListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListViewModel.swift; sourceTree = "<group>"; };
 		BEF3DF64243CFCE200CFF00F /* DarkEagleV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DarkEagleV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF3DF67243CFCE200CFF00F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BEF3DF6B243CFCE200CFF00F /* NativePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativePostViewController.swift; sourceTree = "<group>"; };
+		BEF3DF6B243CFCE200CFF00F /* BlockListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListViewController.swift; sourceTree = "<group>"; };
 		BEF3DF70243CFCE300CFF00F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEF3DF75243CFCE300CFF00F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEF3DF7A243CFCE300CFF00F /* DarkEagleV2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DarkEagleV2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,26 +138,16 @@
 		BE79ED3B2441FF73009249FE /* Post */ = {
 			isa = PBXGroup;
 			children = (
-				BE8DE81D2444DE6400C3CF39 /* Post.storyboard */,
 				BE79ED6424422642009249FE /* Controller */,
 				BE79ED5724420D31009249FE /* Enums */,
 				BE79ED7424432145009249FE /* Extensions */,
 				BE79ED3E2441FF86009249FE /* Models */,
 				BE79ED5424420D1F009249FE /* Protocols */,
 				BE79ED7124430C58009249FE /* Providers */,
-				BE79ED3C2441FF78009249FE /* View Controllers */,
 				BE79ED6724423259009249FE /* View Models */,
 				BE79ED3D2441FF80009249FE /* Views */,
 			);
 			path = Post;
-			sourceTree = "<group>";
-		};
-		BE79ED3C2441FF78009249FE /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				BEF3DF6B243CFCE200CFF00F /* NativePostViewController.swift */,
-			);
-			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		BE79ED3D2441FF80009249FE /* Views */ = {
@@ -174,13 +166,9 @@
 		BE79ED3E2441FF86009249FE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BE79ED4E2442055E009249FE /* AnyBlock.swift */,
-				BE79ED5024420CFC009249FE /* TextBlock.swift */,
 				BE79ED5224420D0D009249FE /* ImageBlock.swift */,
-				BE79ED5A24420D57009249FE /* Style.swift */,
 				BE79ED6224420DD4009249FE /* Post.swift */,
-				BE79ED77244329B6009249FE /* Action.swift */,
-				BE8DE82C2445E4BF00C3CF39 /* BlockSection.swift */,
+				BE79ED5024420CFC009249FE /* TextBlock.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -340,6 +328,44 @@
 			path = "View Models";
 			sourceTree = "<group>";
 		};
+		BE8DE82E2445EA1F00C3CF39 /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				BE8DE8312445F0A800C3CF39 /* Protocols */,
+				BE8DE81D2444DE6400C3CF39 /* Block.storyboard */,
+				BE8DE82F2445EA2900C3CF39 /* Models */,
+				BE8DE8302445F02100C3CF39 /* View Controllers */,
+			);
+			path = Blocks;
+			sourceTree = "<group>";
+		};
+		BE8DE82F2445EA2900C3CF39 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BE79ED4E2442055E009249FE /* AnyBlock.swift */,
+				BE8DE82C2445E4BF00C3CF39 /* BlockSection.swift */,
+				BE79ED5A24420D57009249FE /* Style.swift */,
+				BE79ED77244329B6009249FE /* Action.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BE8DE8302445F02100C3CF39 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BEF3DF6B243CFCE200CFF00F /* BlockListViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		BE8DE8312445F0A800C3CF39 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BE8DE8322445F0B300C3CF39 /* BlockListViewModel.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		BEF3DF5B243CFCE100CFF00F = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +387,7 @@
 		BEF3DF66243CFCE200CFF00F /* DarkEagleV2 */ = {
 			isa = PBXGroup;
 			children = (
+				BE8DE82E2445EA1F00C3CF39 /* Blocks */,
 				BE79ED0A2441FE3A009249FE /* App */,
 				BE79ED452442006F009249FE /* Cells */,
 				BE8DE81B2444DCE800C3CF39 /* List */,
@@ -465,7 +492,7 @@
 				BEF3DF92243D14C800CFF00F /* TextBlockCell.xib in Resources */,
 				BE79ED6124420DC0009249FE /* posts.json in Resources */,
 				BE79ED7024430C2D009249FE /* ImageBlockCell.xib in Resources */,
-				BE8DE81E2444DE6400C3CF39 /* Post.storyboard in Resources */,
+				BE8DE81E2444DE6400C3CF39 /* Block.storyboard in Resources */,
 				BE8DE81A2443B63300C3CF39 /* insta-post.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,6 +517,7 @@
 				BE79ED78244329B6009249FE /* Action.swift in Sources */,
 				BE8DE81024437D0200C3CF39 /* UIColor+Hex.swift in Sources */,
 				BE79ED5924420D3B009249FE /* BlockType.swift in Sources */,
+				BE8DE8332445F0B300C3CF39 /* BlockListViewModel.swift in Sources */,
 				BE8DE8142443906D00C3CF39 /* UITextInputTokenizer+TappedRanges.swift in Sources */,
 				BE79ED762443215B009249FE /* NSMutableAttributedString+WithStyles.swift in Sources */,
 				BE79ED432442003B009249FE /* DynamicCellSizeProvider.swift in Sources */,
@@ -511,7 +539,7 @@
 				BE79ED6924423266009249FE /* NativePostViewModel.swift in Sources */,
 				BE79ED4D244204C5009249FE /* DynamicConfigureActionProvider.swift in Sources */,
 				BE79ED6324420DD4009249FE /* Post.swift in Sources */,
-				BEF3DF6C243CFCE200CFF00F /* NativePostViewController.swift in Sources */,
+				BEF3DF6C243CFCE200CFF00F /* BlockListViewController.swift in Sources */,
 				BE79ED402441FFA6009249FE /* DETextView.swift in Sources */,
 				BEF3DF68243CFCE200CFF00F /* AppDelegate.swift in Sources */,
 				BE79ED0C2441FF19009249FE /* SceneDelegate.swift in Sources */,

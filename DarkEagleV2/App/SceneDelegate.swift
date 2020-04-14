@@ -19,8 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let storyboard = UIStoryboard(name: "Post", bundle: nil)
-        window?.rootViewController = NativePostViewController.create(from: storyboard)
+        let storyboard = UIStoryboard(name: "Block", bundle: nil)
+        window?.rootViewController = BlockListViewController.create(from: storyboard)
         window?.makeKeyAndVisible()
     }
 

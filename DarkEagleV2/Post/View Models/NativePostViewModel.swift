@@ -8,15 +8,25 @@
 
 import Foundation
 
-class NativePostViewModel {
-    enum Change {
-        case updated
-    }
+enum BlockListChange {
+    case updated
+}
+
+protocol BlockListViewModel {
+    var didChange: ((BlockListChange) -> Void)? { get set }
+    var blockSections: [BlockSection] { get }
     
+    func block(for indexPath: IndexPath) -> Block
+    func numberOfBlocks(in section: Int) -> Int
+    func numberOfBlockSections() -> Int
+    func loadData()
+}
+
+class NativePostViewModel: BlockListViewModel {
     private let postId: String
     private var post: Post?
     
-    var didChange: ((Change) -> Void)?
+    var didChange: ((BlockListChange) -> Void)?
     
     private(set) var blockSections: [BlockSection] = []
     
@@ -24,7 +34,11 @@ class NativePostViewModel {
         self.postId = postId
     }
     
-    func fetchPost() {
+    func loadData() {
+        fetchPost()
+    }
+    
+    private func fetchPost() {
         PostDownloader().downloadPost(id: "1") { (result) in
             switch result {
             case let .success(post):

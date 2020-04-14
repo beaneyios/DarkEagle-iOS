@@ -9,13 +9,13 @@
 import UIKit
 import SafariServices
 
-class NativePostViewController: UIViewController {
+class BlockListViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     private var selectionOptions: SelectionOptionsView?
     
-    var viewModel = NativePostViewModel(postId: "1")
+    var viewModel: BlockListViewModel = NativePostViewModel(postId: "1")
     let sizeProvider = DynamicCellSizeProvider()
     
     private var cellProvider: NativePostCellProvider!
@@ -37,17 +37,17 @@ class NativePostViewController: UIViewController {
             }
         }
         
-        viewModel.fetchPost()
+        viewModel.loadData()
     }
 }
 
-extension NativePostViewController: UIScrollViewDelegate {
+extension BlockListViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {        
         dismissOptions()
     }
 }
 
-extension NativePostViewController: UICollectionViewDataSource {
+extension BlockListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let block = viewModel.block(for: indexPath)
         return cellProvider.cell(for: block, collectionView: collectionView, indexPath: indexPath)
@@ -62,7 +62,7 @@ extension NativePostViewController: UICollectionViewDataSource {
     }
 }
 
-extension NativePostViewController: UICollectionViewDelegateFlowLayout {
+extension BlockListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let block = viewModel.block(for: indexPath)
         let leftRightPadding: CGFloat = 0.0
@@ -94,7 +94,7 @@ extension NativePostViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension NativePostViewController: TextBlockCellDelegate {
+extension BlockListViewController: TextBlockCellDelegate {
     func textBlockCellDidTapAction(_ action: TapAction) {
         switch action {
         case let .openURL(url):
