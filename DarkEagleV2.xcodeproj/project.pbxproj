@@ -39,6 +39,7 @@
 		BE8DE8252444E0A300C3CF39 /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE8DE8242444E0A300C3CF39 /* List.storyboard */; };
 		BE8DE8282444E0B900C3CF39 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE8272444E0B900C3CF39 /* ListViewController.swift */; };
 		BE8DE82B2444E11900C3CF39 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE82A2444E11900C3CF39 /* ListViewModel.swift */; };
+		BE8DE82D2445E4BF00C3CF39 /* BlockSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE82C2445E4BF00C3CF39 /* BlockSection.swift */; };
 		BEF3DF68243CFCE200CFF00F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF3DF67243CFCE200CFF00F /* AppDelegate.swift */; };
 		BEF3DF6C243CFCE200CFF00F /* NativePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF3DF6B243CFCE200CFF00F /* NativePostViewController.swift */; };
 		BEF3DF71243CFCE300CFF00F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEF3DF70243CFCE300CFF00F /* Assets.xcassets */; };
@@ -90,6 +91,7 @@
 		BE8DE8242444E0A300C3CF39 /* List.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
 		BE8DE8272444E0B900C3CF39 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		BE8DE82A2444E11900C3CF39 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		BE8DE82C2445E4BF00C3CF39 /* BlockSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockSection.swift; sourceTree = "<group>"; };
 		BEF3DF64243CFCE200CFF00F /* DarkEagleV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DarkEagleV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF3DF67243CFCE200CFF00F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEF3DF6B243CFCE200CFF00F /* NativePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativePostViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				BE79ED5A24420D57009249FE /* Style.swift */,
 				BE79ED6224420DD4009249FE /* Post.swift */,
 				BE79ED77244329B6009249FE /* Action.swift */,
+				BE8DE82C2445E4BF00C3CF39 /* BlockSection.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				BE8DE8182443ADA200C3CF39 /* SelectionOptionsView.swift in Sources */,
 				BE79ED6F24430C2D009249FE /* ImageBlockCell.swift in Sources */,
 				BE79ED5324420D0D009249FE /* ImageBlock.swift in Sources */,
+				BE8DE82D2445E4BF00C3CF39 /* BlockSection.swift in Sources */,
 				BE79ED662442288B009249FE /* PostDownloader.swift in Sources */,
 				BE8DE82B2444E11900C3CF39 /* ListViewModel.swift in Sources */,
 				BE79ED5124420CFC009249FE /* TextBlock.swift in Sources */,

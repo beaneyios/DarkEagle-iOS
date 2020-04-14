@@ -10,5 +10,5 @@ import Foundation
 
 struct Post: Decodable {
     var id: String
-    var blocks: [AnyBlock]
+    var blockSections: [BlockSection]
 }

@@ -34,6 +34,7 @@ class TextBlockCell: UICollectionViewCell, NibLoadable {
         textView.isEditable = false
         textView.tintColor = .green
         textView.delegate = self
+        textView.textContainerInset = UIEdgeInsets(top: 4.0, left: 8.0, bottom: 4.0, right: 8.0)
         
         let tappy = UITapGestureRecognizer(target: self, action: #selector(objectsTapLabel(gesture:)))
         textView.addGestureRecognizer(tappy)

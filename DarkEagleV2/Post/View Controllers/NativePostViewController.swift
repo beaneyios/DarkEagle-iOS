@@ -49,38 +49,48 @@ extension NativePostViewController: UIScrollViewDelegate {
 
 extension NativePostViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let block = viewModel.blocks[indexPath.row]
+        let block = viewModel.block(for: indexPath)
         return cellProvider.cell(for: block, collectionView: collectionView, indexPath: indexPath)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return viewModel.numberOfBlockSections()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.blocks.count
+        return viewModel.numberOfBlocks(in: section)
     }
 }
 
 extension NativePostViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let block = viewModel.blocks[indexPath.row]
+        let block = viewModel.block(for: indexPath)
+        let leftRightPadding: CGFloat = 0.0
         
         switch block {
         case let block as ImageBlock:
             let ratio = CGFloat(block.height / block.width)
             let height = collectionView.frame.width * ratio
-            return CGSize(width: collectionView.frame.width, height: height)
+            return CGSize(width: collectionView.frame.width - leftRightPadding, height: height)
         case let block as TextBlock:
             return sizeProvider.size(
                 indexPath: indexPath,
                 nibCreatable: TextBlockCell.self,
-                preferredWidth: collectionView.frame.width,
+                preferredWidth: collectionView.frame.width - leftRightPadding,
                 configureAction: DynamicConfigureActionProvider.configureAction(for: block)
             )
         default:
             return CGSize.zero
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(
+            top: 0.0,
+            left: 0.0,
+            bottom: 16.0,
+            right: 0.0
+        )
     }
 }
 

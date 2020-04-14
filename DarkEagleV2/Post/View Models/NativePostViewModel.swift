@@ -18,7 +18,7 @@ class NativePostViewModel {
     
     var didChange: ((Change) -> Void)?
     
-    private(set) var blocks: [Block] = []
+    private(set) var blockSections: [BlockSection] = []
     
     init(postId: String) {
         self.postId = postId
@@ -28,10 +28,22 @@ class NativePostViewModel {
         PostDownloader().downloadPost(id: "1") { (result) in
             switch result {
             case let .success(post):
-                self.blocks = post.blocks.map { $0.resource }
+                self.blockSections = post.blockSections
             default:
                 break
             }
         }
+    }
+    
+    func block(for indexPath: IndexPath) -> Block {
+        blockSections[indexPath.section].blocks[indexPath.row].resource
+    }
+    
+    func numberOfBlocks(in section: Int) -> Int {
+        return blockSections[section].blocks.count
+    }
+    
+    func numberOfBlockSections() -> Int {
+        return blockSections.count
     }
 }
