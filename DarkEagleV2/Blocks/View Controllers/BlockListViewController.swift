@@ -15,7 +15,7 @@ class BlockListViewController: UIViewController {
     
     private var selectionOptions: SelectionOptionsView?
     
-    var viewModel: BlockListViewModel = NativePostViewModel(postId: "1")
+    var viewModel: BlockListViewModel!
     let sizeProvider = DynamicCellSizeProvider()
     
     private var cellProvider: NativePostCellProvider!

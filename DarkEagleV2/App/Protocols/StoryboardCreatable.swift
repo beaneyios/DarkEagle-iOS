@@ -20,8 +20,11 @@ extension StoryboardCreatable {
         return "\(Self.self)"
     }
     
-    static func create(from storyboard: UIStoryboard) -> UIViewController {
-        let viewController = storyboard.instantiateViewController(identifier: self.storyboardId)
+    static func create<T: UIViewController>(from storyboard: UIStoryboard) -> T {
+        guard let viewController = storyboard.instantiateViewController(identifier: self.storyboardId) as? T else {
+            fatalError("Couldn't find view controller for type \(T.self)")
+        }
+        
         return viewController
     }
 }

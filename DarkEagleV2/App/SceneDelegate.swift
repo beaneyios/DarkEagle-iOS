@@ -20,7 +20,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         let storyboard = UIStoryboard(name: "Block", bundle: nil)
-        window?.rootViewController = BlockListViewController.create(from: storyboard)
+        let viewController: BlockListViewController = BlockListViewController.create(from: storyboard)
+        viewController.viewModel = NativePostViewModel(postId: "1")
+        window?.rootViewController = viewController
         window?.makeKeyAndVisible()
     }
 
