@@ -9,16 +9,22 @@
 import UIKit
 
 protocol NibLoadable {
-    static var nib: UINib { get }
+    static func nib(named name: String?) -> UINib
 }
 
 extension NibLoadable {
-    static var nib: UINib {
-        UINib(nibName: String(describing: self), bundle: nil)
+    static func nib(named name: String? = nil) -> UINib {
+        guard let name = name else {
+            return UINib(nibName: String(describing: self), bundle: nil)
+        }
+        
+        return UINib(nibName: name, bundle: nil)
     }
     
-    static func createTemplate() -> Self {
-        guard let template = Bundle.main.loadNibNamed(String(describing: Self.self), owner: nil, options: nil)?.first as? Self else {
+    static func createTemplate(named name: String? = nil) -> Self {
+        let nibName = name ?? String(describing: Self.self)
+        
+        guard let template = Bundle.main.loadNibNamed(nibName, owner: nil, options: nil)?.first as? Self else {
             fatalError()
         }
         

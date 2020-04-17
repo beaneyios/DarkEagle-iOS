@@ -24,6 +24,8 @@ struct AnyBlock: Decodable {
             resource = try TextBlock(from: decoder)
         case .image:
             resource = try ImageBlock(from: decoder)
+        case .card:
+            resource = try CardBlock(from: decoder)
         }
     }
 }

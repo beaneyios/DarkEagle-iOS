@@ -8,6 +8,11 @@
 
 import Foundation
 
-class ListViewModel {
+class CardListViewModel: BlockListViewModel {
+    var didChange: ((BlockListChange) -> Void)?
+    var blockSections: [BlockSection] = []
     
+    func loadData() {
+        
+    }
 }

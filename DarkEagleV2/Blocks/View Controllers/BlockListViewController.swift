@@ -18,12 +18,12 @@ class BlockListViewController: UIViewController {
     var viewModel: BlockListViewModel!
     let sizeProvider = DynamicCellSizeProvider()
     
-    private var cellProvider: NativePostCellProvider!
+    private var cellProvider: BlockListCellProvider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cellProvider = NativePostCellProvider(textBlockCellDelegate: self)
+        cellProvider = BlockListCellProvider(textBlockCellDelegate: self)
         cellProvider.registerCells(on: collectionView)
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -79,16 +79,31 @@ extension BlockListViewController: UICollectionViewDelegateFlowLayout {
                 preferredWidth: collectionView.frame.width - leftRightPadding,
                 configureAction: DynamicConfigureActionProvider.configureAction(for: block)
             )
+        case let block as CardBlock:
+            return sizeProvider.size(
+                indexPath: indexPath,
+                nibCreatable: CardBlockCell.self,
+                nibName: CardNibNameProvider.nibName(for: block.cardType),
+                preferredWidth: collectionView.frame.width - leftRightPadding,
+                configureAction: DynamicConfigureActionProvider.configureAction(for: block)
+            )
         default:
             return CGSize.zero
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        let section = viewModel.blockSections[section]
+        return section.itemSpacing ?? 0.0
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        let section = viewModel.blockSections[section]
+        
         return UIEdgeInsets(
             top: 0.0,
             left: 0.0,
-            bottom: 16.0,
+            bottom: section.sectionSpacing ?? 0.0,
             right: 0.0
         )
     }

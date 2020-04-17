@@ -19,14 +19,14 @@ class DynamicCellSizeProvider {
         sizes = [:]
     }
     
-    func size(indexPath: IndexPath, nibCreatable: TemplateCell.Type, preferredWidth: CGFloat, configureAction: ConfigureAction<TemplateCell>?) -> CGSize {
+    func size<T: TemplateCell>(indexPath: IndexPath, nibCreatable: T.Type, nibName: String? = nil, preferredWidth: CGFloat, configureAction: ConfigureAction<TemplateCell>?) -> CGSize {
         if let cachedSize = sizes[indexPath] {
             return cachedSize
         }
         
         let templateCell: TemplateCell = {
-            guard let templateCell = nibs.first(ofType: TemplateCell.self) else {
-                return nibCreatable.createTemplate()
+            guard let templateCell: TemplateCell = nibs.first(ofType: nibCreatable.self) else {
+                return nibCreatable.createTemplate(named: nibName)
             }
             
             return templateCell

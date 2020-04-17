@@ -8,10 +8,11 @@
 
 import UIKit
 
-struct NativePostCellProvider {
+struct BlockListCellProvider {
     enum ReuseIdentifiers: String {
         case textBlock
         case imageBlock
+        case rowCard
     }
     
     private var textBlockCellDelegate: TextBlockCellDelegate?
@@ -21,8 +22,12 @@ struct NativePostCellProvider {
     }
     
     func registerCells(on collectionView: UICollectionView) {
-        collectionView.register(TextBlockCell.nib, forCellWithReuseIdentifier: ReuseIdentifiers.textBlock.rawValue)
-        collectionView.register(ImageBlockCell.nib, forCellWithReuseIdentifier: ReuseIdentifiers.imageBlock.rawValue)
+        collectionView.register(TextBlockCell.nib(), forCellWithReuseIdentifier: ReuseIdentifiers.textBlock.rawValue)
+        collectionView.register(ImageBlockCell.nib(), forCellWithReuseIdentifier: ReuseIdentifiers.imageBlock.rawValue)
+        collectionView.register(
+            CardBlockCell.nib(named: CardNibNameProvider.nibName(for: .row)),
+            forCellWithReuseIdentifier: ReuseIdentifiers.rowCard.rawValue
+        )
     }
     
     func cell(for block: Block, collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
@@ -44,21 +49,22 @@ struct NativePostCellProvider {
             
             cell.configure(with: block)
             return cell
+        case let block as CardBlock:
+            return cardCell(for: block, collectionView: collectionView, indexPath: indexPath)
         default:
             fatalError("Unexpected block \(block.self)")
         }
     }
-}
-
-extension UICollectionView {
-    func dequeueReusableCell<T: UICollectionViewCell>(
-        withReuseIdentifier identifier: String,
-        for indexPath: IndexPath
-    ) -> T {
-        guard let cell = dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? T else {
-            fatalError("No cell found for identifier \(identifier) of type \(T.self)")
-        }
+    
+    func cardCell(for block: CardBlock, collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: CardBlockCell = {
+            switch block.cardType {
+            case .row:
+                return collectionView.dequeueReusableCell(withReuseIdentifier: ReuseIdentifiers.rowCard.rawValue, for: indexPath)
+            }
+        }()
         
+        cell.configure(with: block)
         return cell
     }
 }

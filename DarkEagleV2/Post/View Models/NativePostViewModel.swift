@@ -35,18 +35,3 @@ class NativePostViewModel: BlockListViewModel {
         }
     }
 }
-
-// MARK: - Collection view delegates.
-extension NativePostViewModel {
-    func block(for indexPath: IndexPath) -> Block {
-        blockSections[indexPath.section].blocks[indexPath.row].resource
-    }
-    
-    func numberOfBlocks(in section: Int) -> Int {
-        return blockSections[section].blocks.count
-    }
-    
-    func numberOfBlockSections() -> Int {
-        return blockSections.count
-    }
-}

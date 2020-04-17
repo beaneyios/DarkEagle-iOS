@@ -27,7 +27,7 @@
                                 <cells/>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.83787754754439403" green="0.84385172823443777" blue="0.86177427030456855" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="qWY-TP-u4i" firstAttribute="top" secondItem="bwv-7P-WdR" secondAttribute="top" id="0Lg-6b-6iU"/>
                             <constraint firstItem="bwv-7P-WdR" firstAttribute="trailing" secondItem="qWY-TP-u4i" secondAttribute="trailing" id="DcO-jS-zjm"/>

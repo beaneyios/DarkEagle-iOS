@@ -8,17 +8,17 @@
 
 import UIKit
 
-enum Style {
+enum TextStyle {
     case underlined
     case colour(UIColor)
     case font(UIFont)
     case none
 }
 
-struct StyleRange: Decodable {
+struct TextStyleRange: Decodable {
     var startIndex: Int
     var endIndex: Int?
-    var style: Style
+    var style: TextStyle
     
     enum DecodingKeys: CodingKey {
         case style
@@ -32,12 +32,12 @@ struct StyleRange: Decodable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: DecodingKeys.self)
-        self.style = StyleRange.style(from: container)
+        self.style = TextStyleRange.style(from: container)
         self.startIndex = try container.decode(Int.self, forKey: .startIndex)
         self.endIndex = try container.decodeIfPresent(Int.self, forKey: .endIndex)
     }
     
-    static func style(from container: KeyedDecodingContainer<DecodingKeys>) -> Style {
+    static func style(from container: KeyedDecodingContainer<DecodingKeys>) -> TextStyle {
         do {
             let style = try container.decode(String.self, forKey: .style)
             
@@ -56,7 +56,7 @@ struct StyleRange: Decodable {
         }
     }
     
-    static func colourStyle(from container: KeyedDecodingContainer<DecodingKeys>) throws -> Style {
+    static func colourStyle(from container: KeyedDecodingContainer<DecodingKeys>) throws -> TextStyle {
         let colourHex = try container.decode(String.self, forKey: .colour)
         guard let colour = UIColor(hex: colourHex) else {
             return .none
@@ -65,7 +65,7 @@ struct StyleRange: Decodable {
         return .colour(colour)
     }
     
-    static func fontStyle(from container: KeyedDecodingContainer<DecodingKeys>) throws -> Style {
+    static func fontStyle(from container: KeyedDecodingContainer<DecodingKeys>) throws -> TextStyle {
         let fontName = try container.decode(String.self, forKey: .fontName)
         let fontSize = try container.decode(Double.self, forKey: .fontSize)
         guard let font = UIFont(name: fontName, size: CGFloat(fontSize)) else {

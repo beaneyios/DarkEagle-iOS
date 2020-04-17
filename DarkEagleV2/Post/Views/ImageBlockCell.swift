@@ -13,11 +13,13 @@ class ImageBlockCell: UICollectionViewCell, NibLoadable {
     @IBOutlet weak var imgView: UIImageView!
     
     func configure(with block: ImageBlock) {
-        URLSession.shared.dataTask(with: block.src) { (data, response, error) in
-            DispatchQueue.main.async {
-                let image = UIImage(data: data!)
+        ImageDownloader().downloadImage(url: block.src) { (result) in
+            switch result {
+            case let .success(image):
                 self.imgView.image = image
+            case let .failure(error):
+                break
             }
-        }.resume()
+        }
     }
 }

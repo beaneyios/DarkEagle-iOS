@@ -9,7 +9,7 @@
 import UIKit
 
 extension NSMutableAttributedString {
-    func withStyleRanges(_ styleRanges: [StyleRange]) -> Self {
+    func withStyleRanges(_ styleRanges: [TextStyleRange]) -> Self {
         let updatedAttributedString = self
         
         styleRanges.forEach {

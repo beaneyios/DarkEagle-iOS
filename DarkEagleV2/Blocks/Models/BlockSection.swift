@@ -6,8 +6,10 @@
 //  Copyright © 2020 Matt Beaney. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct BlockSection: Decodable {
     var blocks: [AnyBlock]
+    var sectionSpacing: CGFloat?
+    var itemSpacing: CGFloat?
 }

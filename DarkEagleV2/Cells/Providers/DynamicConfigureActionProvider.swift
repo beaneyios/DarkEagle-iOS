@@ -16,6 +16,8 @@ struct DynamicConfigureActionProvider {
             switch (block, templateCell) {
             case let (block as TextBlock, templateCell as TextBlockCell):
                 templateCell.configure(with: block)
+            case let (block as CardBlock, templateCell as CardBlockCell):
+                templateCell.configure(with: block)
             default:
                 break
             }

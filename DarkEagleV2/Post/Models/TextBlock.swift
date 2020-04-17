@@ -12,6 +12,6 @@ struct TextBlock: Block, Decodable {
     var id: String
     var type: BlockType
     var text: String
-    var styles: [StyleRange]
+    var styles: [TextStyleRange]
     var tapActions: [TapActionRange]?
 }
