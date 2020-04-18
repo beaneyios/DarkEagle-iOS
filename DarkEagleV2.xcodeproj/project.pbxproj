@@ -10,6 +10,10 @@
 		BE012EB7244AF83300F2588B /* list.json in Resources */ = {isa = PBXBuildFile; fileRef = BE012EB6244AF83300F2588B /* list.json */; };
 		BE012EBB244AF90B00F2588B /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE012EBA244AF90B00F2588B /* List.swift */; };
 		BE012EBD244AF94200F2588B /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE012EBC244AF94200F2588B /* ListViewModel.swift */; };
+		BE012EC0244B090E00F2588B /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE012EBF244B090E00F2588B /* NavigationCoordinator.swift */; };
+		BE012EC2244B092100F2588B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE012EC1244B092100F2588B /* AppCoordinator.swift */; };
+		BE012EC5244B094100F2588B /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE012EC4244B094100F2588B /* Weak.swift */; };
+		BE012EC7244B09B700F2588B /* NavigationControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE012EC6244B09B700F2588B /* NavigationControllerCoordinator.swift */; };
 		BE79ED0C2441FF19009249FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79ED0B2441FF19009249FE /* SceneDelegate.swift */; };
 		BE79ED402441FFA6009249FE /* DETextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79ED3F2441FFA6009249FE /* DETextView.swift */; };
 		BE79ED432442003B009249FE /* DynamicCellSizeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79ED422442003B009249FE /* DynamicCellSizeProvider.swift */; };
@@ -73,6 +77,10 @@
 		BE012EB6244AF83300F2588B /* list.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = list.json; sourceTree = "<group>"; };
 		BE012EBA244AF90B00F2588B /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		BE012EBC244AF94200F2588B /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		BE012EBF244B090E00F2588B /* NavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
+		BE012EC1244B092100F2588B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		BE012EC4244B094100F2588B /* Weak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weak.swift; sourceTree = "<group>"; };
+		BE012EC6244B09B700F2588B /* NavigationControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerCoordinator.swift; sourceTree = "<group>"; };
 		BE79ED0B2441FF19009249FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BE79ED3F2441FFA6009249FE /* DETextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DETextView.swift; sourceTree = "<group>"; };
 		BE79ED422442003B009249FE /* DynamicCellSizeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCellSizeProvider.swift; sourceTree = "<group>"; };
@@ -147,8 +155,19 @@
 		BE012EBE244AF97800F2588B /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				BE012EC1244B092100F2588B /* AppCoordinator.swift */,
+				BE012EC6244B09B700F2588B /* NavigationControllerCoordinator.swift */,
+				BE012EBF244B090E00F2588B /* NavigationCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		BE012EC3244B093A00F2588B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BE012EC4244B094100F2588B /* Weak.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		BE79ED0A2441FE3A009249FE /* App */ = {
@@ -156,9 +175,10 @@
 			children = (
 				BEF3DF67243CFCE200CFF00F /* AppDelegate.swift */,
 				BE79ED0B2441FF19009249FE /* SceneDelegate.swift */,
-				BE012EBE244AF97800F2588B /* Coordinators */,
 				BE8DE83E2446013900C3CF39 /* Controllers */,
+				BE012EBE244AF97800F2588B /* Coordinators */,
 				BE79ED4924420427009249FE /* Extensions */,
+				BE012EC3244B093A00F2588B /* Models */,
 				BE8DE8212444DF0C00C3CF39 /* Protocols */,
 			);
 			path = App;
@@ -579,8 +599,10 @@
 				BE79ED78244329B6009249FE /* Action.swift in Sources */,
 				BE8DE81024437D0200C3CF39 /* UIColor+Hex.swift in Sources */,
 				BE79ED5924420D3B009249FE /* BlockType.swift in Sources */,
+				BE012EC5244B094100F2588B /* Weak.swift in Sources */,
 				BE8DE8332445F0B300C3CF39 /* BlockListViewModel.swift in Sources */,
 				BE8DE8142443906D00C3CF39 /* UITextInputTokenizer+TappedRanges.swift in Sources */,
+				BE012EC2244B092100F2588B /* AppCoordinator.swift in Sources */,
 				BE79ED762443215B009249FE /* NSMutableAttributedString+WithStyles.swift in Sources */,
 				BE79ED432442003B009249FE /* DynamicCellSizeProvider.swift in Sources */,
 				BE79ED5624420D28009249FE /* Block.swift in Sources */,
@@ -589,6 +611,7 @@
 				BE8DE8432446054100C3CF39 /* UICollectionView+DequeueGenericCell.swift in Sources */,
 				BE79ED4824420080009249FE /* NibLoadable.swift in Sources */,
 				BE8DE8362445F90400C3CF39 /* CardBlock.swift in Sources */,
+				BE012EC7244B09B700F2588B /* NavigationControllerCoordinator.swift in Sources */,
 				BE79ED4B24420432009249FE /* Array+FirstOfType.swift in Sources */,
 				BE79ED4F2442055E009249FE /* AnyBlock.swift in Sources */,
 				BE79ED7324430C67009249FE /* BlockListCellProvider.swift in Sources */,
@@ -611,6 +634,7 @@
 				BE79ED6324420DD4009249FE /* Post.swift in Sources */,
 				BE8DE8402446014700C3CF39 /* ImageDownloader.swift in Sources */,
 				BE8DE84824464F6F00C3CF39 /* ColourWrapper.swift in Sources */,
+				BE012EC0244B090E00F2588B /* NavigationCoordinator.swift in Sources */,
 				BEF3DF6C243CFCE200CFF00F /* BlockListViewController.swift in Sources */,
 				BE79ED402441FFA6009249FE /* DETextView.swift in Sources */,
 				BEF3DF68243CFCE200CFF00F /* AppDelegate.swift in Sources */,
