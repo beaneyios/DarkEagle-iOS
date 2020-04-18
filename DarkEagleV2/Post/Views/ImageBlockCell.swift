@@ -13,7 +13,7 @@ class ImageBlockCell: UICollectionViewCell, NibLoadable {
     @IBOutlet weak var imgView: UIImageView!
     
     func configure(with block: ImageBlock) {
-        ImageDownloader().downloadImage(url: block.src) { (result) in
+        ImageDownloader().downloadImage(url: block.image.src) { (result) in
             switch result {
             case let .success(image):
                 self.imgView.image = image

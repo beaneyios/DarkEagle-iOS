@@ -23,7 +23,7 @@ class CardBlockCell: UICollectionViewCell, NibLoadable {
         titleLabel.textColor = block.style?.titleColour.colour
         subtitleLabel.textColor = block.style?.subtitleColour.colour
         
-        ImageDownloader().downloadImage(url: block.imgSrc) { (result) in
+        ImageDownloader().downloadImage(url: block.image.src) { (result) in
             switch result {
             case let .success(image):
                 self.imageView.image = image

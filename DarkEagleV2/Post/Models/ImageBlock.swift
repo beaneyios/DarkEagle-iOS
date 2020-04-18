@@ -8,10 +8,14 @@
 
 import Foundation
 
-struct ImageBlock: Block, Decodable {
-    var id: String
-    var type: BlockType
+struct Image: Decodable {
     var src: URL
     var height: Double
     var width: Double
+}
+
+struct ImageBlock: Block, Decodable {
+    var id: String
+    var type: BlockType
+    var image: Image
 }

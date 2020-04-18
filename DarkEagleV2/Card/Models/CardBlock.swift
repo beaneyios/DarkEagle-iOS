@@ -17,7 +17,7 @@ struct CardBlock: Block, Decodable {
     var type: BlockType
     var title: String
     var subtitle: String
-    var imgSrc: URL
+    var image: Image
     var tapAction: TapAction?
     var cardType: CardType
     var style: CardStyle?

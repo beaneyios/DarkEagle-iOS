@@ -73,9 +73,11 @@
         {
           "id": "2",
           "type": "image",
-          "src": "https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg",
-          "height": 900,
-          "width": 1200
+          "image": {
+            "src": "https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg",
+            "height": 900,
+            "width": 1200
+          }          
         },
         {
           "id": "1",
@@ -113,7 +115,11 @@
           "subtitle": "This is a sub-title with lot's of text, hopefully it will run onto two lines so you can see self-sizing growth.",
           "tapAction": null,
           "cardType": "row",
-          "imgSrc": "https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg",
+          "image": {
+              "src": "https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg",
+              "height": 900,
+              "width": 1200
+          },
           "style": {
               "titleFont": {
                   "fontName": "AvenirNext-Bold",
@@ -134,7 +140,11 @@
           "subtitle": "This is a sub-title",
           "tapAction": null,
           "cardType": "row",
-          "imgSrc": "https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg",
+          "image": {
+              "src": "https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg",
+              "height": 900,
+              "width": 1200
+          },
           "style": {
               "titleFont": {
                   "fontName": "AvenirNext-Bold",
