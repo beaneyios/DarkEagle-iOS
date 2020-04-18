@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE012EB7244AF83300F2588B /* list.json in Resources */ = {isa = PBXBuildFile; fileRef = BE012EB6244AF83300F2588B /* list.json */; };
+		BE012EBB244AF90B00F2588B /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE012EBA244AF90B00F2588B /* List.swift */; };
+		BE012EBD244AF94200F2588B /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE012EBC244AF94200F2588B /* ListViewModel.swift */; };
 		BE79ED0C2441FF19009249FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79ED0B2441FF19009249FE /* SceneDelegate.swift */; };
 		BE79ED402441FFA6009249FE /* DETextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79ED3F2441FFA6009249FE /* DETextView.swift */; };
 		BE79ED432442003B009249FE /* DynamicCellSizeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79ED422442003B009249FE /* DynamicCellSizeProvider.swift */; };
@@ -67,6 +70,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE012EB6244AF83300F2588B /* list.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = list.json; sourceTree = "<group>"; };
+		BE012EBA244AF90B00F2588B /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		BE012EBC244AF94200F2588B /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		BE79ED0B2441FF19009249FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BE79ED3F2441FFA6009249FE /* DETextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DETextView.swift; sourceTree = "<group>"; };
 		BE79ED422442003B009249FE /* DynamicCellSizeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCellSizeProvider.swift; sourceTree = "<group>"; };
@@ -138,11 +144,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE012EBE244AF97800F2588B /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
 		BE79ED0A2441FE3A009249FE /* App */ = {
 			isa = PBXGroup;
 			children = (
 				BEF3DF67243CFCE200CFF00F /* AppDelegate.swift */,
 				BE79ED0B2441FF19009249FE /* SceneDelegate.swift */,
+				BE012EBE244AF97800F2588B /* Coordinators */,
 				BE8DE83E2446013900C3CF39 /* Controllers */,
 				BE79ED4924420427009249FE /* Extensions */,
 				BE8DE8212444DF0C00C3CF39 /* Protocols */,
@@ -184,6 +198,7 @@
 				BE79ED6224420DD4009249FE /* Post.swift */,
 				BE79ED5024420CFC009249FE /* TextBlock.swift */,
 				BE79ED5A24420D57009249FE /* TextStyle.swift */,
+				BE012EBA244AF90B00F2588B /* List.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -272,6 +287,7 @@
 			children = (
 				BE79ED6024420DC0009249FE /* posts.json */,
 				BE8DE8192443B63300C3CF39 /* insta-post.json */,
+				BE012EB6244AF83300F2588B /* list.json */,
 			);
 			path = "Test Data";
 			sourceTree = "<group>";
@@ -288,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				BE79ED6824423266009249FE /* NativePostViewModel.swift */,
+				BE012EBC244AF94200F2588B /* ListViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -434,8 +451,8 @@
 			children = (
 				BE79ED0A2441FE3A009249FE /* App */,
 				BE8DE82E2445EA1F00C3CF39 /* Blocks */,
-				BE79ED452442006F009249FE /* Cells */,
 				BE8DE81B2444DCE800C3CF39 /* Card */,
+				BE79ED452442006F009249FE /* Cells */,
 				BE79ED3B2441FF73009249FE /* Post */,
 				BE79ED5C24420D96009249FE /* Resources */,
 			);
@@ -534,6 +551,7 @@
 			files = (
 				BEF3DF71243CFCE300CFF00F /* Assets.xcassets in Resources */,
 				BEF3DF92243D14C800CFF00F /* TextBlockCell.xib in Resources */,
+				BE012EB7244AF83300F2588B /* list.json in Resources */,
 				BE8DE83D2445FFC900C3CF39 /* RowCardBlockCell.xib in Resources */,
 				BE79ED6124420DC0009249FE /* posts.json in Resources */,
 				BE8DE83B2445FF9B00C3CF39 /* LargeCardBlockCell.xib in Resources */,
@@ -574,6 +592,7 @@
 				BE79ED4B24420432009249FE /* Array+FirstOfType.swift in Sources */,
 				BE79ED4F2442055E009249FE /* AnyBlock.swift in Sources */,
 				BE79ED7324430C67009249FE /* BlockListCellProvider.swift in Sources */,
+				BE012EBB244AF90B00F2588B /* List.swift in Sources */,
 				BE8DE8462446457E00C3CF39 /* CardNibNameProvider.swift in Sources */,
 				BE8DE8182443ADA200C3CF39 /* SelectionOptionsView.swift in Sources */,
 				BE8DE84C24464FB500C3CF39 /* CardStyle.swift in Sources */,
@@ -586,6 +605,7 @@
 				BE8DE82B2444E11900C3CF39 /* CardListViewModel.swift in Sources */,
 				BE79ED5124420CFC009249FE /* TextBlock.swift in Sources */,
 				BE8DE8232444DF1800C3CF39 /* StoryboardCreatable.swift in Sources */,
+				BE012EBD244AF94200F2588B /* ListViewModel.swift in Sources */,
 				BE79ED6924423266009249FE /* NativePostViewModel.swift in Sources */,
 				BE79ED4D244204C5009249FE /* DynamicConfigureActionProvider.swift in Sources */,
 				BE79ED6324420DD4009249FE /* Post.swift in Sources */,

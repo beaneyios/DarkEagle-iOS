@@ -21,4 +21,17 @@ struct PostDownloader {
             print(error)
         }
     }
+    
+    func downloadPosts(id: String, completion: @escaping (_ result: Result<List, Error>) -> Void) {
+        let url = Bundle.main.url(forResource: "list", withExtension: "json")
+        let data = try! Data(contentsOf: url!)
+        let decoder = JSONDecoder()
+        
+        do {
+            let post = try decoder.decode(List.self, from: data)
+            completion(.success(post))
+        } catch {
+            print(error)
+        }
+    }
 }

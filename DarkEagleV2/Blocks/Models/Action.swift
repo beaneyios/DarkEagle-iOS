@@ -10,10 +10,12 @@ import Foundation
 
 enum TapAction: Decodable {
     case openURL(_ url: URL)
+    case openPost(_ id: Int)
     case none
     
     enum DecodingKeys: CodingKey {
         case type
+        case postId
         case url
     }
     
@@ -25,6 +27,9 @@ enum TapAction: Decodable {
         case "openURL":
             let url = try container.decode(URL.self, forKey: .url)
             self = .openURL(url)
+        case "openPost":
+            let postId = try container.decode(Int.self, forKey: .postId)
+            self = .openPost(postId)
         default:
             self = .none
         }

@@ -21,7 +21,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         let storyboard = UIStoryboard(name: "Block", bundle: nil)
         let viewController: BlockListViewController = BlockListViewController.create(from: storyboard)
-        viewController.viewModel = NativePostViewModel(postId: "1")
+//        viewController.viewModel = NativePostViewModel(postId: "1")
+        viewController.viewModel = ListViewModel()
         window?.rootViewController = viewController
         window?.makeKeyAndVisible()
     }

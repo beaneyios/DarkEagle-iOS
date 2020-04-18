@@ -69,7 +69,7 @@ extension BlockListViewController: UICollectionViewDelegateFlowLayout {
         
         switch block {
         case let block as ImageBlock:
-            let ratio = CGFloat(block.height / block.width)
+            let ratio = CGFloat(block.image.height / block.image.width)
             let height = collectionView.frame.width * ratio
             return CGSize(width: collectionView.frame.width - leftRightPadding, height: height)
         case let block as TextBlock:
@@ -116,6 +116,9 @@ extension BlockListViewController: TextBlockCellDelegate {
             let sf = SFSafariViewController(url: url)
             present(sf, animated: true, completion: nil)
         case .none:
+            break
+        case .openPost(_):
+            // TODO: Handle open post logic.
             break
         }
     }

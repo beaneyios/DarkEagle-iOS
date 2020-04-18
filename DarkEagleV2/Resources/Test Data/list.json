@@ -1,0 +1,68 @@
+{
+  "id": "5",
+  "blockSections": [
+    {
+      "id": "0",
+      "blocks": [
+        {
+          "id": "1jhjk",
+          "type": "card",
+          "title": "This is a title",
+          "subtitle": "This is a sub-title with lot's of text, hopefully it will run onto two lines so you can see self-sizing growth.",
+          "cardType": "row",
+          "image": {
+              "src": "https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg",
+              "height": 900,
+              "width": 1200
+          },
+          "style": {
+            "titleFont": {
+              "fontName": "AvenirNext-Bold",
+              "fontSize": 20
+            },
+            "subtitleFont": {
+              "fontName": "AvenirNext-Regular",
+              "fontSize": 18
+            },
+            "titleColour": "#000000",
+            "subtitleColour": "#000000"
+          },
+          "tapAction": {
+            "type": "openPost",
+            "postId": 1
+          }
+        },
+        {
+          "id": "1jhjk",
+          "type": "card",
+          "title": "This is a title",
+          "subtitle": "This is a sub-title",
+          "tapAction": {
+            "type": "openPost",
+            "postId": 1
+          },
+          "cardType": "row",
+          "image": {
+              "src": "https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg",
+              "height": 900,
+              "width": 1200
+          },
+          "style": {
+            "titleFont": {
+              "fontName": "AvenirNext-Bold",
+              "fontSize": 20
+            },
+            "subtitleFont": {
+              "fontName": "AvenirNext-Regular",
+              "fontSize": 18
+            },
+            "titleColour": "#000000",
+            "subtitleColour": "#000000"
+          }
+        }
+      ],
+      "itemSpacing": 8,
+      "sectionSpacing": 8
+    }
+  ]
+}
