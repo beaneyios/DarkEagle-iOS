@@ -49,6 +49,12 @@ class BlockListViewController: UIViewController {
         viewModel.loadData()
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        collectionView.reloadData()
+    }
+    
     private func handleTapAction(_ tapAction: TapAction) {
         switch tapAction {
         case let .openURL(url):
