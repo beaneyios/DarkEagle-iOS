@@ -8,12 +8,26 @@
 
 import UIKit
 
+protocol CardBlockCellDelegate: AnyObject {
+    func cardBlockCell(_ cell: CardBlockCell, wasSelectedWithTapAction action: TapAction)
+}
+
 class CardBlockCell: UICollectionViewCell, NibLoadable {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
+    weak var delegate: CardBlockCellDelegate?
+    
+    private var block: CardBlock?
+    
+    override func prepareForReuse() {
+        block = nil
+    }
+    
     func configure(with block: CardBlock) {
+        self.block = block
+        
         titleLabel.text = block.title
         subtitleLabel.text = block.subtitle
         
@@ -31,6 +45,17 @@ class CardBlockCell: UICollectionViewCell, NibLoadable {
                 break
             }
         }
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(cellTapped))
+        addGestureRecognizer(tap)
+    }
+    
+    @objc private func cellTapped() {
+        guard let action = block?.tapAction else {
+            return
+        }
+        
+        delegate?.cardBlockCell(self, wasSelectedWithTapAction: action)
     }
 }
 

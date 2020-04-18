@@ -29,7 +29,12 @@
           },
           "tapAction": {
             "type": "openPost",
-            "postId": 1
+            "postId": "1"
+          },
+          "size": {
+            "type": "weightedWidthFixedHeight",
+            "weighting": 2.0,
+            "height": 75.0
           }
         },
         {
@@ -39,9 +44,113 @@
           "subtitle": "This is a sub-title",
           "tapAction": {
             "type": "openPost",
-            "postId": 1
+            "postId": "1"
           },
           "cardType": "row",
+          "image": {
+              "src": "https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg",
+              "height": 900,
+              "width": 1200
+          },
+          "style": {
+            "titleFont": {
+              "fontName": "AvenirNext-Bold",
+              "fontSize": 20
+            },
+            "subtitleFont": {
+              "fontName": "AvenirNext-Regular",
+              "fontSize": 18
+            },
+            "titleColour": "#000000",
+            "subtitleColour": "#000000"
+          },
+          "size": {
+            "type": "weightedWidthFixedHeight",
+            "weighting": 2.0,
+            "height": 75.0
+          },
+        },
+        {
+          "id": "1jhjk",
+          "type": "card",
+          "title": "This is a title to a web article",
+          "subtitle": "This is a sub-title to another web article",
+          "tapAction": {
+            "type": "openURL",
+            "url": "https://www.bbc.co.uk/news/uk-52339266"
+          },
+          "cardType": "row",
+          "size": {
+            "type": "weightedWidthFixedHeight",
+            "weighting": 2.0,
+            "height": 75.0
+          },
+          "image": {
+              "src": "https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg",
+              "height": 900,
+              "width": 1200
+          },
+          "style": {
+            "titleFont": {
+              "fontName": "AvenirNext-Bold",
+              "fontSize": 20
+            },
+            "subtitleFont": {
+              "fontName": "AvenirNext-Regular",
+              "fontSize": 18
+            },
+            "titleColour": "#000000",
+            "subtitleColour": "#000000"
+          }
+        },
+        {
+          "id": "1jhjk",
+          "type": "card",
+          "title": "This is a title to a web article",
+          "subtitle": "This is a sub-title to another web article",
+          "tapAction": {
+            "type": "openURL",
+            "url": "https://www.bbc.co.uk/news/uk-52339266"
+          },
+          "cardType": "row",
+          "size": {
+            "type": "weightedWidthFixedHeight",
+            "weighting": 2.0,
+            "height": 75.0
+          },
+          "image": {
+              "src": "https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg",
+              "height": 900,
+              "width": 1200
+          },
+          "style": {
+            "titleFont": {
+              "fontName": "AvenirNext-Bold",
+              "fontSize": 20
+            },
+            "subtitleFont": {
+              "fontName": "AvenirNext-Regular",
+              "fontSize": 18
+            },
+            "titleColour": "#000000",
+            "subtitleColour": "#000000"
+          }
+        },
+        {
+          "id": "1jhjk",
+          "type": "card",
+          "title": "This is a title to a web article",
+          "subtitle": "This is a sub-title to another web article",
+          "tapAction": {
+            "type": "openURL",
+            "url": "https://www.bbc.co.uk/news/uk-52339266"
+          },
+          "cardType": "row",
+          "size": {
+            "type": "weightedWidthFixedHeight",
+            "weighting": 2.0,
+            "height": 75.0
+          },
           "image": {
               "src": "https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg",
               "height": 900,
@@ -61,7 +170,7 @@
           }
         }
       ],
-      "itemSpacing": 8,
+      "itemSpacing": 1,
       "sectionSpacing": 8
     }
   ]

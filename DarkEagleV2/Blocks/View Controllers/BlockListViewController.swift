@@ -9,21 +9,30 @@
 import UIKit
 import SafariServices
 
+protocol BlockListViewControllerDelegate: AnyObject {
+    func blockListViewController(_ viewController: BlockListViewController, didSelectOpenUrl url: URL)
+    func blockListViewController(_ viewController: BlockListViewController, didSelectOpenPostWithId postId: String)
+}
+
 class BlockListViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private var selectionOptions: SelectionOptionsView?
-    
+    weak var delegate: BlockListViewControllerDelegate?
     var viewModel: BlockListViewModel!
     let sizeProvider = DynamicCellSizeProvider()
     
     private var cellProvider: BlockListCellProvider!
+    private var selectionOptions: SelectionOptionsView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cellProvider = BlockListCellProvider(textBlockCellDelegate: self)
+        cellProvider = BlockListCellProvider(
+            textBlockCellDelegate: self,
+            cardBlockCellDelegate: self
+        )
+        
         cellProvider.registerCells(on: collectionView)
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -38,6 +47,17 @@ class BlockListViewController: UIViewController {
         }
         
         viewModel.loadData()
+    }
+    
+    private func handleTapAction(_ tapAction: TapAction) {
+        switch tapAction {
+        case let .openURL(url):
+            delegate?.blockListViewController(self, didSelectOpenUrl: url)
+        case let .openPost(postId):
+            delegate?.blockListViewController(self, didSelectOpenPostWithId: postId)
+        case .none:
+            break
+        }
     }
 }
 
@@ -65,34 +85,68 @@ extension BlockListViewController: UICollectionViewDataSource {
 extension BlockListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let block = viewModel.block(for: indexPath)
-        let leftRightPadding: CGFloat = 0.0
+        let horizontalPadding: CGFloat = 0.0
         
         switch block {
         case let block as ImageBlock:
             let ratio = CGFloat(block.image.height / block.image.width)
             let height = collectionView.frame.width * ratio
-            return CGSize(width: collectionView.frame.width - leftRightPadding, height: height)
+            return CGSize(width: collectionView.frame.width - horizontalPadding, height: height)
         case let block as TextBlock:
             return sizeProvider.size(
                 indexPath: indexPath,
                 nibCreatable: TextBlockCell.self,
-                preferredWidth: collectionView.frame.width - leftRightPadding,
+                preferredWidth: collectionView.frame.width - horizontalPadding,
                 configureAction: DynamicConfigureActionProvider.configureAction(for: block)
             )
         case let block as CardBlock:
-            return sizeProvider.size(
+            return size(
+                forCard: block,
                 indexPath: indexPath,
-                nibCreatable: CardBlockCell.self,
-                nibName: CardNibNameProvider.nibName(for: block.cardType),
-                preferredWidth: collectionView.frame.width - leftRightPadding,
-                configureAction: DynamicConfigureActionProvider.configureAction(for: block)
+                collectionView: collectionView,
+                horizontalPadding: horizontalPadding
             )
         default:
             return CGSize.zero
         }
     }
     
+    private func size(forCard block: CardBlock, indexPath: IndexPath, collectionView: UICollectionView, horizontalPadding: CGFloat) -> CGSize {
+        guard let size = block.size else {
+            return sizeProvider.size(
+                indexPath: indexPath,
+                nibCreatable: CardBlockCell.self,
+                nibName: CardNibNameProvider.nibName(for: block.cardType),
+                preferredWidth: collectionView.frame.width - horizontalPadding,
+                configureAction: DynamicConfigureActionProvider.configureAction(for: block)
+            )
+        }
+        
+        switch size {
+        case .fullWidthFlexibleHeight:
+            return sizeProvider.size(
+                indexPath: indexPath,
+                nibCreatable: CardBlockCell.self,
+                nibName: CardNibNameProvider.nibName(for: block.cardType),
+                preferredWidth: collectionView.frame.width - horizontalPadding,
+                configureAction: DynamicConfigureActionProvider.configureAction(for: block)
+            )
+        case let .weightedWidthFixedHeight(weighting, height):
+            let section = viewModel.blockSections[indexPath.section]
+            let collectionWidth = collectionView.frame.width
+            let widthWithoutPadding = collectionWidth - horizontalPadding
+            let spacing = (weighting - 1.0) * (section.itemSpacing ?? 0.0)
+            let widthWithoutSpacing = widthWithoutPadding - spacing
+            return CGSize(width: widthWithoutSpacing / weighting, height: height)
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        let section = viewModel.blockSections[section]
+        return section.itemSpacing ?? 0.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         let section = viewModel.blockSections[section]
         return section.itemSpacing ?? 0.0
     }
@@ -110,21 +164,12 @@ extension BlockListViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension BlockListViewController: TextBlockCellDelegate {
-    func textBlockCellDidTapAction(_ action: TapAction) {
-        switch action {
-        case let .openURL(url):
-            let sf = SFSafariViewController(url: url)
-            present(sf, animated: true, completion: nil)
-        case .none:
-            break
-        case .openPost(_):
-            // TODO: Handle open post logic.
-            break
-        }
-    }
-    
     func textBlockCellDidDismissOptions() {
         dismissOptions()
+    }
+    
+    func textBlockCell(_ cell: TextBlockCell, wasSelectedWithTapAction action: TapAction) {
+        handleTapAction(action)
     }
     
     func textBlockCell(_ cell: TextBlockCell, didSelectatYPosition yPosition: CGFloat) {
@@ -148,5 +193,11 @@ extension BlockListViewController: TextBlockCellDelegate {
     private func dismissOptions() {
         selectionOptions?.removeFromSuperview()
         selectionOptions = nil
+    }
+}
+
+extension BlockListViewController: CardBlockCellDelegate {
+    func cardBlockCell(_ cell: CardBlockCell, wasSelectedWithTapAction action: TapAction) {
+        handleTapAction(action)
     }
 }

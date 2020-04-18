@@ -35,6 +35,7 @@
 		BE79ED7324430C67009249FE /* BlockListCellProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79ED7224430C67009249FE /* BlockListCellProvider.swift */; };
 		BE79ED762443215B009249FE /* NSMutableAttributedString+WithStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79ED752443215B009249FE /* NSMutableAttributedString+WithStyles.swift */; };
 		BE79ED78244329B6009249FE /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79ED77244329B6009249FE /* Action.swift */; };
+		BE8C327B244B7D430003CC01 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8C327A244B7D430003CC01 /* Size.swift */; };
 		BE8DE81024437D0200C3CF39 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE80F24437D0200C3CF39 /* UIColor+Hex.swift */; };
 		BE8DE81224437D2300C3CF39 /* UIView+AutoLayoutHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE81124437D2300C3CF39 /* UIView+AutoLayoutHelpers.swift */; };
 		BE8DE8142443906D00C3CF39 /* UITextInputTokenizer+TappedRanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE8132443906D00C3CF39 /* UITextInputTokenizer+TappedRanges.swift */; };
@@ -102,6 +103,7 @@
 		BE79ED7224430C67009249FE /* BlockListCellProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListCellProvider.swift; sourceTree = "<group>"; };
 		BE79ED752443215B009249FE /* NSMutableAttributedString+WithStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+WithStyles.swift"; sourceTree = "<group>"; };
 		BE79ED77244329B6009249FE /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		BE8C327A244B7D430003CC01 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		BE8DE80F24437D0200C3CF39 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		BE8DE81124437D2300C3CF39 /* UIView+AutoLayoutHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayoutHelpers.swift"; sourceTree = "<group>"; };
 		BE8DE8132443906D00C3CF39 /* UITextInputTokenizer+TappedRanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextInputTokenizer+TappedRanges.swift"; sourceTree = "<group>"; };
@@ -221,32 +223,6 @@
 				BE012EBA244AF90B00F2588B /* List.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		BE79ED412442002F009249FE /* Providers */ = {
-			isa = PBXGroup;
-			children = (
-				BE79ED422442003B009249FE /* DynamicCellSizeProvider.swift */,
-				BE79ED4C244204C5009249FE /* DynamicConfigureActionProvider.swift */,
-			);
-			path = Providers;
-			sourceTree = "<group>";
-		};
-		BE79ED452442006F009249FE /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				BE79ED412442002F009249FE /* Providers */,
-				BE79ED4624420073009249FE /* Protocols */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		BE79ED4624420073009249FE /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				BE79ED4724420080009249FE /* NibLoadable.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		BE79ED4924420427009249FE /* Extensions */ = {
@@ -385,6 +361,7 @@
 				BE8DE82C2445E4BF00C3CF39 /* BlockSection.swift */,
 				BE8DE84724464F6F00C3CF39 /* ColourWrapper.swift */,
 				BE8DE84924464F7E00C3CF39 /* FontWrapper.swift */,
+				BE8C327A244B7D430003CC01 /* Size.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -401,6 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				BE8DE8322445F0B300C3CF39 /* BlockListViewModel.swift */,
+				BE79ED4724420080009249FE /* NibLoadable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -436,6 +414,8 @@
 			isa = PBXGroup;
 			children = (
 				BE79ED7224430C67009249FE /* BlockListCellProvider.swift */,
+				BE79ED422442003B009249FE /* DynamicCellSizeProvider.swift */,
+				BE79ED4C244204C5009249FE /* DynamicConfigureActionProvider.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -472,7 +452,6 @@
 				BE79ED0A2441FE3A009249FE /* App */,
 				BE8DE82E2445EA1F00C3CF39 /* Blocks */,
 				BE8DE81B2444DCE800C3CF39 /* Card */,
-				BE79ED452442006F009249FE /* Cells */,
 				BE79ED3B2441FF73009249FE /* Post */,
 				BE79ED5C24420D96009249FE /* Resources */,
 			);
@@ -626,6 +605,7 @@
 				BE8DE82D2445E4BF00C3CF39 /* BlockSection.swift in Sources */,
 				BE79ED662442288B009249FE /* PostDownloader.swift in Sources */,
 				BE8DE82B2444E11900C3CF39 /* CardListViewModel.swift in Sources */,
+				BE8C327B244B7D430003CC01 /* Size.swift in Sources */,
 				BE79ED5124420CFC009249FE /* TextBlock.swift in Sources */,
 				BE8DE8232444DF1800C3CF39 /* StoryboardCreatable.swift in Sources */,
 				BE012EBD244AF94200F2588B /* ListViewModel.swift in Sources */,

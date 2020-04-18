@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TextBlockCellDelegate: AnyObject {
-    func textBlockCellDidTapAction(_ action: TapAction)
+    func textBlockCell(_ cell: TextBlockCell, wasSelectedWithTapAction action: TapAction)
     func textBlockCell(_ cell: TextBlockCell, didSelectatYPosition yPosition: CGFloat)
     func textBlockCellDidDismissOptions()
 }
@@ -71,7 +71,7 @@ class TextBlockCell: UICollectionViewCell, NibLoadable {
             return
         }
                     
-        delegate?.textBlockCellDidTapAction(action)
+        delegate?.textBlockCell(self, wasSelectedWithTapAction: action)
     }
     
     func clearSelection() {

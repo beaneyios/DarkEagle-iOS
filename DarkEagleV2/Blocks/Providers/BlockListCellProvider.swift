@@ -16,9 +16,14 @@ struct BlockListCellProvider {
     }
     
     private var textBlockCellDelegate: TextBlockCellDelegate?
+    private var cardBlockCellDelegate: CardBlockCellDelegate?
     
-    init(textBlockCellDelegate: TextBlockCellDelegate? = nil) {
+    init(
+        textBlockCellDelegate: TextBlockCellDelegate? = nil,
+        cardBlockCellDelegate: CardBlockCellDelegate? = nil
+    ) {
         self.textBlockCellDelegate = textBlockCellDelegate
+        self.cardBlockCellDelegate = cardBlockCellDelegate
     }
     
     func registerCells(on collectionView: UICollectionView) {
@@ -64,6 +69,7 @@ struct BlockListCellProvider {
             }
         }()
         
+        cell.delegate = cardBlockCellDelegate
         cell.configure(with: block)
         return cell
     }
