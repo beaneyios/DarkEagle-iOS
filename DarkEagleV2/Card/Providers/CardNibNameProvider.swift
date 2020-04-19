@@ -13,6 +13,8 @@ struct CardNibNameProvider {
         switch cardType {
         case .row:
             return "RowCardBlockCell"
+        case .large:
+            return "LargeCardBlockCell"
         }
     }
 }

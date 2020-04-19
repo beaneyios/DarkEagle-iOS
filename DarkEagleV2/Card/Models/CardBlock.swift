@@ -11,6 +11,7 @@ import UIKit
 struct CardBlock: Block, Decodable {
     enum CardType: String, Decodable {
         case row
+        case large
     }
     
     var cardType: CardType

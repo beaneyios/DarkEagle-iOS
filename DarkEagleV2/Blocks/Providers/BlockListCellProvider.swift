@@ -13,6 +13,7 @@ struct BlockListCellProvider {
         case textBlock
         case imageBlock
         case rowCard
+        case largeCard
     }
     
     private var textBlockCellDelegate: TextBlockCellDelegate?
@@ -32,6 +33,10 @@ struct BlockListCellProvider {
         collectionView.register(
             CardBlockCell.nib(named: CardNibNameProvider.nibName(for: .row)),
             forCellWithReuseIdentifier: ReuseIdentifiers.rowCard.rawValue
+        )
+        collectionView.register(
+            CardBlockCell.nib(named: CardNibNameProvider.nibName(for: .large)),
+            forCellWithReuseIdentifier: ReuseIdentifiers.largeCard.rawValue
         )
     }
     
@@ -66,6 +71,8 @@ struct BlockListCellProvider {
             switch block.cardType {
             case .row:
                 return collectionView.dequeueReusableCell(withReuseIdentifier: ReuseIdentifiers.rowCard.rawValue, for: indexPath)
+            case .large:
+                return collectionView.dequeueReusableCell(withReuseIdentifier: ReuseIdentifiers.largeCard.rawValue, for: indexPath)
             }
         }()
         
