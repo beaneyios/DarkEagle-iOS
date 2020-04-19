@@ -22,8 +22,21 @@ class AppCoordinator: NavigationCoordinator {
     func start() {
         let storyboard = UIStoryboard(name: "Block", bundle: nil)
         let viewController: BlockListViewController = BlockListViewController.create(from: storyboard)
+        viewController.title = "DarkEagle"
         viewController.viewModel = ListViewModel()
         viewController.delegate = self
+        
+        let userNavImage = UIImage(named: "user-icon")
+        let userNavItem = UIBarButtonItem(image: userNavImage, style: .plain, target: nil, action: nil)
+        userNavItem.tintColor = .black
+        
+        let refreshNavImage = UIImage(named: "refresh-icon")
+        let refreshNavItem = UIBarButtonItem(image: refreshNavImage, style: .plain, target: nil, action: nil)
+        refreshNavItem.tintColor = .black
+        
+        viewController.navigationItem.leftBarButtonItem = userNavItem
+        viewController.navigationItem.rightBarButtonItem = refreshNavItem
+        
         navigationController.setViewControllers([viewController], animated: true)
     }
     
