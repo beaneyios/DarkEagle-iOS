@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BE012EB7244AF83300F2588B /* list.json in Resources */ = {isa = PBXBuildFile; fileRef = BE012EB6244AF83300F2588B /* list.json */; };
+		BE012EB7244AF83300F2588B /* list-tablet.json in Resources */ = {isa = PBXBuildFile; fileRef = BE012EB6244AF83300F2588B /* list-tablet.json */; };
 		BE012EBB244AF90B00F2588B /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE012EBA244AF90B00F2588B /* List.swift */; };
 		BE012EBD244AF94200F2588B /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE012EBC244AF94200F2588B /* ListViewModel.swift */; };
 		BE012EC0244B090E00F2588B /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE012EBF244B090E00F2588B /* NavigationCoordinator.swift */; };
@@ -56,6 +56,7 @@
 		BE8DE84824464F6F00C3CF39 /* ColourWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE84724464F6F00C3CF39 /* ColourWrapper.swift */; };
 		BE8DE84A24464F7E00C3CF39 /* FontWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE84924464F7E00C3CF39 /* FontWrapper.swift */; };
 		BE8DE84C24464FB500C3CF39 /* CardStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE84B24464FB500C3CF39 /* CardStyle.swift */; };
+		BEE38E44244CC2850019A138 /* list-phone.json in Resources */ = {isa = PBXBuildFile; fileRef = BEE38E43244CC2850019A138 /* list-phone.json */; };
 		BEF3DF68243CFCE200CFF00F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF3DF67243CFCE200CFF00F /* AppDelegate.swift */; };
 		BEF3DF6C243CFCE200CFF00F /* BlockListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF3DF6B243CFCE200CFF00F /* BlockListViewController.swift */; };
 		BEF3DF71243CFCE300CFF00F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEF3DF70243CFCE300CFF00F /* Assets.xcassets */; };
@@ -75,7 +76,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BE012EB6244AF83300F2588B /* list.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = list.json; sourceTree = "<group>"; };
+		BE012EB6244AF83300F2588B /* list-tablet.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "list-tablet.json"; sourceTree = "<group>"; };
 		BE012EBA244AF90B00F2588B /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		BE012EBC244AF94200F2588B /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		BE012EBF244B090E00F2588B /* NavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
@@ -124,6 +125,7 @@
 		BE8DE84724464F6F00C3CF39 /* ColourWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourWrapper.swift; sourceTree = "<group>"; };
 		BE8DE84924464F7E00C3CF39 /* FontWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontWrapper.swift; sourceTree = "<group>"; };
 		BE8DE84B24464FB500C3CF39 /* CardStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStyle.swift; sourceTree = "<group>"; };
+		BEE38E43244CC2850019A138 /* list-phone.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "list-phone.json"; sourceTree = "<group>"; };
 		BEF3DF64243CFCE200CFF00F /* DarkEagleV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DarkEagleV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF3DF67243CFCE200CFF00F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEF3DF6B243CFCE200CFF00F /* BlockListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListViewController.swift; sourceTree = "<group>"; };
@@ -283,7 +285,8 @@
 			children = (
 				BE79ED6024420DC0009249FE /* posts.json */,
 				BE8DE8192443B63300C3CF39 /* insta-post.json */,
-				BE012EB6244AF83300F2588B /* list.json */,
+				BE012EB6244AF83300F2588B /* list-tablet.json */,
+				BEE38E43244CC2850019A138 /* list-phone.json */,
 			);
 			path = "Test Data";
 			sourceTree = "<group>";
@@ -550,10 +553,11 @@
 			files = (
 				BEF3DF71243CFCE300CFF00F /* Assets.xcassets in Resources */,
 				BEF3DF92243D14C800CFF00F /* TextBlockCell.xib in Resources */,
-				BE012EB7244AF83300F2588B /* list.json in Resources */,
+				BE012EB7244AF83300F2588B /* list-tablet.json in Resources */,
 				BE8DE83D2445FFC900C3CF39 /* RowCardBlockCell.xib in Resources */,
 				BE79ED6124420DC0009249FE /* posts.json in Resources */,
 				BE8DE83B2445FF9B00C3CF39 /* LargeCardBlockCell.xib in Resources */,
+				BEE38E44244CC2850019A138 /* list-phone.json in Resources */,
 				BE79ED7024430C2D009249FE /* ImageBlockCell.xib in Resources */,
 				BE8DE81E2444DE6400C3CF39 /* Block.storyboard in Resources */,
 				BE8DE81A2443B63300C3CF39 /* insta-post.json in Resources */,
