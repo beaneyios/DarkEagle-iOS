@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="7P4-1c-XDx">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="9Yq-qP-Ih4" customClass="LoginViewController" customModule="DarkEagleV2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jLs-v3-ZSO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Kd-YZ-fS5">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RIG-Sh-h6i">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="usF-Jx-3Sp">
+                                                <rect key="frame" x="16" y="384" width="382" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="wcC-s0-5kc"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aYt-eo-xAQ">
+                                                <rect key="frame" x="16" y="442" width="382" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="bK7-PG-WSW"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1yH-pJ-xvT">
+                                                <rect key="frame" x="157" y="268" width="100" height="100"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="KjB-JY-8tx"/>
+                                                    <constraint firstAttribute="height" constant="100" id="hTF-A3-mOf"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WPF-ST-Ynq">
+                                                <rect key="frame" x="16" y="500" width="88" height="30"/>
+                                                <state key="normal" title="Start loading"/>
+                                                <connections>
+                                                    <action selector="logIn:" destination="9Yq-qP-Ih4" eventType="touchUpInside" id="4ql-CC-sUW"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXK-XI-Ldh">
+                                                <rect key="frame" x="311" y="500" width="87" height="30"/>
+                                                <state key="normal" title="Stop loading"/>
+                                                <connections>
+                                                    <action selector="logIn:" destination="9Yq-qP-Ih4" eventType="touchUpInside" id="9oD-nf-ZoO"/>
+                                                    <action selector="stopLoading:" destination="9Yq-qP-Ih4" eventType="touchUpInside" id="B4w-HD-7jF"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="usF-Jx-3Sp" firstAttribute="top" secondItem="1yH-pJ-xvT" secondAttribute="bottom" constant="16" id="8Xn-yH-dEM"/>
+                                            <constraint firstItem="aYt-eo-xAQ" firstAttribute="top" secondItem="usF-Jx-3Sp" secondAttribute="bottom" constant="8" id="BYq-8S-DRV"/>
+                                            <constraint firstItem="WPF-ST-Ynq" firstAttribute="leading" secondItem="aYt-eo-xAQ" secondAttribute="leading" id="UJj-jB-94u"/>
+                                            <constraint firstItem="usF-Jx-3Sp" firstAttribute="leading" secondItem="RIG-Sh-h6i" secondAttribute="leading" constant="16" id="Xkb-SK-HQw"/>
+                                            <constraint firstAttribute="trailing" secondItem="usF-Jx-3Sp" secondAttribute="trailing" constant="16" id="ezS-4b-GdT"/>
+                                            <constraint firstItem="nXK-XI-Ldh" firstAttribute="top" secondItem="aYt-eo-xAQ" secondAttribute="bottom" constant="8" id="i5V-FG-6gE"/>
+                                            <constraint firstItem="usF-Jx-3Sp" firstAttribute="centerY" secondItem="RIG-Sh-h6i" secondAttribute="centerY" id="irX-ri-Nx9"/>
+                                            <constraint firstItem="1yH-pJ-xvT" firstAttribute="centerX" secondItem="RIG-Sh-h6i" secondAttribute="centerX" id="mha-cG-75Y"/>
+                                            <constraint firstItem="nXK-XI-Ldh" firstAttribute="trailing" secondItem="aYt-eo-xAQ" secondAttribute="trailing" id="uW0-If-rNJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="aYt-eo-xAQ" secondAttribute="trailing" constant="16" id="wrg-5M-9Zg"/>
+                                            <constraint firstItem="WPF-ST-Ynq" firstAttribute="top" secondItem="aYt-eo-xAQ" secondAttribute="bottom" constant="8" id="xnF-8J-dfI"/>
+                                            <constraint firstItem="aYt-eo-xAQ" firstAttribute="leading" secondItem="RIG-Sh-h6i" secondAttribute="leading" constant="16" id="zhO-S9-0bl"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="RIG-Sh-h6i" firstAttribute="top" secondItem="yWu-YD-OIG" secondAttribute="top" id="TPo-4w-WMz"/>
+                                    <constraint firstItem="RIG-Sh-h6i" firstAttribute="bottom" secondItem="yWu-YD-OIG" secondAttribute="bottom" id="TzW-1Y-pt4"/>
+                                    <constraint firstItem="RIG-Sh-h6i" firstAttribute="leading" secondItem="yWu-YD-OIG" secondAttribute="leading" id="htl-Kq-ZVC"/>
+                                    <constraint firstItem="RIG-Sh-h6i" firstAttribute="trailing" secondItem="yWu-YD-OIG" secondAttribute="trailing" constant="414" id="stz-DF-QOG"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="yWu-YD-OIG"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Yg3-Xg-k7w"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.87961275250000004" green="0.88588451089999998" blue="0.90469978600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2Kd-YZ-fS5" firstAttribute="top" secondItem="4o1-1X-VJg" secondAttribute="top" id="NIf-lx-fIU"/>
+                            <constraint firstItem="4o1-1X-VJg" firstAttribute="bottom" secondItem="2Kd-YZ-fS5" secondAttribute="bottom" id="P2T-A2-AlX"/>
+                            <constraint firstItem="RIG-Sh-h6i" firstAttribute="width" secondItem="jLs-v3-ZSO" secondAttribute="width" id="VKa-RS-Nuv"/>
+                            <constraint firstItem="2Kd-YZ-fS5" firstAttribute="leading" secondItem="4o1-1X-VJg" secondAttribute="leading" id="fT1-CN-iS3"/>
+                            <constraint firstItem="RIG-Sh-h6i" firstAttribute="height" secondItem="jLs-v3-ZSO" secondAttribute="height" multiplier="0.912946" id="k0L-mT-qOi"/>
+                            <constraint firstItem="4o1-1X-VJg" firstAttribute="trailing" secondItem="2Kd-YZ-fS5" secondAttribute="trailing" id="vGu-mQ-LMD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4o1-1X-VJg"/>
+                    </view>
+                    <connections>
+                        <outlet property="logoContainer" destination="1yH-pJ-xvT" id="SWv-GL-ynF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NDh-ZH-qkS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-36.231884057971016" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+</document>

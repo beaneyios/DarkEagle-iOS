@@ -113,7 +113,10 @@
           "type": "card",
           "title": "This is a title",
           "subtitle": "This is a sub-title with lot's of text, hopefully it will run onto two lines so you can see self-sizing growth.",
-          "tapAction": null,
+          "tapAction": {
+            "type": "openPost",
+            "postId": "1"
+          },
           "cardType": "row",
           "image": {
               "src": "https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg",
@@ -138,7 +141,10 @@
           "type": "card",
           "title": "This is a title",
           "subtitle": "This is a sub-title",
-          "tapAction": null,
+          "tapAction": {
+            "type": "openPost",
+            "postId": "1"
+          },
           "cardType": "row",
           "image": {
               "src": "https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg",
