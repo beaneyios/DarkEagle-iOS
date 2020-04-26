@@ -14,6 +14,7 @@ class LoadingView: UIView {
     @IBOutlet weak var loader: UIView!
     
     @IBOutlet var roundables: [UIView]!
+    @IBOutlet var borderables: [UIView]!
     
     private var shouldAnimate = false
     
@@ -42,6 +43,11 @@ class LoadingView: UIView {
             $0.layoutIfNeeded()
             $0.layer.cornerRadius = $0.frame.width / 2.0
             $0.clipsToBounds = true
+        }
+        
+        self.borderables.forEach {
+            $0.layer.borderColor = UIColor.white.cgColor
+            $0.layer.borderWidth = 2.0
         }
         
         loader.alpha = 0.5

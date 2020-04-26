@@ -21,9 +21,6 @@ class PostListCoordinator: ViewCoordinator {
     }
     
     func start() {
-        let loginViewController: LoginViewController = LoginViewController.create(from: UIStoryboard(name: "Login", bundle: nil))
-        navigationController.setViewControllers([loginViewController], animated: true)
-        return;
         let storyboard = UIStoryboard(name: "Block", bundle: nil)
         let viewController: BlockListViewController = BlockListViewController.create(from: storyboard)
         viewController.title = "DarkEagle"

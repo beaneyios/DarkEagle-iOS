@@ -17,6 +17,7 @@
 		BE3732A02454727A008CAB06 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE37329F2454727A008CAB06 /* LoginViewController.swift */; };
 		BE3732A3245485A7008CAB06 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE3732A2245485A7008CAB06 /* LoadingView.xib */; };
 		BE3732A5245486FA008CAB06 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3732A4245486FA008CAB06 /* LoadingView.swift */; };
+		BE69D0812455DFE80027836B /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE69D0802455DFE80027836B /* LoginCoordinator.swift */; };
 		BE79ED0C2441FF19009249FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79ED0B2441FF19009249FE /* SceneDelegate.swift */; };
 		BE79ED402441FFA6009249FE /* DETextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79ED3F2441FFA6009249FE /* DETextView.swift */; };
 		BE79ED432442003B009249FE /* DynamicCellSizeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79ED422442003B009249FE /* DynamicCellSizeProvider.swift */; };
@@ -90,6 +91,7 @@
 		BE37329F2454727A008CAB06 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BE3732A2245485A7008CAB06 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		BE3732A4245486FA008CAB06 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		BE69D0802455DFE80027836B /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		BE79ED0B2441FF19009249FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BE79ED3F2441FFA6009249FE /* DETextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DETextView.swift; sourceTree = "<group>"; };
 		BE79ED422442003B009249FE /* DynamicCellSizeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCellSizeProvider.swift; sourceTree = "<group>"; };
@@ -184,6 +186,8 @@
 		BE37329B2454711C008CAB06 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				BE69D07F2455DFDE0027836B /* Coordinators */,
+				BE69D07C2455BAD80027836B /* Views */,
 				BE37329E2454726F008CAB06 /* View Controllers */,
 				BE37329C24547127008CAB06 /* Login.storyboard */,
 			);
@@ -205,6 +209,21 @@
 				BE3732A4245486FA008CAB06 /* LoadingView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		BE69D07C2455BAD80027836B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BE69D07F2455DFDE0027836B /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				BE69D0802455DFE80027836B /* LoginCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		BE79ED0A2441FE3A009249FE /* App */ = {
@@ -654,6 +673,7 @@
 				BE3732A02454727A008CAB06 /* LoginViewController.swift in Sources */,
 				BE79ED5324420D0D009249FE /* ImageBlock.swift in Sources */,
 				BE8DE84A24464F7E00C3CF39 /* FontWrapper.swift in Sources */,
+				BE69D0812455DFE80027836B /* LoginCoordinator.swift in Sources */,
 				BE8DE8392445FF7900C3CF39 /* CardBlockCell.swift in Sources */,
 				BE8DE82D2445E4BF00C3CF39 /* BlockSection.swift in Sources */,
 				BE79ED662442288B009249FE /* PostDownloader.swift in Sources */,

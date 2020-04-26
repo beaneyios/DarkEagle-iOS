@@ -286,6 +286,13 @@
                 <outletCollection property="roundables" destination="wW9-gc-2TO" collectionClass="NSMutableArray" id="i6s-uq-ByF"/>
                 <outletCollection property="roundables" destination="VJW-WC-nY6" collectionClass="NSMutableArray" id="PER-Cc-RHf"/>
                 <outletCollection property="roundables" destination="5Rx-r9-0li" collectionClass="NSMutableArray" id="qLn-Yd-9pj"/>
+                <outletCollection property="borderables" destination="1vJ-Ll-9Rc" collectionClass="NSMutableArray" id="hlL-5f-Xsy"/>
+                <outletCollection property="borderables" destination="ecc-22-zdI" collectionClass="NSMutableArray" id="CDm-oh-Zlu"/>
+                <outletCollection property="borderables" destination="nUc-Qj-yhR" collectionClass="NSMutableArray" id="mWJ-aN-W7Z"/>
+                <outletCollection property="borderables" destination="IMp-1R-aCa" collectionClass="NSMutableArray" id="gjW-W7-d4K"/>
+                <outletCollection property="borderables" destination="QFH-xn-WGc" collectionClass="NSMutableArray" id="peW-lw-6l5"/>
+                <outletCollection property="borderables" destination="B0J-ts-5ar" collectionClass="NSMutableArray" id="Dvf-sa-zdw"/>
+                <outletCollection property="borderables" destination="SJB-xD-QOR" collectionClass="NSMutableArray" id="Yp7-sp-eqN"/>
             </connections>
             <point key="canvasLocation" x="-233.59999999999999" y="208.69565217391306"/>
         </view>

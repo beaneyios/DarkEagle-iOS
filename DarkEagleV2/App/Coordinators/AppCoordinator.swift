@@ -17,10 +17,16 @@ class AppCoordinator: ViewCoordinator {
     }
     
     func start() {
-        let vc1 = addPostCoordinator()
-        let vc2 = addPostCoordinator()
-        let vc3 = addPostCoordinator()
-        tabBarController.setViewControllers([vc1, vc2, vc3], animated: false)
+        showLoginScreen()
+    }
+    
+    private func showLoginScreen() {
+        let navigationController = UINavigationController()
+        let loginCoordinator = LoginCoordinator(navigationController: navigationController)
+        loginCoordinator.start()
+        add(loginCoordinator)
+        tabBarController.tabBar.isHidden = true
+        tabBarController.setViewControllers([navigationController], animated: false)
     }
     
     private func addPostCoordinator() -> UIViewController {
