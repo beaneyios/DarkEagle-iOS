@@ -14,10 +14,14 @@ class AppCoordinator: ViewCoordinator {
     
     init(tabBarController: UITabBarController) {
         self.tabBarController = tabBarController
+        tabBarController.tabBar.tintColor = UIColor(named: "de-purple")
     }
     
     func start() {
-        showLoginScreen()
+        let postList = self.postList()
+        let localList = self.localList()
+        let userView = self.userView()
+        tabBarController.setViewControllers([postList, localList, userView], animated: false)
     }
     
     private func showLoginScreen() {
@@ -29,17 +33,45 @@ class AppCoordinator: ViewCoordinator {
         tabBarController.setViewControllers([navigationController], animated: false)
     }
     
-    private func addPostCoordinator() -> UIViewController {
+    private func postList() -> UIViewController {
         let navigationController = UINavigationController()
         let postCoordinator = PostListCoordinator(
             navigationController: navigationController,
             coordinatorDelegate: nil
         )
         
-        navigationController.tabBarItem = UITabBarItem(title: "Post", image: nil, selectedImage: nil)
-        
+        navigationController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "home-icon"), selectedImage: nil)
         postCoordinator.start()
         add(postCoordinator)
+        
+        return navigationController
+    }
+    
+    private func userView() -> UIViewController {
+        let navigationController = UINavigationController()
+        let postCoordinator = PostListCoordinator(
+            navigationController: navigationController,
+            coordinatorDelegate: nil
+        )
+        
+        navigationController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "user-icon"), selectedImage: nil)
+        postCoordinator.start()
+        add(postCoordinator)
+        
+        return navigationController
+    }
+    
+    private func localList() -> UIViewController {
+        let navigationController = UINavigationController()
+        let postCoordinator = PostListCoordinator(
+            navigationController: navigationController,
+            coordinatorDelegate: nil
+        )
+        
+        navigationController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "aim-icon"), selectedImage: nil)
+        postCoordinator.start()
+        add(postCoordinator)
+        
         return navigationController
     }
     

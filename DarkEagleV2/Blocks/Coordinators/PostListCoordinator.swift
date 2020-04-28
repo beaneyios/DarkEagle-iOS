@@ -27,15 +27,10 @@ class PostListCoordinator: ViewCoordinator {
         viewController.viewModel = ListViewModel()
         viewController.delegate = self
         
-        let userNavImage = UIImage(named: "user-icon")
-        let userNavItem = UIBarButtonItem(image: userNavImage, style: .plain, target: nil, action: nil)
-        userNavItem.tintColor = .black
-        
         let refreshNavImage = UIImage(named: "refresh-icon")
         let refreshNavItem = UIBarButtonItem(image: refreshNavImage, style: .plain, target: nil, action: nil)
-        refreshNavItem.tintColor = .black
+        refreshNavItem.tintColor = UIColor(named: "de-purple")
         
-        viewController.navigationItem.leftBarButtonItem = userNavItem
         viewController.navigationItem.rightBarButtonItem = refreshNavItem
         
         navigationController.setViewControllers([viewController], animated: true)
