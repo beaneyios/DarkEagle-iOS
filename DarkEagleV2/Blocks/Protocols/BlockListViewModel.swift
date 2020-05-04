@@ -10,6 +10,8 @@ import Foundation
 
 enum BlockListChange {
     case updated
+    case startLoading
+    case stopLoading
 }
 
 protocol BlockListViewModel {

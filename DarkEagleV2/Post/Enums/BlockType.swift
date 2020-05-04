@@ -12,4 +12,5 @@ enum BlockType: String, Codable {
     case text
     case image
     case card
+    case title
 }

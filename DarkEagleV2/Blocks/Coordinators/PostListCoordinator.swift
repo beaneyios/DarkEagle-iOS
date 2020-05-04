@@ -23,16 +23,28 @@ class PostListCoordinator: ViewCoordinator {
     func start() {
         let storyboard = UIStoryboard(name: "Block", bundle: nil)
         let viewController: BlockListViewController = BlockListViewController.create(from: storyboard)
-        viewController.title = "DarkEagle"
         viewController.viewModel = ListViewModel()
         viewController.delegate = self
         
         let refreshNavImage = UIImage(named: "refresh-icon")
-        let refreshNavItem = UIBarButtonItem(image: refreshNavImage, style: .plain, target: nil, action: nil)
+        let refreshNavItem = UIBarButtonItem(
+            image: refreshNavImage,
+            style: .plain,
+            target: viewController,
+            action: #selector(BlockListViewController.refresh)
+        )
         refreshNavItem.tintColor = UIColor(named: "de-purple")
         
+        let loadingView = LoadingView.instanceFromNib()
+        loadingView.configureSizes(size: CGSize(width: 10, height: 10), padding: 0)
+        loadingView.configureBorders(borderColor: UIColor.white, borderWidth: 1)
+        let spacerView = UIView(frame: CGRect(x: 0, y: 0, width: 20.0, height: 44.0))
+        spacerView.addSubview(loadingView)
+        loadingView.frame = spacerView.frame
+        let spacerButton = UIBarButtonItem(customView: spacerView)
+        viewController.navigationItem.leftBarButtonItems = [spacerButton]
         viewController.navigationItem.rightBarButtonItem = refreshNavItem
-        
+        viewController.loadingView = loadingView
         navigationController.setViewControllers([viewController], animated: true)
     }
     
@@ -47,6 +59,17 @@ extension PostListCoordinator: BlockListViewControllerDelegate {
         let viewController: BlockListViewController = BlockListViewController.create(from: storyboard)
         viewController.viewModel = NativePostViewModel(postId: postId)
         viewController.delegate = self
+        
+        let loadingView = LoadingView.instanceFromNib()
+        loadingView.configureSizes(size: CGSize(width: 10, height: 10), padding: 0)
+        loadingView.configureBorders(borderColor: UIColor.white, borderWidth: 1)
+        let spacerView = UIView(frame: CGRect(x: 0, y: 0, width: 20.0, height: 44.0))
+        spacerView.addSubview(loadingView)
+        loadingView.frame = spacerView.frame
+        let spacerButton = UIBarButtonItem(customView: spacerView)
+        viewController.navigationItem.rightBarButtonItems = [spacerButton]
+        viewController.loadingView = loadingView
+        
         navigationController.pushViewController(viewController, animated: true)
     }
     

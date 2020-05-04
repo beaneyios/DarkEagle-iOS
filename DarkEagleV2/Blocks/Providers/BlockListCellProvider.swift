@@ -14,6 +14,7 @@ struct BlockListCellProvider {
         case imageBlock
         case rowCard
         case largeCard
+        case titleCard
     }
     
     private var textBlockCellDelegate: TextBlockCellDelegate?
@@ -38,6 +39,8 @@ struct BlockListCellProvider {
             CardBlockCell.nib(named: CardNibNameProvider.nibName(for: .large)),
             forCellWithReuseIdentifier: ReuseIdentifiers.largeCard.rawValue
         )
+        
+        collectionView.register(TitleBlockCell.nib(), forCellWithReuseIdentifier: ReuseIdentifiers.titleCard.rawValue)
     }
     
     func cell(for block: Block, collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
@@ -61,9 +64,17 @@ struct BlockListCellProvider {
             return cell
         case let block as CardBlock:
             return cardCell(for: block, collectionView: collectionView, indexPath: indexPath)
+        case let block as TitleBlock:
+            return titleCell(for: block, collectionView: collectionView, indexPath: indexPath)
         default:
             fatalError("Unexpected block \(block.self)")
         }
+    }
+    
+    func titleCell(for block: TitleBlock, collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: TitleBlockCell = collectionView.dequeueReusableCell(withReuseIdentifier: ReuseIdentifiers.titleCard.rawValue, for: indexPath)
+        cell.configure(with: block)
+        return cell
     }
     
     func cardCell(for block: CardBlock, collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {

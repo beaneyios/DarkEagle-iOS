@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TitleBlockCell" customModule="DarkEagleV2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="411" height="144"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="411" height="144"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LVY-4G-nzg">
+                        <rect key="frame" x="0.0" y="0.0" width="411" height="144"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbh-o4-C5O">
+                                <rect key="frame" x="8" y="8" width="395" height="128"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Kbh-o4-C5O" firstAttribute="leading" secondItem="LVY-4G-nzg" secondAttribute="leading" constant="8" id="AFh-6a-nwc"/>
+                            <constraint firstAttribute="bottom" secondItem="Kbh-o4-C5O" secondAttribute="bottom" constant="8" id="Tgm-16-WOR"/>
+                            <constraint firstAttribute="trailing" secondItem="Kbh-o4-C5O" secondAttribute="trailing" constant="8" id="b39-qP-j0s"/>
+                            <constraint firstItem="Kbh-o4-C5O" firstAttribute="top" secondItem="LVY-4G-nzg" secondAttribute="top" constant="8" id="yzm-b1-mSr"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="LVY-4G-nzg" secondAttribute="bottom" id="9aV-9l-du8"/>
+                <constraint firstItem="LVY-4G-nzg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="9z2-pS-06e"/>
+                <constraint firstItem="LVY-4G-nzg" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="at9-iV-luu"/>
+                <constraint firstAttribute="trailing" secondItem="LVY-4G-nzg" secondAttribute="trailing" id="i01-PC-gRw"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="411" height="144"/>
+            <connections>
+                <outlet property="titleLabel" destination="Kbh-o4-C5O" id="Ban-vx-I00"/>
+            </connections>
+            <point key="canvasLocation" x="121" y="151"/>
+        </collectionViewCell>
+    </objects>
+</document>

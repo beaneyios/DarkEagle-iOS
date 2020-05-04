@@ -3,7 +3,7 @@
   "blockSections": [
     {
       "id": "1",
-      "sectionSpacing": 8,
+      "sectionSpacing": 4,
       "user": "12345",
       "blocks": [
         {
@@ -165,8 +165,8 @@
           }
         }
       ],
-      "itemSpacing": 8,
-      "sectionSpacing": 8
+      "itemSpacing": 1,
+      "sectionSpacing": 4
     },
     {
       "id": "1",

@@ -1,0 +1,242 @@
+{
+  "id": "5",
+  "blockSections": [
+    {
+      "id": "a",
+      "sectionSpacing": 0,
+      "blocks": [
+        {
+          "id": "1jhjks",
+          "type": "title",
+          "title": "Top stories",
+          "size": {
+            "type": "fullWidthFlexibleHeight"
+          },
+          "style": {
+            "font": {
+              "fontName": "AvenirNext-Bold",
+              "fontSize": 25
+            },
+            "colour": "#000000"
+          }
+        }
+      ],
+      "itemSpacing": 0
+    },
+    {
+      "id": "0",
+      "blocks": [
+        {
+          "id": "1jhjk",
+          "type": "card",
+          "title": "Car fire in Ramsgate",
+          "subtitle": "Arson adds to local residents growing concerns",
+          "cardType": "large",
+          "image": {
+            "src": "https://c1.staticflickr.com/3/2784/4134540965_46285be2f5_b.jpg",
+            "height": 685,
+            "width": 1023
+          },
+          "style": {
+            "titleStyle": {
+              "font": {
+                "fontName": "AvenirNext-Bold",
+                "fontSize": 20
+              },
+              "colour": "#000000"
+            },
+            "subtitleStyle": {
+              "font": {
+                "fontName": "AvenirNext-Regular",
+                "fontSize": 18
+              },
+              "colour": "#000000"
+            }
+          },
+          "tapAction": {
+            "type": "openPost",
+            "postId": "ramsgate-fire"
+          },
+          "size": {
+            "type": "weightedWidthFixedHeight",
+            "weighting": 1,
+            "height": 350
+          }
+        },
+        {
+          "id": "1jhjk",
+          "type": "card",
+          "title": "Park vandalism in Folkestone amid lockdown",
+          "subtitle": "Lockdown breakers have caused damage to local park benches after flouting lockdown rules and having a BBQ.",
+          "tapAction": {
+            "type": "openPost",
+            "postId": "folkestone-hythe-vandalism"
+          },
+          "cardType": "large",
+          "image": {
+            "src": "https://upload.wikimedia.org/wikipedia/commons/0/04/Burnt_picnic_tables_near_Nunnery_Wood_-_geograph.org.uk_-_766559.jpg",
+            "height": 480,
+            "width": 640
+          },
+          "style": {
+            "titleStyle": {
+              "font": {
+                "fontName": "AvenirNext-Bold",
+                "fontSize": 20
+              },
+              "colour": "#000000"
+            },
+            "subtitleStyle": {
+              "font": {
+                "fontName": "AvenirNext-Regular",
+                "fontSize": 18
+              },
+              "colour": "#000000"
+            }
+          },
+          "size": {
+            "weighting": 1,
+            "height": 350,
+            "type": "weightedWidthFixedHeight"
+          }
+        }
+      ],
+      "itemSpacing": 4,
+      "sectionSpacing": 12
+    },
+    {
+      "id": "a",
+      "sectionSpacing": 0,
+      "blocks": [
+        {
+          "id": "1jhjks",
+          "type": "title",
+          "title": "Local news",
+          "size": {
+            "type": "fullWidthFlexibleHeight"
+          },
+          "style": {
+            "font": {
+              "fontName": "AvenirNext-Bold",
+              "fontSize": 25
+            },
+            "colour": "#000000"
+          }
+        }
+      ],
+      "itemSpacing": 0
+    },
+    {
+      "id": "0",
+      "blocks": [
+        {
+          "id": "1jhjk",
+          "type": "card",
+          "title": "Concerns over parents missing immunisation appointments",
+          "subtitle": "Parents urged to continue bringing their children for their routine immunisation jabs.",
+          "tapAction": {
+            "type": "openPost",
+            "postId": "immunisation-concerns"
+          },
+          "cardType": "row",
+          "image": {
+            "src": "https://pixnio.com/free-images/science/medical-science/baby-was-receiving-his-scheduled-vaccine-injection-in-his-right-thigh-muscle-ie-intramuscular-injection-725x490.jpg",
+            "height": 490,
+            "width": 725
+          },
+          "style": {
+            "titleStyle": {
+              "font": {
+                "fontName": "AvenirNext-Bold",
+                "fontSize": 20
+              },
+              "colour": "#000000"
+            },
+            "subtitleStyle": {
+              "font": {
+                "fontName": "AvenirNext-Regular",
+                "fontSize": 18
+              },
+              "colour": "#000000"
+            }
+          },
+          "size": {
+            "type": "fullWidthFlexibleHeight"
+          }
+        },
+        {
+          "id": "1jhjk",
+          "type": "card",
+          "title": "Greggs cancels plans to re-open stores",
+          "subtitle": "Nationwide bakery Greggs has cancelled it's plans to re-open amid fears that stores would become overcrowded.",
+          "tapAction": {
+            "type": "openPost",
+            "postId": "greggs-to-reopen"
+          },
+          "cardType": "row",
+          "image": {
+            "src": "https://upload.wikimedia.org/wikipedia/commons/d/de/Greggs.jpg",
+            "height": 490,
+            "width": 725
+          },
+          "style": {
+            "titleStyle": {
+              "font": {
+                "fontName": "AvenirNext-Bold",
+                "fontSize": 20
+              },
+              "colour": "#000000"
+            },
+            "subtitleStyle": {
+              "font": {
+                "fontName": "AvenirNext-Regular",
+                "fontSize": 18
+              },
+              "colour": "#000000"
+            }
+          },
+          "size": {
+            "type": "fullWidthFlexibleHeight"
+          }
+        },
+        {
+          "id": "1jhjk",
+          "type": "card",
+          "title": "Seasonal beach dog ban put in to force despite lockdown",
+          "subtitle": "Local residents are calling for KCC to relax seasonal ban on dogs at the beach",
+          "tapAction": {
+            "type": "openPost",
+            "postId": "seasonal-dog-ban"
+          },
+          "cardType": "row",
+          "image": {
+            "src": "https://live.staticflickr.com/2778/4447409616_92c3b36541_b.jpg",
+            "height": 490,
+            "width": 725
+          },
+          "style": {
+            "titleStyle": {
+              "font": {
+                "fontName": "AvenirNext-Bold",
+                "fontSize": 20
+              },
+              "colour": "#000000"
+            },
+            "subtitleStyle": {
+              "font": {
+                "fontName": "AvenirNext-Regular",
+                "fontSize": 18
+              },
+              "colour": "#000000"
+            }
+          },
+          "size": {
+            "type": "fullWidthFlexibleHeight"
+          }
+        }
+      ],
+      "itemSpacing": 4,
+      "sectionSpacing": 8
+    }
+  ]
+}

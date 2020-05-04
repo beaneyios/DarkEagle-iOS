@@ -39,6 +39,8 @@
                         <constraint firstAttribute="bottom" secondItem="CsR-g5-D54" secondAttribute="bottom" id="42j-Ep-WYs"/>
                         <constraint firstAttribute="trailing" secondItem="CsR-g5-D54" secondAttribute="trailing" constant="1" id="6GM-7j-8mV"/>
                         <constraint firstItem="CsR-g5-D54" firstAttribute="top" secondItem="1vJ-Ll-9Rc" secondAttribute="top" constant="4" id="OMd-Yc-Vr0"/>
+                        <constraint firstAttribute="height" constant="36" id="avi-lF-HPY"/>
+                        <constraint firstAttribute="width" constant="36" id="dl6-Gu-rLn"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ecc-22-zdI">
@@ -237,8 +239,6 @@
                 <constraint firstItem="C44-bU-dG4" firstAttribute="centerY" secondItem="1vJ-Ll-9Rc" secondAttribute="centerY" id="LGR-lg-GvD"/>
                 <constraint firstItem="SJB-xD-QOR" firstAttribute="top" secondItem="f0e-kx-wdP" secondAttribute="bottom" id="P8H-OB-nQd"/>
                 <constraint firstItem="ecc-22-zdI" firstAttribute="top" secondItem="1vJ-Ll-9Rc" secondAttribute="bottom" constant="5" id="Qam-AA-oMK"/>
-                <constraint firstItem="1vJ-Ll-9Rc" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.18" id="QoP-F0-swO"/>
-                <constraint firstItem="1vJ-Ll-9Rc" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.18" id="R7d-Gx-nPT"/>
                 <constraint firstItem="nUc-Qj-yhR" firstAttribute="height" secondItem="1vJ-Ll-9Rc" secondAttribute="height" id="Skh-0A-feL"/>
                 <constraint firstItem="1vJ-Ll-9Rc" firstAttribute="top" secondItem="QFH-xn-WGc" secondAttribute="bottom" constant="5" id="Zme-3c-rnQ"/>
                 <constraint firstItem="SJB-xD-QOR" firstAttribute="centerX" secondItem="f0e-kx-wdP" secondAttribute="centerX" id="bHU-iF-M9e"/>
@@ -264,7 +264,9 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="heightConstraint" destination="avi-lF-HPY" id="KPQ-jM-s0G"/>
                 <outlet property="loader" destination="QFH-xn-WGc" id="EjM-ZV-R6h"/>
+                <outlet property="widthConstraint" destination="dl6-Gu-rLn" id="snq-D0-BTo"/>
                 <outletCollection property="roundables" destination="QFH-xn-WGc" collectionClass="NSMutableArray" id="tpI-h2-FLf"/>
                 <outletCollection property="roundables" destination="B0J-ts-5ar" collectionClass="NSMutableArray" id="3ah-Lm-lza"/>
                 <outletCollection property="roundables" destination="SJB-xD-QOR" collectionClass="NSMutableArray" id="2cV-tl-cc9"/>
@@ -293,6 +295,12 @@
                 <outletCollection property="borderables" destination="QFH-xn-WGc" collectionClass="NSMutableArray" id="peW-lw-6l5"/>
                 <outletCollection property="borderables" destination="B0J-ts-5ar" collectionClass="NSMutableArray" id="Dvf-sa-zdw"/>
                 <outletCollection property="borderables" destination="SJB-xD-QOR" collectionClass="NSMutableArray" id="Yp7-sp-eqN"/>
+                <outletCollection property="spacingConstraints" destination="do7-c4-aCf" collectionClass="NSMutableArray" id="aTh-1y-zrS"/>
+                <outletCollection property="spacingConstraints" destination="u0e-QN-Fnr" collectionClass="NSMutableArray" id="VK5-gw-6jV"/>
+                <outletCollection property="spacingConstraints" destination="Zme-3c-rnQ" collectionClass="NSMutableArray" id="LS7-pl-ClR"/>
+                <outletCollection property="spacingConstraints" destination="Qam-AA-oMK" collectionClass="NSMutableArray" id="Y7S-an-rJf"/>
+                <outletCollection property="spacingConstraints" destination="Pj6-4g-eCi" collectionClass="NSMutableArray" id="56V-z1-I8y"/>
+                <outletCollection property="spacingConstraints" destination="ZqP-2G-CQJ" collectionClass="NSMutableArray" id="aoD-4e-X4O"/>
             </connections>
             <point key="canvasLocation" x="-233.59999999999999" y="208.69565217391306"/>
         </view>

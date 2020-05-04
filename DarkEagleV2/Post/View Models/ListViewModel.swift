@@ -20,12 +20,17 @@ class ListViewModel: BlockListViewModel {
     }
     
     private func fetchList() {
-        PostDownloader().downloadPosts(id: "1") { (result) in
-            switch result {
-            case let .success(list):
-                self.blockSections = list.blockSections
-            default:
-                break
+        didChange?(.startLoading)
+        DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 2.0) {
+            PostDownloader().downloadPosts(id: "1") { (result) in
+                switch result {
+                case let .success(list):
+                    self.blockSections = list.blockSections
+                    self.didChange?(.stopLoading)
+                    self.didChange?(.updated)
+                default:
+                    break
+                }
             }
         }
     }

@@ -16,23 +16,23 @@ class LoadingView: UIView {
     @IBOutlet var roundables: [UIView]!
     @IBOutlet var borderables: [UIView]!
     
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var widthConstraint: NSLayoutConstraint!
+    
+    @IBOutlet var spacingConstraints: [NSLayoutConstraint]!
+    
+    // Loading animation properties
     private var shouldAnimate = false
+    
+    // Pull to refresh properties
+    private var pullToRefreshLocked = false
+    
+    // View Properties
+    private var borderColor: UIColor = .white
+    private var borderWidth: CGFloat = 2.0
     
     class func instanceFromNib() -> LoadingView {
         return UINib(nibName: "LoadingView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! LoadingView
-    }
-    
-    func startAnimating() {
-        shouldAnimate = true
-        animate()
-    }
-    
-    func stopAnimating() {
-        shouldAnimate = false
-        UIView.animate(withDuration: 0.5) {
-            self.loader.alpha = 0.5
-            self.transform = self.transform.rotated(by: 0.5)
-        }
     }
     
     override func layoutSubviews() {
@@ -46,15 +46,38 @@ class LoadingView: UIView {
         }
         
         self.borderables.forEach {
-            $0.layer.borderColor = UIColor.white.cgColor
-            $0.layer.borderWidth = 2.0
+            $0.layer.borderColor = self.borderColor.cgColor
+            $0.layer.borderWidth = self.borderWidth
+        }
+    }
+    
+    func configureBorders(borderColor: UIColor, borderWidth: CGFloat) {
+        self.borderColor = borderColor
+        self.borderWidth = borderWidth
+    }
+    
+    func configureSizes(size: CGSize, padding: CGFloat) {
+        self.heightConstraint.constant = size.height
+        self.widthConstraint.constant = size.width
+        self.spacingConstraints.forEach {
+            $0.constant = padding
+        }
+    }
+}
+
+// MARK: Loading functions
+extension LoadingView {
+    func startAnimating() {
+        if shouldAnimate {
+            return
         }
         
-        loader.alpha = 0.5
-        
-        UIView.animate(withDuration: 0.5) {
-            self.transform = self.transform.rotated(by: 0.5)
-        }
+        shouldAnimate = true
+        animate()
+    }
+    
+    func stopAnimating() {
+        shouldAnimate = false
     }
     
     private func animate() {
@@ -67,7 +90,7 @@ class LoadingView: UIView {
             self.loader.alpha = 1.0
         }) { (finished) in
             UIView.animate(withDuration: 0.8, animations: {
-                self.loader.transform = self.loader.transform.translatedBy(x: 0.0, y: -20.0)
+                self.loader.transform = self.loader.transform.translatedBy(x: 0.0, y: -10.0)
             }) { (finished) in
                 UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 3, options: .curveEaseInOut, animations: {
                     self.loader.transform = CGAffineTransform.identity

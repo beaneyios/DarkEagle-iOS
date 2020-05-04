@@ -17,6 +17,9 @@ protocol BlockListViewControllerDelegate: AnyObject {
 class BlockListViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var loadingContainerView: UIView!
+    var loadingView: LoadingView?
+    var initialLoadingView: LoadingView!
     
     weak var delegate: BlockListViewControllerDelegate?
     var viewModel: BlockListViewModel!
@@ -27,6 +30,9 @@ class BlockListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureRefreshControl()
+        configureInitialLoader()
         
         cellProvider = BlockListCellProvider(
             textBlockCellDelegate: self,
@@ -42,6 +48,27 @@ class BlockListViewController: UIViewController {
                 switch change {
                 case .updated:
                     self.collectionView.reloadData()
+                case .startLoading:
+                    self.collectionView.isUserInteractionEnabled = false
+                    self.loadingView?.startAnimating()
+                    self.navigationItem.rightBarButtonItem?.isEnabled = false
+                    
+                    UIView.animate(withDuration: 0.3, animations: {
+                        self.collectionView.alpha = 0.6
+                        self.loadingView?.alpha = 0.6
+                    })
+                case .stopLoading:
+                    self.collectionView.isUserInteractionEnabled = true
+                    UIView.animate(withDuration: 0.3, animations: {
+                        self.loadingView?.alpha = 1.0
+                        self.collectionView.alpha = 1.0
+                    }) { (finished) in
+                        self.collectionView.refreshControl?.endRefreshing()
+                        self.loadingView?.stopAnimating()
+                        self.initialLoadingView.stopAnimating()
+                        self.initialLoadingView.isHidden = true
+                        self.navigationItem.rightBarButtonItem?.isEnabled = true
+                    }
                 }
             }
         }
@@ -51,8 +78,29 @@ class BlockListViewController: UIViewController {
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        
         collectionView.reloadData()
+    }
+    
+    private func configureInitialLoader() {
+        let loadingView = LoadingView.instanceFromNib()
+        loadingView.configureSizes(size: CGSize(width: 30, height: 30), padding: 50)
+        loadingView.configureBorders(borderColor: UIColor.white, borderWidth: 1)
+        loadingView.translatesAutoresizingMaskIntoConstraints = false
+        loadingContainerView.addSubview(loadingView)
+        loadingView.pinToEdges(on: loadingContainerView)
+        loadingView.startAnimating()
+        loadingView.alpha = 0.6
+        initialLoadingView = loadingView
+    }
+    
+    private func configureRefreshControl() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        collectionView.refreshControl = refreshControl
+    }
+    
+    @objc func refresh() {
+        viewModel.loadData()
     }
     
     private func handleTapAction(_ tapAction: TapAction) {
@@ -64,12 +112,6 @@ class BlockListViewController: UIViewController {
         case .none:
             break
         }
-    }
-}
-
-extension BlockListViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {        
-        dismissOptions()
     }
 }
 
@@ -102,6 +144,13 @@ extension BlockListViewController: UICollectionViewDelegateFlowLayout {
             return sizeProvider.size(
                 indexPath: indexPath,
                 nibCreatable: TextBlockCell.self,
+                preferredWidth: collectionView.frame.width - horizontalPadding,
+                configureAction: DynamicConfigureActionProvider.configureAction(for: block)
+            )
+        case let block as TitleBlock:
+            return sizeProvider.size(
+                indexPath: indexPath,
+                nibCreatable: TitleBlockCell.self,
                 preferredWidth: collectionView.frame.width - horizontalPadding,
                 configureAction: DynamicConfigureActionProvider.configureAction(for: block)
             )

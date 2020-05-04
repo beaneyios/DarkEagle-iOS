@@ -10,7 +10,7 @@ import Foundation
 
 struct PostDownloader {
     func downloadPost(id: String, completion: @escaping (_ result: Result<Post, Error>) -> Void) {
-        let url = Bundle.main.url(forResource: "posts", withExtension: "json")
+        let url = Bundle.main.url(forResource: id, withExtension: "json")
         let data = try! Data(contentsOf: url!)
         let decoder = JSONDecoder()
         
@@ -23,7 +23,7 @@ struct PostDownloader {
     }
     
     func downloadPosts(id: String, completion: @escaping (_ result: Result<List, Error>) -> Void) {
-        let url = Bundle.main.url(forResource: "list-phone", withExtension: "json")
+        let url = Bundle.main.url(forResource: "home", withExtension: "json")
         let data = try! Data(contentsOf: url!)
         let decoder = JSONDecoder()
         

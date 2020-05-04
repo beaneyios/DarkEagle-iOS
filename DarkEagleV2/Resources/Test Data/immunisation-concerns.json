@@ -1,0 +1,64 @@
+{
+  "id": "5",
+  "blockSections": [
+    {
+      "id": "1",
+      "sectionSpacing": 2,
+      "user": "12345",
+      "blocks": [
+        {
+          "id": "2",
+          "type": "image",
+          "image": {
+            "src": "https://pixnio.com/free-images/science/medical-science/baby-was-receiving-his-scheduled-vaccine-injection-in-his-right-thigh-muscle-ie-intramuscular-injection-725x490.jpg",
+            "height": 490,
+            "width": 725
+          }
+        },
+        {
+          "id": "1",
+          "type": "text",
+          "text": "Concerns over parents missing immunisation appointments",
+          "styles": [
+            {
+              "startIndex": 0,
+              "endIndex": null,
+              "style": "font",
+              "fontName": "AvenirNext-Bold",
+              "fontSize": 40
+            }
+          ],
+          "tapActions": []
+        },
+        {
+          "id": "1",
+          "type": "text",
+          "text": "NHS Kent and Medway Clinical Commissioning Group (CCG) has urged parents to continue bringing their children for their routine immunisation jabs.",
+          "styles": [
+            {
+              "startIndex": 0,
+              "endIndex": null,
+              "style": "font",
+              "fontName": "AvenirNext-Regular",
+              "fontSize": 25
+            }
+          ]
+        },
+        {
+          "id": "1",
+          "type": "text",
+          "text": "In a bid to reassure parents, Dr Navin Kumta has said that staff are making every effort to ensure immunisations are given safely and quickly, and that they are open for business.",
+          "styles": [
+            {
+              "startIndex": 0,
+              "endIndex": null,
+              "style": "font",
+              "fontName": "AvenirNext-Regular",
+              "fontSize": 25
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

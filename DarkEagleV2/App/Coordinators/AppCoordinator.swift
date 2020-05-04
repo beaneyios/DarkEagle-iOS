@@ -21,6 +21,7 @@ class AppCoordinator: ViewCoordinator {
         let postList = self.postList()
         let localList = self.localList()
         let userView = self.userView()
+        tabBarController.tabBar.isHidden = true
         tabBarController.setViewControllers([postList, localList, userView], animated: false)
     }
     

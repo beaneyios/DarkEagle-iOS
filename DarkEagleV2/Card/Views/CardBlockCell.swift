@@ -31,11 +31,11 @@ class CardBlockCell: UICollectionViewCell, NibLoadable {
         titleLabel.text = block.title
         subtitleLabel.text = block.subtitle
         
-        titleLabel.font = block.style?.titleFont.font
-        subtitleLabel.font = block.style?.subtitleFont.font
+        titleLabel.font = block.style?.titleStyle.font.font
+        subtitleLabel.font = block.style?.subtitleStyle.font.font
         
-        titleLabel.textColor = block.style?.titleColour.colour
-        subtitleLabel.textColor = block.style?.subtitleColour.colour
+        titleLabel.textColor = block.style?.titleStyle.colour.colour
+        subtitleLabel.textColor = block.style?.subtitleStyle.colour.colour
         
         ImageDownloader().downloadImage(url: block.image.src) { (result) in
             switch result {

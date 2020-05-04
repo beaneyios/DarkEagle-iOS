@@ -14,12 +14,17 @@ struct CardBlock: Block, Decodable {
         case large
     }
     
+    struct Style: Decodable {
+        var titleStyle: FontStyle
+        var subtitleStyle: FontStyle
+    }
+    
     var cardType: CardType
     var id: String
     var image: Image
     var size: Size?
     var subtitle: String
-    var style: CardStyle?
+    var style: Style?
     var tapAction: TapAction?
     var type: BlockType
     var title: String

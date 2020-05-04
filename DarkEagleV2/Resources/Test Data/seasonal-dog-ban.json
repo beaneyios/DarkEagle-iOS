@@ -1,0 +1,78 @@
+{
+  "id": "5",
+  "blockSections": [
+    {
+      "id": "1",
+      "sectionSpacing": 2,
+      "user": "12345",
+      "blocks": [
+        {
+          "id": "2",
+          "type": "image",
+          "image": {
+            "src": "https://live.staticflickr.com/2778/4447409616_92c3b36541_b.jpg",
+            "height": 683,
+            "width": 1024
+          }
+        },
+        {
+          "id": "1",
+          "type": "text",
+          "text": "Seasonal beach dog ban put in to force despite lockdown",
+          "styles": [
+            {
+              "startIndex": 0,
+              "endIndex": null,
+              "style": "font",
+              "fontName": "AvenirNext-Bold",
+              "fontSize": 40
+            }
+          ],
+          "tapActions": []
+        },
+        {
+          "id": "1",
+          "type": "text",
+          "text": "Local residents are calling for KCC to relax seasonal ban on dogs at the beach during the coronavirus lockdown.",
+          "styles": [
+            {
+              "startIndex": 0,
+              "endIndex": null,
+              "style": "font",
+              "fontName": "AvenirNext-Regular",
+              "fontSize": 25
+            }
+          ]
+        },
+        {
+          "id": "1",
+          "type": "text",
+          "text": "They are concerned that with beaches closed to dog walkers, it will become more difficult to socially distance while walking their dogs.",
+          "styles": [
+            {
+              "startIndex": 0,
+              "endIndex": null,
+              "style": "font",
+              "fontName": "AvenirNext-Regular",
+              "fontSize": 25
+            }
+          ]
+        },
+        {
+          "id": "1",
+          "type": "text",
+          "text": "Dover has taken the decision to lift the ban, but other councils have yet to.",
+          "styles": [
+            {
+              "startIndex": 0,
+              "endIndex": null,
+              "style": "font",
+              "fontName": "AvenirNext-Regular",
+              "fontSize": 25
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

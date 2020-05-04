@@ -1,0 +1,79 @@
+{
+  "id": "5",
+  "blockSections": [
+    {
+      "id": "1",
+      "sectionSpacing": 2,
+      "user": "12345",
+      "blocks": [
+        {
+          "id": "2",
+          "type": "image",
+          "image": {
+            "src": "https://upload.wikimedia.org/wikipedia/commons/0/04/Burnt_picnic_tables_near_Nunnery_Wood_-_geograph.org.uk_-_766559.jpg",
+            "height": 480,
+            "width": 640
+          }
+        },
+        {
+          "id": "1",
+          "type": "text",
+          "text": "Park vandalism in Folkestone amid lockdown",
+          "styles": [
+            {
+              "startIndex": 0,
+              "endIndex": null,
+              "style": "font",
+              "fontName": "AvenirNext-Bold",
+              "fontSize": 40
+            }
+          ],
+          "tapActions": []
+        },
+        {
+          "id": "1",
+          "type": "text",
+          "text": "Folkestone council have reported that lockdown breakers in Folkestone and Hythe have left serious damage to picnic tables in a local park after flouting lockdown rules.",
+          "styles": [
+            {
+              "startIndex": 0,
+              "endIndex": null,
+              "style": "font",
+              "fontName": "AvenirNext-Regular",
+              "fontSize": 25
+            }
+          ]
+        },
+        {
+          "id": "1",
+          "type": "text",
+          "text": "They have urged people to continue to stay home even as weather improves.",
+          "styles": [
+            {
+              "startIndex": 0,
+              "endIndex": null,
+              "style": "font",
+              "fontName": "AvenirNext-Regular",
+              "fontSize": 25
+            }
+          ]
+        },
+        {
+          "id": "1",
+          "type": "text",
+          "text": "More than 53 people in Kent have this month been fined for breaking lockdown rules.",
+          "styles": [
+            {
+              "startIndex": 0,
+              "endIndex": null,
+              "style": "font",
+              "fontName": "AvenirNext-Regular",
+              "fontSize": 25
+            }
+          ],
+          "tapActions": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "5",
+  "blockSections": [
+    {
+      "id": "1",
+      "sectionSpacing": 2,
+      "user": "12345",
+      "blocks": [
+        {
+          "id": "2",
+          "type": "image",
+          "image": {
+            "src": "https://c1.staticflickr.com/3/2784/4134540965_46285be2f5_b.jpg",
+            "height": 685,
+            "width": 1023
+          }
+        },
+        {
+          "id": "1",
+          "type": "text",
+          "text": "Arson in Ramsgate",
+          "styles": [
+            {
+              "startIndex": 0,
+              "endIndex": null,
+              "style": "font",
+              "fontName": "AvenirNext-Bold",
+              "fontSize": 40
+            }
+          ],
+          "tapActions": []
+        },
+        {
+          "id": "1",
+          "type": "text",
+          "text": "A car fire broke out at 5:30AM this morning on Grange Street, Ramsgate.",
+          "styles": [
+            {
+              "startIndex": 0,
+              "endIndex": null,
+              "style": "font",
+              "fontName": "AvenirNext-Regular",
+              "fontSize": 25
+            }
+          ]
+        },
+        {
+          "id": "1",
+          "type": "text",
+          "text": "Residents of the street report this as being the second fire they have experienced.",
+          "styles": [
+            {
+              "startIndex": 0,
+              "endIndex": null,
+              "style": "font",
+              "fontName": "AvenirNext-Regular",
+              "fontSize": 25
+            }
+          ]
+        },
+        {
+          "id": "1",
+          "type": "text",
+          "text": "This comes a month after a man was arrested for setting 12 cars alight.",
+          "styles": [
+            {
+              "startIndex": 0,
+              "endIndex": null,
+              "style": "font",
+              "fontName": "AvenirNext-Regular",
+              "fontSize": 25
+            }
+          ],
+          "tapActions": []
+        }
+      ]
+    }
+  ]
+}

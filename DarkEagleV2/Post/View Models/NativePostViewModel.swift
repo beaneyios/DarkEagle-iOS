@@ -25,12 +25,17 @@ class NativePostViewModel: BlockListViewModel {
     }
     
     private func fetchPost() {
-        PostDownloader().downloadPost(id: "1") { (result) in
-            switch result {
-            case let .success(post):
-                self.blockSections = post.blockSections
-            default:
-                break
+        didChange?(.startLoading)
+        DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 2.0) {
+            PostDownloader().downloadPost(id: self.postId) { (result) in
+                switch result {
+                case let .success(post):
+                    self.blockSections = post.blockSections
+                    self.didChange?(.updated)
+                    self.didChange?(.stopLoading)
+                default:
+                    break
+                }
             }
         }
     }

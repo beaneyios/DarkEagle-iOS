@@ -1,0 +1,78 @@
+{
+  "id": "5",
+  "blockSections": [
+    {
+      "id": "1",
+      "sectionSpacing": 2,
+      "user": "12345",
+      "blocks": [
+        {
+          "id": "2",
+          "type": "image",
+          "image": {
+            "src": "https://upload.wikimedia.org/wikipedia/commons/d/de/Greggs.jpg",
+            "height": 480,
+            "width": 640
+          }
+        },
+        {
+          "id": "1",
+          "type": "text",
+          "text": "Greggs cancels plans to re-open stores",
+          "styles": [
+            {
+              "startIndex": 0,
+              "endIndex": null,
+              "style": "font",
+              "fontName": "AvenirNext-Bold",
+              "fontSize": 40
+            }
+          ],
+          "tapActions": []
+        },
+        {
+          "id": "1",
+          "type": "text",
+          "text": "Nationwide bakery Greggs has cancelled it's plans to re-open amid fears that stores would become overcrowded.",
+          "styles": [
+            {
+              "startIndex": 0,
+              "endIndex": null,
+              "style": "font",
+              "fontName": "AvenirNext-Regular",
+              "fontSize": 25
+            }
+          ]
+        },
+        {
+          "id": "1",
+          "type": "text",
+          "text": "Originally they had planned to trial run store re-openings in Newcastle and follow shortly with a nationwide rollout.",
+          "styles": [
+            {
+              "startIndex": 0,
+              "endIndex": null,
+              "style": "font",
+              "fontName": "AvenirNext-Regular",
+              "fontSize": 25
+            }
+          ]
+        },
+        {
+          "id": "1",
+          "type": "text",
+          "text": "However, on Saturday, a spokesman said that \"[due] to significant interest in our 20-shop trial, and the risk that excessive numbers of customers may plan to visit Greggs, we will now initially operate these trials behind closed doors in order to effectively test our new operational safety measures.\"",
+          "styles": [
+            {
+              "startIndex": 0,
+              "endIndex": null,
+              "style": "font",
+              "fontName": "AvenirNext-Regular",
+              "fontSize": 25
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
