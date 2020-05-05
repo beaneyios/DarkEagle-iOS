@@ -6,6 +6,7 @@ target 'DarkEagleV2' do
   use_frameworks!
 
   # Pods for DarkEagleV2
+  pod 'SkeletonView'
   
   target 'DarkEagleV2Tests' do
     inherit! :search_paths

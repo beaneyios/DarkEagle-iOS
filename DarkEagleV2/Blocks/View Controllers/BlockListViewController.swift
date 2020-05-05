@@ -17,9 +17,12 @@ protocol BlockListViewControllerDelegate: AnyObject {
 class BlockListViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var loadingContainerView: UIView!
+    @IBOutlet weak var skeletonViewContainer: UIView!
+    
+    typealias SkeletonableUIView = UIView & SkeletonableView
+    private var skeletonView: SkeletonableUIView?
+
     var loadingView: LoadingView?
-    var initialLoadingView: LoadingView!
     
     weak var delegate: BlockListViewControllerDelegate?
     var viewModel: BlockListViewModel!
@@ -32,7 +35,7 @@ class BlockListViewController: UIViewController {
         super.viewDidLoad()
         
         configureRefreshControl()
-        configureInitialLoader()
+        addSkeletonView()
         
         cellProvider = BlockListCellProvider(
             textBlockCellDelegate: self,
@@ -58,6 +61,7 @@ class BlockListViewController: UIViewController {
                         self.loadingView?.alpha = 0.6
                     })
                 case .stopLoading:
+                    self.skeletonView?.stopSkeleton()
                     self.collectionView.isUserInteractionEnabled = true
                     UIView.animate(withDuration: 0.3, animations: {
                         self.loadingView?.alpha = 1.0
@@ -65,8 +69,6 @@ class BlockListViewController: UIViewController {
                     }) { (finished) in
                         self.collectionView.refreshControl?.endRefreshing()
                         self.loadingView?.stopAnimating()
-                        self.initialLoadingView.stopAnimating()
-                        self.initialLoadingView.isHidden = true
                         self.navigationItem.rightBarButtonItem?.isEnabled = true
                     }
                 }
@@ -81,18 +83,6 @@ class BlockListViewController: UIViewController {
         collectionView.reloadData()
     }
     
-    private func configureInitialLoader() {
-        let loadingView = LoadingView.instanceFromNib()
-        loadingView.configureSizes(size: CGSize(width: 30, height: 30), padding: 50)
-        loadingView.configureBorders(borderColor: UIColor.white, borderWidth: 1)
-        loadingView.translatesAutoresizingMaskIntoConstraints = false
-        loadingContainerView.addSubview(loadingView)
-        loadingView.pinToEdges(on: loadingContainerView)
-        loadingView.startAnimating()
-        loadingView.alpha = 0.6
-        initialLoadingView = loadingView
-    }
-    
     private func configureRefreshControl() {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
@@ -100,7 +90,26 @@ class BlockListViewController: UIViewController {
     }
     
     @objc func refresh() {
-        viewModel.loadData()
+        viewModel.reloadData()
+    }
+    
+    func configureSkeletonView(withType type: SkeletonableView.Type) {
+        guard let skeletonView = type.createTemplate() as? SkeletonableUIView else {
+            return
+        }
+    
+        self.skeletonView = skeletonView
+    }
+    
+    private func addSkeletonView() {
+        guard let skeletonView = self.skeletonView else {
+            return
+        }
+        
+        skeletonView.translatesAutoresizingMaskIntoConstraints = false
+        skeletonViewContainer.addSubview(skeletonView)
+        skeletonView.pinToEdges(on: skeletonViewContainer)
+        skeletonView.startSkeleton()
     }
     
     private func handleTapAction(_ tapAction: TapAction) {
@@ -161,9 +170,15 @@ extension BlockListViewController: UICollectionViewDelegateFlowLayout {
                 collectionView: collectionView,
                 horizontalPadding: horizontalPadding
             )
+        case let block as SkeletonBlock:
+            if let size = block.size, case let Size.fullWidthFixedHeight(height) = size {
+                return CGSize(width: collectionView.frame.width, height: height)
+            }
         default:
             return CGSize.zero
         }
+        
+        return CGSize.zero
     }
     
     private func size(forCard block: CardBlock, indexPath: IndexPath, collectionView: UICollectionView, horizontalPadding: CGFloat) -> CGSize {
@@ -193,6 +208,8 @@ extension BlockListViewController: UICollectionViewDelegateFlowLayout {
             let spacing = (weighting - 1.0) * (section.itemSpacing ?? 0.0)
             let widthWithoutSpacing = widthWithoutPadding - spacing
             return CGSize(width: widthWithoutSpacing / weighting, height: height)
+        case let .fullWidthFixedHeight(height):
+            return CGSize(width: collectionView.frame.width, height: height)
         }
     }
     

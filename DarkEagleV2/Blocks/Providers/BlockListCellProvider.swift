@@ -66,6 +66,8 @@ struct BlockListCellProvider {
             return cardCell(for: block, collectionView: collectionView, indexPath: indexPath)
         case let block as TitleBlock:
             return titleCell(for: block, collectionView: collectionView, indexPath: indexPath)
+        case let block as SkeletonBlock:
+            return skeletonCell(for: block, collectionView: collectionView, indexPath: indexPath)
         default:
             fatalError("Unexpected block \(block.self)")
         }
@@ -90,5 +92,22 @@ struct BlockListCellProvider {
         cell.delegate = cardBlockCellDelegate
         cell.configure(with: block)
         return cell
+    }
+    
+    func skeletonCell(for skeletonBlock: SkeletonBlock, collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+        switch skeletonBlock.skeletonType {
+        case .largeCard:
+            let cell: CardBlockCell = collectionView.dequeueReusableCell(withReuseIdentifier: ReuseIdentifiers.largeCard.rawValue, for: indexPath)
+            cell.configureSkeleton()
+            return cell
+        case .rowCard:
+            let cell: CardBlockCell = collectionView.dequeueReusableCell(withReuseIdentifier: ReuseIdentifiers.rowCard.rawValue, for: indexPath)
+            cell.configureSkeleton()
+            return cell
+        case .text:
+            let cell: TitleBlockCell = collectionView.dequeueReusableCell(withReuseIdentifier: ReuseIdentifiers.titleCard.rawValue, for: indexPath)
+            cell.configureSkeleton()
+            return cell
+        }
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 protocol CardBlockCellDelegate: AnyObject {
     func cardBlockCell(_ cell: CardBlockCell, wasSelectedWithTapAction action: TapAction)
@@ -21,11 +22,21 @@ class CardBlockCell: UICollectionViewCell, NibLoadable {
     
     private var block: CardBlock?
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        titleLabel.isSkeletonable = true
+        subtitleLabel.isSkeletonable = true
+        imageView.isSkeletonable = true
+    }
+    
     override func prepareForReuse() {
         block = nil
     }
     
     func configure(with block: CardBlock) {
+        disableSkeleton()
+        
         self.block = block
         
         titleLabel.text = block.title
@@ -48,6 +59,24 @@ class CardBlockCell: UICollectionViewCell, NibLoadable {
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(cellTapped))
         addGestureRecognizer(tap)
+    }
+    
+    func configureSkeleton() {
+        enableSkeleton()
+        titleLabel.clipsToBounds = true
+        subtitleLabel.clipsToBounds = true
+    }
+    
+    func enableSkeleton() {
+        titleLabel.showAnimatedSkeleton()
+        subtitleLabel.showAnimatedSkeleton()
+        imageView.showAnimatedSkeleton()
+    }
+    
+    func disableSkeleton() {
+        titleLabel.hideSkeleton()
+        subtitleLabel.hideSkeleton()
+        imageView.hideSkeleton()
     }
     
     @objc private func cellTapped() {

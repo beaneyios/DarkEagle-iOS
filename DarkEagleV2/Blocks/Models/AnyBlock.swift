@@ -15,6 +15,10 @@ struct AnyBlock: Decodable {
         case type
     }
     
+    init(resource: Block) {
+        self.resource = resource
+    }
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: DecodingKey.self)
         let type = try container.decode(BlockType.self, forKey: .type)
@@ -28,6 +32,8 @@ struct AnyBlock: Decodable {
             resource = try CardBlock(from: decoder)
         case .title:
             resource = try TitleBlock(from: decoder)
+        case .skeleton:
+            resource = try SkeletonBlock(from: decoder)
         }
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 protocol TextBlockCellDelegate: AnyObject {
     func textBlockCell(_ cell: TextBlockCell, wasSelectedWithTapAction action: TapAction)

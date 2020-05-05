@@ -24,6 +24,10 @@ class NativePostViewModel: BlockListViewModel {
         fetchPost()
     }
     
+    func reloadData() {
+        fetchPost()
+    }
+    
     private func fetchPost() {
         didChange?(.startLoading)
         DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 2.0) {

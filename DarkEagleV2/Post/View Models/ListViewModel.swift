@@ -16,7 +16,42 @@ class ListViewModel: BlockListViewModel {
     private(set) var blockSections: [BlockSection] = []
     
     func loadData() {
+        skeletise()
         fetchList()
+    }
+    
+    func reloadData() {
+        fetchList()
+    }
+    
+    private func skeletise() {
+        self.blockSections = [
+            BlockSection(
+                blocks: [
+                    AnyBlock(
+                        resource: SkeletonBlock(
+                            id: "",
+                            type: .skeleton,
+                            skeletonType: .largeCard,
+                            size: .fullWidthFixedHeight(350.0)
+                        )
+                    )
+                ] + (0...10).map {
+                    AnyBlock(
+                        resource: SkeletonBlock(
+                            id: "\($0)",
+                            type: .skeleton,
+                            skeletonType: .rowCard,
+                            size: .fullWidthFixedHeight(75.0)
+                        )
+                    )
+                },
+                sectionSpacing: 0.0,
+                itemSpacing: 2.0
+            )
+        ]
+        
+        didChange?(.updated)
     }
     
     private func fetchList() {

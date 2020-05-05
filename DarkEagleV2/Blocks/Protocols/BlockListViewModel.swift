@@ -22,6 +22,7 @@ protocol BlockListViewModel {
     func numberOfBlocks(in section: Int) -> Int
     func numberOfBlockSections() -> Int
     func loadData()
+    func reloadData()
 }
 
 extension BlockListViewModel {

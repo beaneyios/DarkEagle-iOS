@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -55,7 +55,6 @@
 		BE8DE81A2443B63300C3CF39 /* insta-post.json in Resources */ = {isa = PBXBuildFile; fileRef = BE8DE8192443B63300C3CF39 /* insta-post.json */; };
 		BE8DE81E2444DE6400C3CF39 /* Block.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE8DE81D2444DE6400C3CF39 /* Block.storyboard */; };
 		BE8DE8232444DF1800C3CF39 /* StoryboardCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE8222444DF1800C3CF39 /* StoryboardCreatable.swift */; };
-		BE8DE82B2444E11900C3CF39 /* CardListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE82A2444E11900C3CF39 /* CardListViewModel.swift */; };
 		BE8DE82D2445E4BF00C3CF39 /* BlockSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE82C2445E4BF00C3CF39 /* BlockSection.swift */; };
 		BE8DE8332445F0B300C3CF39 /* BlockListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE8322445F0B300C3CF39 /* BlockListViewModel.swift */; };
 		BE8DE8362445F90400C3CF39 /* CardBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DE8352445F90400C3CF39 /* CardBlock.swift */; };
@@ -73,6 +72,11 @@
 		BEB503952458BD31001CE5BB /* TitleBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB503942458BD31001CE5BB /* TitleBlock.swift */; };
 		BEE38E44244CC2850019A138 /* list-phone.json in Resources */ = {isa = PBXBuildFile; fileRef = BEE38E43244CC2850019A138 /* list-phone.json */; };
 		BEE38E4A2450E61C0019A138 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE38E492450E61C0019A138 /* AppCoordinator.swift */; };
+		BEE57A5224607C4800F89A0E /* SkeletonBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE57A5124607C4800F89A0E /* SkeletonBlock.swift */; };
+		BEE57A5724608B0200F89A0E /* Sizeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE57A5624608B0200F89A0E /* Sizeable.swift */; };
+		BEE57A59246179FD00F89A0E /* PostSkeletonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEE57A58246179FD00F89A0E /* PostSkeletonView.xib */; };
+		BEE57A5B24617A0600F89A0E /* PostSkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE57A5A24617A0600F89A0E /* PostSkeletonView.swift */; };
+		BEE57A5F2461862D00F89A0E /* SkeletonableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE57A5E2461862D00F89A0E /* SkeletonableView.swift */; };
 		BEF3DF68243CFCE200CFF00F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF3DF67243CFCE200CFF00F /* AppDelegate.swift */; };
 		BEF3DF6C243CFCE200CFF00F /* BlockListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF3DF6B243CFCE200CFF00F /* BlockListViewController.swift */; };
 		BEF3DF71243CFCE300CFF00F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEF3DF70243CFCE300CFF00F /* Assets.xcassets */; };
@@ -142,7 +146,6 @@
 		BE8DE8192443B63300C3CF39 /* insta-post.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "insta-post.json"; sourceTree = "<group>"; };
 		BE8DE81D2444DE6400C3CF39 /* Block.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Block.storyboard; sourceTree = "<group>"; };
 		BE8DE8222444DF1800C3CF39 /* StoryboardCreatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardCreatable.swift; sourceTree = "<group>"; };
-		BE8DE82A2444E11900C3CF39 /* CardListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListViewModel.swift; sourceTree = "<group>"; };
 		BE8DE82C2445E4BF00C3CF39 /* BlockSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockSection.swift; sourceTree = "<group>"; };
 		BE8DE8322445F0B300C3CF39 /* BlockListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListViewModel.swift; sourceTree = "<group>"; };
 		BE8DE8352445F90400C3CF39 /* CardBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBlock.swift; sourceTree = "<group>"; };
@@ -160,6 +163,11 @@
 		BEB503942458BD31001CE5BB /* TitleBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBlock.swift; sourceTree = "<group>"; };
 		BEE38E43244CC2850019A138 /* list-phone.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "list-phone.json"; sourceTree = "<group>"; };
 		BEE38E492450E61C0019A138 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		BEE57A5124607C4800F89A0E /* SkeletonBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonBlock.swift; sourceTree = "<group>"; };
+		BEE57A5624608B0200F89A0E /* Sizeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizeable.swift; sourceTree = "<group>"; };
+		BEE57A58246179FD00F89A0E /* PostSkeletonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostSkeletonView.xib; sourceTree = "<group>"; };
+		BEE57A5A24617A0600F89A0E /* PostSkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSkeletonView.swift; sourceTree = "<group>"; };
+		BEE57A5E2461862D00F89A0E /* SkeletonableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonableView.swift; sourceTree = "<group>"; };
 		BEF3DF64243CFCE200CFF00F /* DarkEagleV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DarkEagleV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF3DF67243CFCE200CFF00F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEF3DF6B243CFCE200CFF00F /* BlockListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListViewController.swift; sourceTree = "<group>"; };
@@ -211,7 +219,6 @@
 				4279B5FB5145F47A0E88953D /* Pods-DarkEagleV2Tests.debug.xcconfig */,
 				208BF38614A4200C98D87782 /* Pods-DarkEagleV2Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -313,6 +320,8 @@
 				BE79ED6D24430C2D009249FE /* ImageBlockCell.swift */,
 				BE79ED6E24430C2D009249FE /* ImageBlockCell.xib */,
 				BE8DE8172443ADA200C3CF39 /* SelectionOptionsView.swift */,
+				BEE57A58246179FD00F89A0E /* PostSkeletonView.xib */,
+				BEE57A5A24617A0600F89A0E /* PostSkeletonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -440,6 +449,7 @@
 			isa = PBXGroup;
 			children = (
 				BE8DE8222444DF1800C3CF39 /* StoryboardCreatable.swift */,
+				BEE57A5624608B0200F89A0E /* Sizeable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -447,7 +457,6 @@
 		BE8DE8292444E10E00C3CF39 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				BE8DE82A2444E11900C3CF39 /* CardListViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -500,6 +509,7 @@
 			children = (
 				BE8DE8352445F90400C3CF39 /* CardBlock.swift */,
 				BE8DE84B24464FB500C3CF39 /* FontStyle.swift */,
+				BEE57A5124607C4800F89A0E /* SkeletonBlock.swift */,
 				BEB503942458BD31001CE5BB /* TitleBlock.swift */,
 			);
 			path = Models;
@@ -551,6 +561,22 @@
 			path = Coordinators;
 			sourceTree = "<group>";
 		};
+		BEE57A5C2461861E00F89A0E /* Skeleton */ = {
+			isa = PBXGroup;
+			children = (
+				BEE57A5D2461862500F89A0E /* Protocols */,
+			);
+			path = Skeleton;
+			sourceTree = "<group>";
+		};
+		BEE57A5D2461862500F89A0E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BEE57A5E2461862D00F89A0E /* SkeletonableView.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		BEF3DF5B243CFCE100CFF00F = {
 			isa = PBXGroup;
 			children = (
@@ -574,10 +600,11 @@
 		BEF3DF66243CFCE200CFF00F /* DarkEagleV2 */ = {
 			isa = PBXGroup;
 			children = (
-				BE37329B2454711C008CAB06 /* Login */,
+				BEE57A5C2461861E00F89A0E /* Skeleton */,
 				BE79ED0A2441FE3A009249FE /* App */,
 				BE8DE82E2445EA1F00C3CF39 /* Blocks */,
 				BE8DE81B2444DCE800C3CF39 /* Card */,
+				BE37329B2454711C008CAB06 /* Login */,
 				BE79ED3B2441FF73009249FE /* Post */,
 				BE79ED5C24420D96009249FE /* Resources */,
 			);
@@ -604,6 +631,7 @@
 				BEF3DF60243CFCE200CFF00F /* Sources */,
 				BEF3DF61243CFCE200CFF00F /* Frameworks */,
 				BEF3DF62243CFCE200CFF00F /* Resources */,
+				DD09A8A4FD3FA7CDCB01F153 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -688,6 +716,7 @@
 				BE79ED7024430C2D009249FE /* ImageBlockCell.xib in Resources */,
 				BE15E194245D8CA00095FFEF /* immunisation-concerns.json in Resources */,
 				BEB503932458BCCC001CE5BB /* TitleBlockCell.xib in Resources */,
+				BEE57A59246179FD00F89A0E /* PostSkeletonView.xib in Resources */,
 				BE15E190245D89650095FFEF /* home.json in Resources */,
 				BE15E196245D8EC30095FFEF /* greggs-to-reopen.json in Resources */,
 				BE8DE81E2444DE6400C3CF39 /* Block.storyboard in Resources */,
@@ -752,6 +781,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DD09A8A4FD3FA7CDCB01F153 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DarkEagleV2/Pods-DarkEagleV2-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DarkEagleV2/Pods-DarkEagleV2-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DarkEagleV2/Pods-DarkEagleV2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -772,6 +818,7 @@
 				BE79ED762443215B009249FE /* NSMutableAttributedString+WithStyles.swift in Sources */,
 				BE79ED432442003B009249FE /* DynamicCellSizeProvider.swift in Sources */,
 				BE79ED5624420D28009249FE /* Block.swift in Sources */,
+				BEE57A5B24617A0600F89A0E /* PostSkeletonView.swift in Sources */,
 				BE8DE81224437D2300C3CF39 /* UIView+AutoLayoutHelpers.swift in Sources */,
 				BE79ED5B24420D57009249FE /* TextStyle.swift in Sources */,
 				BE3732A5245486FA008CAB06 /* LoadingView.swift in Sources */,
@@ -781,10 +828,13 @@
 				BE79ED4B24420432009249FE /* Array+FirstOfType.swift in Sources */,
 				BE79ED4F2442055E009249FE /* AnyBlock.swift in Sources */,
 				BE79ED7324430C67009249FE /* BlockListCellProvider.swift in Sources */,
+				BEE57A5224607C4800F89A0E /* SkeletonBlock.swift in Sources */,
 				BE012EBB244AF90B00F2588B /* List.swift in Sources */,
+				BEE57A5F2461862D00F89A0E /* SkeletonableView.swift in Sources */,
 				BE8DE8462446457E00C3CF39 /* CardNibNameProvider.swift in Sources */,
 				BE8DE8182443ADA200C3CF39 /* SelectionOptionsView.swift in Sources */,
 				BE37329A24545FF8008CAB06 /* ViewCoordinator.swift in Sources */,
+				BEE57A5724608B0200F89A0E /* Sizeable.swift in Sources */,
 				BE8DE84C24464FB500C3CF39 /* FontStyle.swift in Sources */,
 				BE79ED6F24430C2D009249FE /* ImageBlockCell.swift in Sources */,
 				BE3732A02454727A008CAB06 /* LoginViewController.swift in Sources */,
@@ -794,7 +844,6 @@
 				BE8DE8392445FF7900C3CF39 /* CardBlockCell.swift in Sources */,
 				BE8DE82D2445E4BF00C3CF39 /* BlockSection.swift in Sources */,
 				BE79ED662442288B009249FE /* PostDownloader.swift in Sources */,
-				BE8DE82B2444E11900C3CF39 /* CardListViewModel.swift in Sources */,
 				BE8C327B244B7D430003CC01 /* Size.swift in Sources */,
 				BE79ED5124420CFC009249FE /* TextBlock.swift in Sources */,
 				BE8DE8232444DF1800C3CF39 /* StoryboardCreatable.swift in Sources */,

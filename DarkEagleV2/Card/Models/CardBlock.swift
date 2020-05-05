@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct CardBlock: Block, Decodable {
+struct CardBlock: Block, Decodable, Sizeable {
     enum CardType: String, Decodable {
         case row
         case large

@@ -11,6 +11,7 @@ import UIKit
 enum Size: Decodable {
     case fullWidthFlexibleHeight
     case weightedWidthFixedHeight(weighting: CGFloat, height: CGFloat)
+    case fullWidthFixedHeight(_ height: CGFloat)
     
     enum SizeType: String, Decodable {
         case fullWidthFlexibleHeight

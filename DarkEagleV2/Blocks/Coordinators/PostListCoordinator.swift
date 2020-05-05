@@ -69,6 +69,7 @@ extension PostListCoordinator: BlockListViewControllerDelegate {
         let spacerButton = UIBarButtonItem(customView: spacerView)
         viewController.navigationItem.rightBarButtonItems = [spacerButton]
         viewController.loadingView = loadingView
+        viewController.configureSkeletonView(withType: PostSkeletonView.self)
         
         navigationController.pushViewController(viewController, animated: true)
     }

@@ -15,13 +15,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fuw-iS-Ozr">
-                                <rect key="frame" x="57" y="298" width="300" height="300"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAl-Jm-blo">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="UrQ-QA-Re2"/>
-                                    <constraint firstAttribute="width" constant="300" id="jmV-A8-EYE"/>
-                                </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWY-TP-u4i">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
@@ -38,17 +34,19 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="qWY-TP-u4i" firstAttribute="top" secondItem="bwv-7P-WdR" secondAttribute="top" id="0Lg-6b-6iU"/>
+                            <constraint firstItem="bwv-7P-WdR" firstAttribute="bottom" secondItem="IAl-Jm-blo" secondAttribute="bottom" id="4Yt-4m-90F"/>
+                            <constraint firstItem="bwv-7P-WdR" firstAttribute="trailing" secondItem="IAl-Jm-blo" secondAttribute="trailing" id="80a-Za-O0Q"/>
                             <constraint firstItem="bwv-7P-WdR" firstAttribute="trailing" secondItem="qWY-TP-u4i" secondAttribute="trailing" id="DcO-jS-zjm"/>
+                            <constraint firstItem="IAl-Jm-blo" firstAttribute="top" secondItem="bwv-7P-WdR" secondAttribute="top" id="GXf-Av-5P3"/>
+                            <constraint firstItem="IAl-Jm-blo" firstAttribute="leading" secondItem="bwv-7P-WdR" secondAttribute="leading" id="Je2-ch-Vd5"/>
                             <constraint firstAttribute="bottom" secondItem="qWY-TP-u4i" secondAttribute="bottom" id="O9x-5f-4rH"/>
-                            <constraint firstItem="fuw-iS-Ozr" firstAttribute="centerY" secondItem="mCW-au-ZgE" secondAttribute="centerY" id="RFs-qH-kys"/>
-                            <constraint firstItem="fuw-iS-Ozr" firstAttribute="centerX" secondItem="mCW-au-ZgE" secondAttribute="centerX" id="cqQ-eU-o9W"/>
                             <constraint firstItem="qWY-TP-u4i" firstAttribute="leading" secondItem="bwv-7P-WdR" secondAttribute="leading" id="gbd-xq-SRq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bwv-7P-WdR"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="qWY-TP-u4i" id="C4U-Wc-csW"/>
-                        <outlet property="loadingContainerView" destination="fuw-iS-Ozr" id="pdn-ec-2ZW"/>
+                        <outlet property="skeletonViewContainer" destination="IAl-Jm-blo" id="DdL-RN-7rs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tay-BS-sIC" sceneMemberID="firstResponder"/>
