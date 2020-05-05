@@ -77,6 +77,8 @@
 		BEE57A59246179FD00F89A0E /* PostSkeletonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEE57A58246179FD00F89A0E /* PostSkeletonView.xib */; };
 		BEE57A5B24617A0600F89A0E /* PostSkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE57A5A24617A0600F89A0E /* PostSkeletonView.swift */; };
 		BEE57A5F2461862D00F89A0E /* SkeletonableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE57A5E2461862D00F89A0E /* SkeletonableView.swift */; };
+		BEE57A63246198D600F89A0E /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE57A62246198D600F89A0E /* SplashViewController.swift */; };
+		BEE57A66246198FA00F89A0E /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEE57A65246198FA00F89A0E /* Splash.storyboard */; };
 		BEF3DF68243CFCE200CFF00F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF3DF67243CFCE200CFF00F /* AppDelegate.swift */; };
 		BEF3DF6C243CFCE200CFF00F /* BlockListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF3DF6B243CFCE200CFF00F /* BlockListViewController.swift */; };
 		BEF3DF71243CFCE300CFF00F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEF3DF70243CFCE300CFF00F /* Assets.xcassets */; };
@@ -168,7 +170,9 @@
 		BEE57A58246179FD00F89A0E /* PostSkeletonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostSkeletonView.xib; sourceTree = "<group>"; };
 		BEE57A5A24617A0600F89A0E /* PostSkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSkeletonView.swift; sourceTree = "<group>"; };
 		BEE57A5E2461862D00F89A0E /* SkeletonableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonableView.swift; sourceTree = "<group>"; };
-		BEF3DF64243CFCE200CFF00F /* DarkEagleV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DarkEagleV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEE57A62246198D600F89A0E /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		BEE57A65246198FA00F89A0E /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		BEF3DF64243CFCE200CFF00F /* Grapevine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grapevine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF3DF67243CFCE200CFF00F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEF3DF6B243CFCE200CFF00F /* BlockListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListViewController.swift; sourceTree = "<group>"; };
 		BEF3DF70243CFCE300CFF00F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -577,6 +581,23 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		BEE57A60246198BF00F89A0E /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				BEE57A61246198C600F89A0E /* View Controllers */,
+				BEE57A65246198FA00F89A0E /* Splash.storyboard */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		BEE57A61246198C600F89A0E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BEE57A62246198D600F89A0E /* SplashViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		BEF3DF5B243CFCE100CFF00F = {
 			isa = PBXGroup;
 			children = (
@@ -591,7 +612,7 @@
 		BEF3DF65243CFCE200CFF00F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BEF3DF64243CFCE200CFF00F /* DarkEagleV2.app */,
+				BEF3DF64243CFCE200CFF00F /* Grapevine.app */,
 				BEF3DF7A243CFCE300CFF00F /* DarkEagleV2Tests.xctest */,
 			);
 			name = Products;
@@ -606,6 +627,7 @@
 				BE8DE81B2444DCE800C3CF39 /* Card */,
 				BE37329B2454711C008CAB06 /* Login */,
 				BE79ED3B2441FF73009249FE /* Post */,
+				BEE57A60246198BF00F89A0E /* Splash */,
 				BE79ED5C24420D96009249FE /* Resources */,
 			);
 			path = DarkEagleV2;
@@ -639,7 +661,7 @@
 			);
 			name = DarkEagleV2;
 			productName = DarkEagleV2;
-			productReference = BEF3DF64243CFCE200CFF00F /* DarkEagleV2.app */;
+			productReference = BEF3DF64243CFCE200CFF00F /* Grapevine.app */;
 			productType = "com.apple.product-type.application";
 		};
 		BEF3DF79243CFCE300CFF00F /* DarkEagleV2Tests */ = {
@@ -724,6 +746,7 @@
 				BE3732A3245485A7008CAB06 /* LoadingView.xib in Resources */,
 				BE8DE81A2443B63300C3CF39 /* insta-post.json in Resources */,
 				BE37329D24547127008CAB06 /* Login.storyboard in Resources */,
+				BEE57A66246198FA00F89A0E /* Splash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -808,6 +831,7 @@
 				BEF3DF91243D14C800CFF00F /* TextBlockCell.swift in Sources */,
 				BE79ED78244329B6009249FE /* Action.swift in Sources */,
 				BE8DE81024437D0200C3CF39 /* UIColor+Hex.swift in Sources */,
+				BEE57A63246198D600F89A0E /* SplashViewController.swift in Sources */,
 				BE79ED5924420D3B009249FE /* BlockType.swift in Sources */,
 				BE012EC5244B094100F2588B /* Weak.swift in Sources */,
 				BE8DE8332445F0B300C3CF39 /* BlockListViewModel.swift in Sources */,
@@ -1000,13 +1024,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5P5MB2LN99;
 				INFOPLIST_FILE = DarkEagleV2/Resources/Plists/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mattbeaney.DarkEagleV2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkeagle.grapevine;
+				PRODUCT_NAME = Grapevine;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1018,13 +1044,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5P5MB2LN99;
 				INFOPLIST_FILE = DarkEagleV2/Resources/Plists/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mattbeaney.DarkEagleV2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkeagle.grapevine;
+				PRODUCT_NAME = Grapevine;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

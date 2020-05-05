@@ -31,6 +31,8 @@ class LoadingView: UIView {
     private var borderColor: UIColor = .white
     private var borderWidth: CGFloat = 2.0
     
+    private var animationCompletion: (() -> Void)?
+    
     class func instanceFromNib() -> LoadingView {
         return UINib(nibName: "LoadingView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! LoadingView
     }
@@ -76,12 +78,15 @@ extension LoadingView {
         animate()
     }
     
-    func stopAnimating() {
+    func stopAnimating(withBlock completion: (() -> Void)? = nil) {
         shouldAnimate = false
+        animationCompletion = completion
     }
     
     private func animate() {
         guard shouldAnimate else {
+            animationCompletion?()
+            animationCompletion = nil
             return
         }
         

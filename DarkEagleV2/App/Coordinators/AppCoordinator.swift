@@ -18,11 +18,22 @@ class AppCoordinator: ViewCoordinator {
     }
     
     func start() {
+        showSplashScreen()
+    }
+    
+    private func showStories() {
         let postList = self.postList()
         let localList = self.localList()
         let userView = self.userView()
         tabBarController.tabBar.isHidden = true
-        tabBarController.setViewControllers([postList, localList, userView], animated: false)
+        tabBarController.setViewControllers([postList, localList, userView], animated: true)
+    }
+    
+    private func showSplashScreen() {
+        let viewController = newSplashViewController
+        viewController.delegate = self
+        tabBarController.tabBar.isHidden = true
+        tabBarController.setViewControllers([viewController], animated: true)
     }
     
     private func showLoginScreen() {
@@ -78,5 +89,18 @@ class AppCoordinator: ViewCoordinator {
     
     func finish() {
         assertionFailure("This should never finish!")
+    }
+}
+
+extension AppCoordinator {
+    var newSplashViewController: SplashViewController {
+        let storyboard = UIStoryboard(name: "Splash", bundle: nil)
+        return SplashViewController.create(from: storyboard)
+    }
+}
+
+extension AppCoordinator: SplashViewControllerDelegate {
+    func splashViewControllerDidEndLoading(_ splashViewController: SplashViewController) {
+        showStories()
     }
 }
