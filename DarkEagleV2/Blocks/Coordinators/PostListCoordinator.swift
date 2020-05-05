@@ -14,15 +14,16 @@ class PostListCoordinator: ViewCoordinator {
     
     var childCoordinators: [ViewCoordinator] = []
     let navigationController: UINavigationController
-
+    
     init(navigationController: UINavigationController, coordinatorDelegate: ViewCoordinatorDelegate?) {
         self.navigationController = navigationController
         self.coordinatorDelegate = coordinatorDelegate
+        
+        navigationController.navigationBar.tintColor = UIColor(named: "de-purple")
     }
     
     func start() {
-        let storyboard = UIStoryboard(name: "Block", bundle: nil)
-        let viewController: BlockListViewController = BlockListViewController.create(from: storyboard)
+        let viewController = newBlockListViewController
         viewController.viewModel = ListViewModel()
         viewController.delegate = self
         
@@ -35,14 +36,8 @@ class PostListCoordinator: ViewCoordinator {
         )
         refreshNavItem.tintColor = UIColor(named: "de-purple")
         
-        let loadingView = LoadingView.instanceFromNib()
-        loadingView.configureSizes(size: CGSize(width: 10, height: 10), padding: 0)
-        loadingView.configureBorders(borderColor: UIColor.white, borderWidth: 1)
-        let spacerView = UIView(frame: CGRect(x: 0, y: 0, width: 20.0, height: 44.0))
-        spacerView.addSubview(loadingView)
-        loadingView.frame = spacerView.frame
-        let spacerButton = UIBarButtonItem(customView: spacerView)
-        viewController.navigationItem.leftBarButtonItems = [spacerButton]
+        let loadingView = newLoadingView
+        viewController.navigationItem.leftBarButtonItems = [newNavBarLoadingViewBarButton(withLoadingView: loadingView)]
         viewController.navigationItem.rightBarButtonItem = refreshNavItem
         viewController.loadingView = loadingView
         navigationController.setViewControllers([viewController], animated: true)
@@ -53,21 +48,37 @@ class PostListCoordinator: ViewCoordinator {
     }
 }
 
-extension PostListCoordinator: BlockListViewControllerDelegate {
-    func blockListViewController(_ viewController: BlockListViewController, didSelectOpenPostWithId postId: String) {
+// MARK: Generate new views
+extension PostListCoordinator {
+    var newBlockListViewController: BlockListViewController {
         let storyboard = UIStoryboard(name: "Block", bundle: nil)
-        let viewController: BlockListViewController = BlockListViewController.create(from: storyboard)
-        viewController.viewModel = NativePostViewModel(postId: postId)
-        viewController.delegate = self
-        
+        return BlockListViewController.create(from: storyboard)
+    }
+    
+    var newLoadingView: LoadingView {
         let loadingView = LoadingView.instanceFromNib()
         loadingView.configureSizes(size: CGSize(width: 10, height: 10), padding: 0)
         loadingView.configureBorders(borderColor: UIColor.white, borderWidth: 1)
+        return loadingView
+    }
+    
+    func newNavBarLoadingViewBarButton(withLoadingView loadingView: LoadingView) -> UIBarButtonItem {
         let spacerView = UIView(frame: CGRect(x: 0, y: 0, width: 20.0, height: 44.0))
         spacerView.addSubview(loadingView)
         loadingView.frame = spacerView.frame
         let spacerButton = UIBarButtonItem(customView: spacerView)
-        viewController.navigationItem.rightBarButtonItems = [spacerButton]
+        return spacerButton
+    }
+}
+
+extension PostListCoordinator: BlockListViewControllerDelegate {
+    func blockListViewController(_ viewController: BlockListViewController, didSelectOpenPostWithId postId: String) {
+        let viewController = newBlockListViewController
+        viewController.viewModel = NativePostViewModel(postId: postId)
+        viewController.delegate = self
+        
+        let loadingView = newLoadingView
+        viewController.navigationItem.rightBarButtonItems = [newNavBarLoadingViewBarButton(withLoadingView: loadingView)]
         viewController.loadingView = loadingView
         viewController.configureSkeletonView(withType: PostSkeletonView.self)
         
