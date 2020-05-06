@@ -49,7 +49,7 @@ class AppCoordinator: ViewCoordinator {
         let navigationController = UINavigationController()
         let postCoordinator = PostListCoordinator(
             navigationController: navigationController,
-            coordinatorDelegate: nil
+            coordinatorDelegate: self
         )
         
         navigationController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "home-icon"), selectedImage: nil)
@@ -63,7 +63,7 @@ class AppCoordinator: ViewCoordinator {
         let navigationController = UINavigationController()
         let postCoordinator = PostListCoordinator(
             navigationController: navigationController,
-            coordinatorDelegate: nil
+            coordinatorDelegate: self
         )
         
         navigationController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "user-icon"), selectedImage: nil)
@@ -77,7 +77,7 @@ class AppCoordinator: ViewCoordinator {
         let navigationController = UINavigationController()
         let postCoordinator = PostListCoordinator(
             navigationController: navigationController,
-            coordinatorDelegate: nil
+            coordinatorDelegate: self
         )
         
         navigationController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "aim-icon"), selectedImage: nil)

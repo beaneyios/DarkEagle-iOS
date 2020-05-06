@@ -41,7 +41,7 @@
 		BE79ED6124420DC0009249FE /* posts.json in Resources */ = {isa = PBXBuildFile; fileRef = BE79ED6024420DC0009249FE /* posts.json */; };
 		BE79ED6324420DD4009249FE /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79ED6224420DD4009249FE /* Post.swift */; };
 		BE79ED662442288B009249FE /* PostDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79ED652442288B009249FE /* PostDownloader.swift */; };
-		BE79ED6924423266009249FE /* NativePostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79ED6824423266009249FE /* NativePostViewModel.swift */; };
+		BE79ED6924423266009249FE /* PostBlockListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79ED6824423266009249FE /* PostBlockListViewModel.swift */; };
 		BE79ED6F24430C2D009249FE /* ImageBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79ED6D24430C2D009249FE /* ImageBlockCell.swift */; };
 		BE79ED7024430C2D009249FE /* ImageBlockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE79ED6E24430C2D009249FE /* ImageBlockCell.xib */; };
 		BE79ED7324430C67009249FE /* BlockListCellProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79ED7224430C67009249FE /* BlockListCellProvider.swift */; };
@@ -79,6 +79,10 @@
 		BEE57A5F2461862D00F89A0E /* SkeletonableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE57A5E2461862D00F89A0E /* SkeletonableView.swift */; };
 		BEE57A63246198D600F89A0E /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE57A62246198D600F89A0E /* SplashViewController.swift */; };
 		BEE57A66246198FA00F89A0E /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEE57A65246198FA00F89A0E /* Splash.storyboard */; };
+		BEE57A6A2461D50000F89A0E /* SaveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE57A692461D50000F89A0E /* SaveController.swift */; };
+		BEE57A742462CAF300F89A0E /* PostCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE57A732462CAF300F89A0E /* PostCoordinating.swift */; };
+		BEE57A762462CB1F00F89A0E /* PostCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE57A752462CB1F00F89A0E /* PostCoordinator.swift */; };
+		BEE57A782462CBE600F89A0E /* SafariLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE57A772462CBE600F89A0E /* SafariLoading.swift */; };
 		BEF3DF68243CFCE200CFF00F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF3DF67243CFCE200CFF00F /* AppDelegate.swift */; };
 		BEF3DF6C243CFCE200CFF00F /* BlockListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF3DF6B243CFCE200CFF00F /* BlockListViewController.swift */; };
 		BEF3DF71243CFCE300CFF00F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEF3DF70243CFCE300CFF00F /* Assets.xcassets */; };
@@ -134,7 +138,7 @@
 		BE79ED6024420DC0009249FE /* posts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = posts.json; sourceTree = "<group>"; };
 		BE79ED6224420DD4009249FE /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		BE79ED652442288B009249FE /* PostDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDownloader.swift; sourceTree = "<group>"; };
-		BE79ED6824423266009249FE /* NativePostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativePostViewModel.swift; sourceTree = "<group>"; };
+		BE79ED6824423266009249FE /* PostBlockListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostBlockListViewModel.swift; sourceTree = "<group>"; };
 		BE79ED6D24430C2D009249FE /* ImageBlockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageBlockCell.swift; sourceTree = "<group>"; };
 		BE79ED6E24430C2D009249FE /* ImageBlockCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageBlockCell.xib; sourceTree = "<group>"; };
 		BE79ED7224430C67009249FE /* BlockListCellProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListCellProvider.swift; sourceTree = "<group>"; };
@@ -172,6 +176,10 @@
 		BEE57A5E2461862D00F89A0E /* SkeletonableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonableView.swift; sourceTree = "<group>"; };
 		BEE57A62246198D600F89A0E /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		BEE57A65246198FA00F89A0E /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		BEE57A692461D50000F89A0E /* SaveController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveController.swift; sourceTree = "<group>"; };
+		BEE57A732462CAF300F89A0E /* PostCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCoordinating.swift; sourceTree = "<group>"; };
+		BEE57A752462CB1F00F89A0E /* PostCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCoordinator.swift; sourceTree = "<group>"; };
+		BEE57A772462CBE600F89A0E /* SafariLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariLoading.swift; sourceTree = "<group>"; };
 		BEF3DF64243CFCE200CFF00F /* Grapevine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grapevine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF3DF67243CFCE200CFF00F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEF3DF6B243CFCE200CFF00F /* BlockListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListViewController.swift; sourceTree = "<group>"; };
@@ -309,6 +317,7 @@
 				BE79ED7424432145009249FE /* Extensions */,
 				BE79ED3E2441FF86009249FE /* Models */,
 				BE79ED5424420D1F009249FE /* Protocols */,
+				BEE57A6B2462BA4E00F89A0E /* View Controllers */,
 				BE79ED6724423259009249FE /* View Models */,
 				BE79ED3D2441FF80009249FE /* Views */,
 			);
@@ -423,7 +432,7 @@
 		BE79ED6724423259009249FE /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				BE79ED6824423266009249FE /* NativePostViewModel.swift */,
+				BE79ED6824423266009249FE /* PostBlockListViewModel.swift */,
 				BE012EBC244AF94200F2588B /* ListViewModel.swift */,
 			);
 			path = "View Models";
@@ -560,7 +569,10 @@
 		BEE38E482450E6060019A138 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				BEE57A732462CAF300F89A0E /* PostCoordinating.swift */,
 				BE012EC1244B092100F2588B /* PostListCoordinator.swift */,
+				BEE57A752462CB1F00F89A0E /* PostCoordinator.swift */,
+				BEE57A772462CBE600F89A0E /* SafariLoading.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -598,6 +610,29 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
+		BEE57A672461D4EE00F89A0E /* Saved */ = {
+			isa = PBXGroup;
+			children = (
+				BEE57A682461D4F500F89A0E /* Controllers */,
+			);
+			path = Saved;
+			sourceTree = "<group>";
+		};
+		BEE57A682461D4F500F89A0E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BEE57A692461D50000F89A0E /* SaveController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BEE57A6B2462BA4E00F89A0E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		BEF3DF5B243CFCE100CFF00F = {
 			isa = PBXGroup;
 			children = (
@@ -621,6 +656,7 @@
 		BEF3DF66243CFCE200CFF00F /* DarkEagleV2 */ = {
 			isa = PBXGroup;
 			children = (
+				BEE57A672461D4EE00F89A0E /* Saved */,
 				BEE57A5C2461861E00F89A0E /* Skeleton */,
 				BE79ED0A2441FE3A009249FE /* App */,
 				BE8DE82E2445EA1F00C3CF39 /* Blocks */,
@@ -838,11 +874,13 @@
 				BEE38E4A2450E61C0019A138 /* AppCoordinator.swift in Sources */,
 				BE8DE8142443906D00C3CF39 /* UITextInputTokenizer+TappedRanges.swift in Sources */,
 				BEB503952458BD31001CE5BB /* TitleBlock.swift in Sources */,
+				BEE57A742462CAF300F89A0E /* PostCoordinating.swift in Sources */,
 				BE012EC2244B092100F2588B /* PostListCoordinator.swift in Sources */,
 				BE79ED762443215B009249FE /* NSMutableAttributedString+WithStyles.swift in Sources */,
 				BE79ED432442003B009249FE /* DynamicCellSizeProvider.swift in Sources */,
 				BE79ED5624420D28009249FE /* Block.swift in Sources */,
 				BEE57A5B24617A0600F89A0E /* PostSkeletonView.swift in Sources */,
+				BEE57A6A2461D50000F89A0E /* SaveController.swift in Sources */,
 				BE8DE81224437D2300C3CF39 /* UIView+AutoLayoutHelpers.swift in Sources */,
 				BE79ED5B24420D57009249FE /* TextStyle.swift in Sources */,
 				BE3732A5245486FA008CAB06 /* LoadingView.swift in Sources */,
@@ -856,6 +894,7 @@
 				BE012EBB244AF90B00F2588B /* List.swift in Sources */,
 				BEE57A5F2461862D00F89A0E /* SkeletonableView.swift in Sources */,
 				BE8DE8462446457E00C3CF39 /* CardNibNameProvider.swift in Sources */,
+				BEE57A782462CBE600F89A0E /* SafariLoading.swift in Sources */,
 				BE8DE8182443ADA200C3CF39 /* SelectionOptionsView.swift in Sources */,
 				BE37329A24545FF8008CAB06 /* ViewCoordinator.swift in Sources */,
 				BEE57A5724608B0200F89A0E /* Sizeable.swift in Sources */,
@@ -873,7 +912,7 @@
 				BE8DE8232444DF1800C3CF39 /* StoryboardCreatable.swift in Sources */,
 				BE012EBD244AF94200F2588B /* ListViewModel.swift in Sources */,
 				BEB503922458BCCC001CE5BB /* TitleBlockCell.swift in Sources */,
-				BE79ED6924423266009249FE /* NativePostViewModel.swift in Sources */,
+				BE79ED6924423266009249FE /* PostBlockListViewModel.swift in Sources */,
 				BE79ED4D244204C5009249FE /* DynamicConfigureActionProvider.swift in Sources */,
 				BE79ED6324420DD4009249FE /* Post.swift in Sources */,
 				BE8DE8402446014700C3CF39 /* ImageDownloader.swift in Sources */,
@@ -881,6 +920,7 @@
 				BEF3DF6C243CFCE200CFF00F /* BlockListViewController.swift in Sources */,
 				BE79ED402441FFA6009249FE /* DETextView.swift in Sources */,
 				BEF3DF68243CFCE200CFF00F /* AppDelegate.swift in Sources */,
+				BEE57A762462CB1F00F89A0E /* PostCoordinator.swift in Sources */,
 				BE79ED0C2441FF19009249FE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

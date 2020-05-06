@@ -12,6 +12,7 @@ import SafariServices
 protocol BlockListViewControllerDelegate: AnyObject {
     func blockListViewController(_ viewController: BlockListViewController, didSelectOpenUrl url: URL)
     func blockListViewController(_ viewController: BlockListViewController, didSelectOpenPostWithId postId: String)
+    func blockListViewController(_ viewController: BlockListViewController, didBookmarkPostWithId postId: String, andResult result: SaveController.Result)
 }
 
 class BlockListViewController: UIViewController {
@@ -71,6 +72,8 @@ class BlockListViewController: UIViewController {
                         self.loadingView?.stopAnimating()
                         self.navigationItem.rightBarButtonItem?.isEnabled = true
                     }
+                case let .bookmarked(result, id):
+                    self.delegate?.blockListViewController(self, didBookmarkPostWithId: id, andResult: result)
                 }
             }
         }

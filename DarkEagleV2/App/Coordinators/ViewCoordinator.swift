@@ -12,7 +12,7 @@ protocol ViewCoordinatorDelegate: AnyObject {
     func coordinatorDidFinish(_ coordinator: ViewCoordinator)
 }
 
-protocol ViewCoordinator: AnyObject {
+protocol ViewCoordinator: ViewCoordinatorDelegate {
     var childCoordinators: [ViewCoordinator] { get set }
     
     func start()
@@ -28,5 +28,9 @@ extension ViewCoordinator {
     
     func remove(_ coordinator: ViewCoordinator) {
         childCoordinators = childCoordinators.filter { $0 !== coordinator }
+    }
+    
+    func coordinatorDidFinish(_ coordinator: ViewCoordinator) {
+        remove(coordinator)
     }
 }

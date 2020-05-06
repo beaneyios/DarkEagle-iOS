@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NativePostViewModel: BlockListViewModel {
+class PostBlockListViewModel: BlockListViewModel {
     private let postId: String
     private var post: Post?
     
@@ -26,6 +26,11 @@ class NativePostViewModel: BlockListViewModel {
     
     func reloadData() {
         fetchPost()
+    }
+    
+    @objc func bookmarkPost() {
+        let result = SaveController().toggleBookmarkArticle(id: postId)
+        didChange?(.bookmarked(result: result, postId: postId))
     }
     
     private func fetchPost() {

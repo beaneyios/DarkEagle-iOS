@@ -23,6 +23,9 @@ class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        delegate?.splashViewControllerDidEndLoading(self)
+        return
+        
         configureLoadingView()
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2.0) {
