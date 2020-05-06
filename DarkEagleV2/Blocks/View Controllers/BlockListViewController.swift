@@ -12,7 +12,7 @@ import SafariServices
 protocol BlockListViewControllerDelegate: AnyObject {
     func blockListViewController(_ viewController: BlockListViewController, didSelectOpenUrl url: URL)
     func blockListViewController(_ viewController: BlockListViewController, didSelectOpenPostWithId postId: String)
-    func blockListViewController(_ viewController: BlockListViewController, didBookmarkPostWithId postId: String, andResult result: SaveController.Result)
+    func blockListViewController(_ viewController: BlockListViewController, didBookmarkPostWithId postId: String, andResult result: BookmarkController.Result)
 }
 
 class BlockListViewController: UIViewController {

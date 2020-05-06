@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct SaveController {
+struct BookmarkController {
     enum Result {
         case saved
         case unsaved

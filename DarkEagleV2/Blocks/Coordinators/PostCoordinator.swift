@@ -39,7 +39,7 @@ class PostCoordinator: PostCoordinating {
         viewController.configureSkeletonView(withType: PostSkeletonView.self)
         viewController.delegate = self
         
-        let saveController = SaveController()
+        let saveController = BookmarkController()
         let status = saveController.getBookmarkStatus(id: postId)
         let bookmarkItem = UIBarButtonItem(
             image: status.bookmarkImage,
@@ -66,8 +66,8 @@ extension PostCoordinator: BlockListViewControllerDelegate, SafariLoading {
         openPost(id: postId, navigationController: navigationController)
     }
     
-    func blockListViewController(_ viewController: BlockListViewController, didBookmarkPostWithId postId: String, andResult result: SaveController.Result) {
-        let saveController = SaveController()
+    func blockListViewController(_ viewController: BlockListViewController, didBookmarkPostWithId postId: String, andResult result: BookmarkController.Result) {
+        let saveController = BookmarkController()
         let status = saveController.getBookmarkStatus(id: postId)
         
         guard let viewModel = viewController.viewModel as? PostBlockListViewModel, let loadingView = viewController.loadingView else {

@@ -79,7 +79,7 @@
 		BEE57A5F2461862D00F89A0E /* SkeletonableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE57A5E2461862D00F89A0E /* SkeletonableView.swift */; };
 		BEE57A63246198D600F89A0E /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE57A62246198D600F89A0E /* SplashViewController.swift */; };
 		BEE57A66246198FA00F89A0E /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEE57A65246198FA00F89A0E /* Splash.storyboard */; };
-		BEE57A6A2461D50000F89A0E /* SaveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE57A692461D50000F89A0E /* SaveController.swift */; };
+		BEE57A6A2461D50000F89A0E /* BookmarkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE57A692461D50000F89A0E /* BookmarkController.swift */; };
 		BEE57A742462CAF300F89A0E /* PostCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE57A732462CAF300F89A0E /* PostCoordinating.swift */; };
 		BEE57A762462CB1F00F89A0E /* PostCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE57A752462CB1F00F89A0E /* PostCoordinator.swift */; };
 		BEE57A782462CBE600F89A0E /* SafariLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE57A772462CBE600F89A0E /* SafariLoading.swift */; };
@@ -176,7 +176,7 @@
 		BEE57A5E2461862D00F89A0E /* SkeletonableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonableView.swift; sourceTree = "<group>"; };
 		BEE57A62246198D600F89A0E /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		BEE57A65246198FA00F89A0E /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
-		BEE57A692461D50000F89A0E /* SaveController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveController.swift; sourceTree = "<group>"; };
+		BEE57A692461D50000F89A0E /* BookmarkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkController.swift; sourceTree = "<group>"; };
 		BEE57A732462CAF300F89A0E /* PostCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCoordinating.swift; sourceTree = "<group>"; };
 		BEE57A752462CB1F00F89A0E /* PostCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCoordinator.swift; sourceTree = "<group>"; };
 		BEE57A772462CBE600F89A0E /* SafariLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariLoading.swift; sourceTree = "<group>"; };
@@ -621,7 +621,7 @@
 		BEE57A682461D4F500F89A0E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BEE57A692461D50000F89A0E /* SaveController.swift */,
+				BEE57A692461D50000F89A0E /* BookmarkController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -880,7 +880,7 @@
 				BE79ED432442003B009249FE /* DynamicCellSizeProvider.swift in Sources */,
 				BE79ED5624420D28009249FE /* Block.swift in Sources */,
 				BEE57A5B24617A0600F89A0E /* PostSkeletonView.swift in Sources */,
-				BEE57A6A2461D50000F89A0E /* SaveController.swift in Sources */,
+				BEE57A6A2461D50000F89A0E /* BookmarkController.swift in Sources */,
 				BE8DE81224437D2300C3CF39 /* UIView+AutoLayoutHelpers.swift in Sources */,
 				BE79ED5B24420D57009249FE /* TextStyle.swift in Sources */,
 				BE3732A5245486FA008CAB06 /* LoadingView.swift in Sources */,

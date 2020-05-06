@@ -12,7 +12,7 @@ enum BlockListChange {
     case updated
     case startLoading
     case stopLoading
-    case bookmarked(result: SaveController.Result, postId: String)
+    case bookmarked(result: BookmarkController.Result, postId: String)
 }
 
 protocol BlockListViewModel {

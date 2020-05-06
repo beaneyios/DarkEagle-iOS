@@ -29,7 +29,7 @@ class PostBlockListViewModel: BlockListViewModel {
     }
     
     @objc func bookmarkPost() {
-        let result = SaveController().toggleBookmarkArticle(id: postId)
+        let result = BookmarkController().toggleBookmarkArticle(id: postId)
         didChange?(.bookmarked(result: result, postId: postId))
     }
     

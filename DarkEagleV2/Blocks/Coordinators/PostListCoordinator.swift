@@ -57,7 +57,7 @@ extension PostListCoordinator: BlockListViewControllerDelegate, SafariLoading {
         loadUrlInSafari(url: url, on: navigationController)
     }
     
-    func blockListViewController(_ viewController: BlockListViewController, didBookmarkPostWithId postId: String, andResult result: SaveController.Result) {
+    func blockListViewController(_ viewController: BlockListViewController, didBookmarkPostWithId postId: String, andResult result: BookmarkController.Result) {
         
     }
 }
